@@ -8,6 +8,7 @@ const navLinks = [
   { to: "/projects", label: "Projects" },
   { to: "/knowledge-base", label: "Knowledge Base" },
   { to: "/resume", label: "Résumé" },
+  { to: "/resume2", label: "Resume2" },
   { to: "/resume-builder", label: "Resume Builder" },
   { to: "/cover-letter-builder", label: "Cover Letter Builder" },
   { to: "/crm", label: "CRM" },

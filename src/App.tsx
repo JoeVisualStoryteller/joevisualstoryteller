@@ -5,6 +5,7 @@ import Shell from "./Shell"
 // Lazy load all page components for better code splitting
 const Home = lazy(() => import("./pages/Home"))
 const Resume = lazy(() => import("./pages/Resume"))
+const Resume2 = lazy(() => import("./pages/Resume2"))
 const ResumeBuild = lazy(() => import("./pages/ResumeBuild"))
 const CoverLetterBuild = lazy(() => import("./pages/CoverLetterBuild"))
 const CRM = lazy(() => import("./pages/CRM"))
@@ -24,6 +25,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="projects" element={<Projects />} />
           <Route path="resume" element={<Resume />} />
+          <Route path="resume2" element={<Resume2 />} />
           <Route path="resume-builder" element={<ResumeBuild />} />
           <Route path="cover-letter-builder" element={<CoverLetterBuild />} />
           <Route path="crm" element={<CRM />} />

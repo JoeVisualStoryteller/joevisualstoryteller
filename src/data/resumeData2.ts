@@ -17,11 +17,11 @@ export const personalInfo: PersonalInfo = {
 };
 
 export const summary: Summary = {
-  main: "Operations and client support professional with experience in account management, scheduling, recruiting, and service leadership. I’m known for clear communication, organized workflows, and accurate documentation in fast-paced, client-facing environments. Comfortable working in CRMs (OneSite, Knock), coordinating across teams, and keeping requests moving so clients stay informed."
+  main: "Operations and client support professional with experience in account management, scheduling, recruiting, and service leadership. Known for clear communication, organized workflows, and accurate documentation in fast-paced, client-facing environments. Experienced with CRMs (OneSite, Knock), cross-team coordination, and keeping requests moving so clients stay informed."
 };
 
 export const keyAchievements: string[] = [
-  "Kept multi-channel client communication and request tracking organized so priorities stayed aligned and service stayed on schedule",
+  "Coordinated multi-channel client communication and request tracking so priorities stayed aligned and service stayed on schedule",
   "Maintained clean records and CRM updates across leasing, recruiting, and account workflows to support reliable follow-up",
   "Coordinated educational programming and community events as The Buddy Bench team leader, handling logistics and participant communication"
 ];
@@ -33,10 +33,10 @@ export const experiences: Experience[] = [
     date: "Feb 2025 - Present",
     bullets: [
       "Serve as the main point of contact for assigned accounts, sorting requests, coordinating daily communication, and keeping response times timely",
-      "Keep workflows, documentation, and message tracking organized so account status is current and actionable",
-      "Support revenue initiatives by coordinating outreach, tracking activity, and ensuring accurate information flow",
+      "Maintain workflows, documentation, and message tracking so account status is current and actionable",
+      "Coordinate outreach to support revenue initiatives, tracking activity and ensuring accurate information flow",
       "Partner with operations, marketing, and sales to align priorities and make handoffs smooth",
-      "Watch for risks and bottlenecks, flagging issues early to protect service quality"
+      "Identify risks and workflow bottlenecks early, flagging issues to protect timelines and service quality"
     ],
   },
   {
@@ -55,8 +55,8 @@ export const experiences: Experience[] = [
     date: "Aug 2023 - Jul 2024",
     bullets: [
       "Led front-of-house bar operations during high-volume service periods while keeping the customer experience strong",
-      "Supported training and onboarding of new staff to maintain consistent service standards",
-      "Assisted with inventory tracking, restocking, and daily operational coordination"
+      "Trained and onboarded new staff to maintain consistent service standards",
+      "Tracked inventory, restocking, and daily operational coordination"
     ],
   },
   {
@@ -73,7 +73,7 @@ export const experiences: Experience[] = [
     role: "Sales & Marketing Associate",
     date: "Feb 2022 - Jun 2022",
     bullets: [
-      "Supported sales operations through customer engagement, product guidance, and upselling",
+      "Drove sales support through customer engagement, product guidance, and upselling",
       "Managed inventory, pricing updates, and new merchandise intake so displays stayed accurate"
     ],
   },

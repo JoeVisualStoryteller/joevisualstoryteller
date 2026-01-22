@@ -17,45 +17,45 @@ export const personalInfo: PersonalInfo = {
 };
 
 export const summary: Summary = {
-  main: "Operations and client support professional with experience in account management, coordination, sales support, recruiting, and service leadership. Known for organized workflows, accurate records, and responsive client experiences in fast-paced environments. Strengths include communication, scheduling, and operational follow-through."
+  main: "Operations and client support professional with experience in account management, scheduling, recruiting, and service leadership. I’m known for clear communication, organized workflows, and accurate documentation in fast-paced, client-facing environments. Comfortable working in CRMs (OneSite, Knock), coordinating across teams, and keeping requests moving so clients stay informed."
 };
 
 export const keyAchievements: string[] = [
-  "Managed workflows, documentation, and cross-functional coordination to deliver consistent client and customer experiences",
-  "Handled scheduling, communication, and operational follow-through in fast-paced environments",
-  "Coordinated educational programming and community events as The Buddy Bench team leader"
+  "Kept multi-channel client communication and request tracking organized so priorities stayed aligned and service stayed on schedule",
+  "Maintained clean records and CRM updates across leasing, recruiting, and account workflows to support reliable follow-up",
+  "Coordinated educational programming and community events as The Buddy Bench team leader, handling logistics and participant communication"
 ];
 
 export const experiences: Experience[] = [
   {
-    company: "Skywalker Marketing | West Hollywood, CA",
+    company: "Skywalker Marketing — West Hollywood, CA (Remote)",
     role: "Talent Agent (Remote)",
     date: "Feb 2025 - Present",
     bullets: [
-      "Manage assigned accounts as primary point of contact, coordinating daily communication, requests, and follow-ups",
-      "Maintain organized workflows, documentation, and messaging systems to ensure timely service delivery",
+      "Serve as the main point of contact for assigned accounts, sorting requests, coordinating daily communication, and keeping response times timely",
+      "Keep workflows, documentation, and message tracking organized so account status is current and actionable",
       "Support revenue initiatives by coordinating outreach, tracking activity, and ensuring accurate information flow",
-      "Collaborate with operations, marketing, and sales to align priorities and streamline processes",
-      "Monitor activity to identify issues, improve efficiency, and maintain consistent service quality"
+      "Partner with operations, marketing, and sales to align priorities and make handoffs smooth",
+      "Watch for risks and bottlenecks, flagging issues early to protect service quality"
     ],
   },
   {
-    company: "Kam's Kookery | Oklahoma",
+    company: "Kam's Kookery — Oklahoma",
     role: "Lead Bartender - Banquet Services",
     date: "Aug 2024 - Jan 2025",
     bullets: [
-      "Delivered high-volume service during large-scale events while maintaining a positive guest experience",
-      "Coordinated bar setup, breakdown, inventory, and supplies to ensure smooth operations",
+      "Delivered high-volume service during large-scale events while keeping the guest experience positive",
+      "Coordinated bar setup, breakdown, inventory, and supplies to keep events running smoothly",
       "Ensured compliance with safety, service, and alcohol regulations"
     ],
   },
   {
-    company: "Yo Pablo | Oklahoma",
+    company: "Yo Pablo — Oklahoma",
     role: "Lead Bartender",
     date: "Aug 2023 - Jul 2024",
     bullets: [
-      "Led front-of-house bar operations during high-volume service periods while maintaining strong customer experience",
-      "Supported training and onboarding of new staff to ensure consistent service standards",
+      "Led front-of-house bar operations during high-volume service periods while keeping the customer experience strong",
+      "Supported training and onboarding of new staff to maintain consistent service standards",
       "Assisted with inventory tracking, restocking, and daily operational coordination"
     ],
   },
@@ -64,8 +64,8 @@ export const experiences: Experience[] = [
     role: "Family Assistant",
     date: "Jan 2023 - Aug 2023",
     bullets: [
-      "Coordinated schedules, logistics, and task prioritization to support daily operations",
-      "Managed online sales listings, customer inquiries, transactions, and follow-ups"
+      "Coordinated schedules, logistics, and task priorities to support daily operations and time-sensitive requests",
+      "Managed online sales listings, customer inquiries, transactions, and follow-ups while keeping records accurate"
     ],
   },
   {
@@ -73,8 +73,8 @@ export const experiences: Experience[] = [
     role: "Sales & Marketing Associate",
     date: "Feb 2022 - Jun 2022",
     bullets: [
-      "Supported sales operations through customer engagement and strategic upselling",
-      "Managed inventory, pricing updates, and new merchandise intake"
+      "Supported sales operations through customer engagement, product guidance, and upselling",
+      "Managed inventory, pricing updates, and new merchandise intake so displays stayed accurate"
     ],
   },
   {
@@ -84,7 +84,7 @@ export const experiences: Experience[] = [
     bullets: [
       "Managed applications, leases, and resident documentation using OneSite CRM",
       "Conducted tours and followed up with prospective clients to convert leads",
-      "Tracked and maintained lead pipelines using Knock CRM"
+      "Tracked lead pipelines and activity updates using Knock CRM"
     ],
   },
   {
@@ -93,8 +93,8 @@ export const experiences: Experience[] = [
     date: "Jan 2020 - Jun 2020",
     bullets: [
       "Conducted candidate screenings via phone, video, and in-person interviews",
-      "Sourced and evaluated candidates using multiple recruiting platforms",
-      "Maintained accurate recruiting documentation and activity reports"
+      "Sourced and evaluated candidates using multiple recruiting platforms to support active requisitions",
+      "Kept recruiting documentation, pipeline notes, and activity reports accurate and up to date"
     ],
   }
 ];
@@ -112,15 +112,30 @@ export const skillCategories = {
   ],
   "Systems & Records": [
     "CRM & Database Systems (Knock, OneSite, POS Platforms)",
-    "Documentation & Records Management"
+    "Documentation & Records Management",
+    "Reporting & Activity Tracking"
   ],
   "Communication & Team Support": [
     "Cross-Functional Communication",
-    "Training & Team Support"
+    "Training & Team Support",
+    "Client Communication"
   ]
 };
 
-export const skills: string[] = [];
+export const skills: string[] = [
+  "Account Management",
+  "Client Support",
+  "Customer Experience",
+  "Scheduling & Calendar Management",
+  "CRM (OneSite, Knock)",
+  "Documentation & Records Management",
+  "Operational Coordination",
+  "Cross-Functional Communication",
+  "Sales Support",
+  "Recruiting & Screening",
+  "Inventory Management",
+  "Training & Onboarding"
+];
 
 export const education = {
   degree: "Bachelor of Arts & Sciences",

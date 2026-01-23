@@ -69,6 +69,16 @@ export const experiences: Experience[] = [
     ],
   },
   {
+    company: "The Porch",
+    role: "Bartender",
+    date: "Jun 2022 - Oct 2022",
+    bullets: [
+      "Promoted weekly specials and incentives, leading to successful customer retention",
+      "Onboarded and trained new hires, ensuring a consistent quality of service amongst staff",
+      "Conducted inventory stocks, ensuring timely order placements and product availability"
+    ],
+  },
+  {
     company: "Live Boho",
     role: "Sales & Marketing Associate",
     date: "Feb 2022 - Jun 2022",

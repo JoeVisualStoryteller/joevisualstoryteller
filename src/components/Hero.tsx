@@ -53,8 +53,8 @@ export default function Hero() {
           backgroundImage: [
             'linear-gradient(rgba(201,162,39,0.04) 1px, transparent 1px)',
             'linear-gradient(90deg, rgba(201,162,39,0.04) 1px, transparent 1px)',
-            'linear-gradient(rgba(6,182,212,0.025) 1px, transparent 1px)',
-            'linear-gradient(90deg, rgba(6,182,212,0.025) 1px, transparent 1px)',
+            'linear-gradient(rgba(125,211,252,0.025) 1px, transparent 1px)',
+            'linear-gradient(90deg, rgba(125,211,252,0.025) 1px, transparent 1px)',
           ].join(', '),
           backgroundSize: '80px 80px, 80px 80px, 20px 20px, 20px 20px',
         }}

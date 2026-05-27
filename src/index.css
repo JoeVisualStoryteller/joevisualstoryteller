@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Self-hosted Cinzel (variable font + static fallbacks) ── */
+@font-face {
+  font-family: "Cinzel";
+  src: url("/fonts/Cinzel-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face { font-family: "Cinzel"; src: url("/fonts/Cinzel-Regular.ttf")   format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("/fonts/Cinzel-Medium.ttf")    format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("/fonts/Cinzel-SemiBold.ttf")  format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("/fonts/Cinzel-Bold.ttf")      format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("/fonts/Cinzel-ExtraBold.ttf") format("truetype"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("/fonts/Cinzel-Black.ttf")     format("truetype"); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* ── Design system CSS tokens ── */
+:root {
+  --void:       #08080d;
+  --surface:    #111118;
+  --raised:     #1a1a24;
+  --raised-2:   #0a0a10;
+  --gold:       #c9a227;
+  --crimson:    #e0e7ef;
+  --diamond:    var(--crimson);
+  --cyan:       #7dd3fc;
+  --light-blue: var(--cyan);
+  --maroon:     #5d2e3e;
+  --parchment:  #e8e0cc;
+
+  --gold-04:    rgba(201,162,39,0.04);
+  --gold-12:    rgba(201,162,39,0.12);
+  --gold-20:    rgba(201,162,39,0.20);
+  --gold-30:    rgba(201,162,39,0.30);
+  --gold-40:    rgba(201,162,39,0.40);
+  --gold-60:    rgba(201,162,39,0.60);
+  --cyan-25:    rgba(125,211,252,0.25);
+
+  --glow-gold-soft:   0 0 20px rgba(201,162,39,0.20);
+  --glow-gold-medium: 0 0 24px rgba(201,162,39,0.12);
+  --glow-gold-card:   0 8px 32px rgba(201,162,39,0.15);
+  --glow-maroon-soft: 0 0 20px rgba(93,46,62,0.35);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,14 +52,10 @@ html {
 body {
   background-color: #08080d;
   color: #e8e0cc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #08080d;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(201, 162, 39, 0.4);
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #08080d; }
+::-webkit-scrollbar-thumb { background: rgba(201, 162, 39, 0.4); }

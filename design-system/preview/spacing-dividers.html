@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Dividers</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); }
+  .card { padding: 30px 28px; display:flex; flex-direction:column; gap: 28px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); letter-spacing: .2em; text-transform: uppercase; margin-bottom: 8px; }
+  .rule-gold-bar { height: 1px; background: linear-gradient(to right, transparent, rgba(201,162,39,.30), transparent); }
+  .rule-cyan-bar { height: 1px; background: linear-gradient(to right, transparent, rgba(125,211,252,.25), transparent); }
+  .diamond { display:flex; align-items:center; justify-content:center; gap: 16px; }
+  .diamond .r { height: 1px; flex: 1; max-width: 220px; }
+</style></head>
+<body>
+<div class="card">
+  <div><div class="lbl">// SECTION RULE · gold</div><div class="rule-gold-bar"></div></div>
+  <div><div class="lbl">// SECTION RULE · light blue</div><div class="rule-cyan-bar"></div></div>
+  <div><div class="lbl">// DIAMOND DIVIDER</div>
+    <div class="diamond">
+      <div class="r" style="background: linear-gradient(to left, #c9a227, transparent);"></div>
+      <svg width="14" height="14" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" fill="#c9a227" transform="rotate(45 8 8)"/></svg>
+      <div class="r" style="background: linear-gradient(to right, #c9a227, transparent);"></div>
+    </div>
+  </div>
+</div>
+</body></html>

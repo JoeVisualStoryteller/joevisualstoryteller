@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Spacing scale</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); }
+  .card { padding: 22px 28px; }
+  .grp  { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; color: var(--cyan); text-transform: uppercase; margin: 0 0 16px; }
+  .row { display: flex; flex-direction: column; gap: 10px; }
+  .item { display: grid; grid-template-columns: 80px 1fr 80px; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); letter-spacing: .15em; text-transform: uppercase; }
+  .bar { height: 14px; background: var(--gold); }
+  .v { color: var(--fg-1); text-align: right; }
+</style></head>
+<body>
+<div class="card">
+  <p class="grp">// SPACING SCALE</p>
+  <div class="row">
+    <div class="item"><span>xs</span><div class="bar" style="width: 4px"></div><span class="v">4px</span></div>
+    <div class="item"><span>sm</span><div class="bar" style="width: 8px"></div><span class="v">8px</span></div>
+    <div class="item"><span>md</span><div class="bar" style="width: 16px"></div><span class="v">16px</span></div>
+    <div class="item"><span>lg</span><div class="bar" style="width: 32px"></div><span class="v">32px</span></div>
+    <div class="item"><span>xl</span><div class="bar" style="width: 64px"></div><span class="v">64px</span></div>
+    <div class="item"><span>2xl · py</span><div class="bar" style="width: 112px"></div><span class="v">112px</span></div>
+  </div>
+</div>
+</body></html>

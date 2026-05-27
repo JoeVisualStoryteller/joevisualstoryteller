@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Stat card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); }
+  .wrap { padding: 24px 28px; display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stat { background: var(--surface); border: 1px solid var(--gold-20); padding: 22px 12px; text-align: center; transition: all .2s; }
+  .stat.hover { border-color: var(--gold-60); box-shadow: var(--glow-gold-medium); }
+  .v { font-family: var(--font-display); font-weight: 700; color: var(--gold); font-size: 36px; line-height: 1; margin-bottom: 6px; }
+  .l { font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); letter-spacing: .2em; text-transform: uppercase; }
+</style></head>
+<body>
+<div class="wrap">
+  <div class="stat"><div class="v">10+</div><div class="l">Years Experience</div></div>
+  <div class="stat hover"><div class="v">100+</div><div class="l">Systems Managed</div></div>
+  <div class="stat"><div class="v">4</div><div class="l">Service Branches</div></div>
+  <div class="stat"><div class="v">3</div><div class="l">Cloud Platforms</div></div>
+</div>
+</body></html>

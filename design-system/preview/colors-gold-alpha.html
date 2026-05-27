@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Gold alpha scale</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); color: var(--fg-1); }
+  .card { padding: 20px 24px; }
+  .row { display:grid; grid-template-columns: repeat(8,1fr); gap:8px; }
+  .sw { display:flex; flex-direction:column; gap:6px; }
+  .chip { aspect-ratio: 1/1.1; background:#c9a227; }
+  .name { font-family: var(--font-mono); font-size:10px; color: var(--fg-4); text-align:center; letter-spacing:.1em; }
+  .grp  { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; color: var(--cyan); text-transform: uppercase; margin: 0 0 14px; }
+</style></head>
+<body>
+<div class="card">
+  <p class="grp">// GOLD ALPHA (border + glow)</p>
+  <div class="row">
+    <div class="sw"><div class="chip" style="opacity:.04"></div><span class="name">04%</span></div>
+    <div class="sw"><div class="chip" style="opacity:.12"></div><span class="name">12%</span></div>
+    <div class="sw"><div class="chip" style="opacity:.15"></div><span class="name">15%</span></div>
+    <div class="sw"><div class="chip" style="opacity:.20"></div><span class="name">20%</span></div>
+    <div class="sw"><div class="chip" style="opacity:.30"></div><span class="name">30%</span></div>
+    <div class="sw"><div class="chip" style="opacity:.40"></div><span class="name">40%</span></div>
+    <div class="sw"><div class="chip" style="opacity:.60"></div><span class="name">60%</span></div>
+    <div class="sw"><div class="chip" style="opacity:1"></div><span class="name">100%</span></div>
+  </div>
+</div>
+</body></html>

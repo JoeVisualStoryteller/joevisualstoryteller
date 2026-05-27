@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Colors — Core</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); color: var(--fg-1); }
+  .card { padding: 20px 24px; }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw { display:flex; flex-direction:column; gap: 8px; }
+  .chip { aspect-ratio: 1/.65; border:1px solid var(--gold-20); }
+  .name { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--fg-1); }
+  .hex  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); }
+  .grp  { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; color: var(--cyan); text-transform: uppercase; margin: 0 0 12px; }
+</style></head>
+<body>
+<div class="card">
+  <p class="grp">// ACCENT PALETTE · GOLD · DIAMOND · LIGHT BLUE · MAROON</p>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:#c9a227"></div><span class="name">gold</span><span class="hex">#c9a227</span></div>
+    <div class="sw"><div class="chip" style="background:#e0e7ef"></div><span class="name">diamond</span><span class="hex">#e0e7ef</span></div>
+    <div class="sw"><div class="chip" style="background:#7dd3fc"></div><span class="name">light blue</span><span class="hex">#7dd3fc</span></div>
+    <div class="sw"><div class="chip" style="background:#5d2e3e"></div><span class="name">maroon</span><span class="hex">#5d2e3e</span></div>
+  </div>
+</div>
+</body></html>

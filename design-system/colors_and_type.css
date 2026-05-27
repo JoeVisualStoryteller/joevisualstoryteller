@@ -1,0 +1,293 @@
+/* ============================================================
+   JOSEPH H. DUNN II — DESIGN SYSTEM
+   Color + Type Foundations
+   ============================================================
+   Aesthetic: Medieval armory meets cyber tactical HUD.
+   Dark, gilded, monastic. Serif heraldry over monospace
+   telemetry. Light is for parchment; everything else is void.
+   ============================================================ */
+
+/* ---------- Font Faces (self-hosted Cinzel) ---------- */
+
+/* Variable font drives every weight; static TTFs ship alongside as a fallback
+   for engines without variable-axis support. All 7 weights are self-hosted. */
+@font-face {
+  font-family: "Cinzel";
+  src: url("fonts/Cinzel-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face { font-family: "Cinzel"; src: url("fonts/Cinzel-Regular.ttf")   format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("fonts/Cinzel-Medium.ttf")    format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("fonts/Cinzel-SemiBold.ttf")  format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("fonts/Cinzel-Bold.ttf")      format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("fonts/Cinzel-ExtraBold.ttf") format("truetype"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("fonts/Cinzel-Black.ttf")     format("truetype"); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* JetBrains Mono + Inter — substituted from Google Fonts CDN.
+   FLAG: No local TTFs were provided for these two families. Replace with
+   self-hosted files if shipping offline / for print fidelity. */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
+
+/* ============================================================
+   COLORS
+   ============================================================ */
+:root {
+  /* --- Base palette (from tailwind.config.js) --- */
+  --void:       #08080d;   /* Deepest background. Pre-dawn battlefield. */
+  --surface:    #111118;   /* Card / panel base */
+  --raised:     #1a1a24;   /* Hovered or elevated panel */
+  --raised-2:   #0a0a10;   /* Alternate section band */
+
+  --gold:       #c9a227;   /* Primary heraldic accent. Borders, titles, rune lines. */
+  --crimson:    #e0e7ef;   /* DIAMOND — brushed pearl-white. Bullets, file tags,
+                              accent eyebrows. (Token still named --crimson
+                              for source-codebase continuity; the value is
+                              a Taurus-birthstone diamond pearl.) */
+  --diamond:    var(--crimson); /* preferred alias for new code */
+  --cyan:       #7dd3fc;   /* LIGHT BLUE — telemetry / system label / "online" status.
+                              (Token still named --cyan to keep continuity
+                              with the source codebase; the value is light blue.) */
+  --light-blue: var(--cyan); /* preferred alias for new code */
+
+  --maroon:     #5d2e3e;   /* HARROW MAROON — the rarest accent. Use only for
+                              ceremonial weight: the single most important CTA
+                              on a page, the brand wordmark on a featured page,
+                              the signature rule under a hero subtitle, badge
+                              edges, real "alert" states. Never as a body color,
+                              never on more than one element per surface. */
+  --ceremony:   var(--maroon); /* preferred semantic alias */
+  --parchment:  #e8e0cc;   /* Primary text on dark. Aged vellum. */
+
+  /* --- Foreground scale (on void) --- */
+  --fg-1:       #e8e0cc;            /* parchment — primary text */
+  --fg-2:       rgba(232,224,204,.80); /* body copy */
+  --fg-3:       rgba(232,224,204,.70); /* secondary body */
+  --fg-4:       #6b7280;            /* gray-500 — mono labels, meta */
+  --fg-5:       #4b5563;            /* gray-600 — taglines */
+  --fg-6:       #374151;            /* gray-700 — footer copyright */
+
+  /* --- Accent tints (used for hover glows / faint dividers) --- */
+  --gold-04:    rgba(201,162,39,0.04);
+  --gold-12:    rgba(201,162,39,0.12);
+  --gold-15:    rgba(201,162,39,0.15);
+  --gold-20:    rgba(201,162,39,0.20);
+  --gold-30:    rgba(201,162,39,0.30);
+  --gold-40:    rgba(201,162,39,0.40);
+  --gold-60:    rgba(201,162,39,0.60);
+  --cyan-25:    rgba(125,211,252,0.25);
+  --cyan-04:    rgba(125,211,252,0.025);
+  --crimson-30: rgba(224,231,239,0.30);
+
+  --maroon-12:  rgba(93,46,62,0.12);
+  --maroon-30:  rgba(93,46,62,0.30);
+  --maroon-60:  rgba(93,46,62,0.60);
+  --hairline:   rgba(255,255,255,0.04); /* faint inner divider */
+
+  /* --- Semantic --- */
+  --bg:           var(--void);
+  --bg-band:      var(--raised-2);
+  --bg-panel:     var(--surface);
+  --border:       var(--gold-20);
+  --border-strong:var(--gold-60);
+  --rule:         var(--gold-30);
+  --danger:       var(--crimson);    /* now visually a diamond pearl, not red —
+                                        "danger" semantic kept for legacy refs */
+  --accent-pearl: var(--crimson);    /* preferred semantic alias */
+  --rare:         var(--maroon);     /* most-restricted accent */
+  --alert:        var(--maroon);     /* real warm-warning semantic */
+  --signal:       var(--cyan);
+  --highlight:    var(--gold);
+
+  /* --- Glow / shadow tokens (used on hover) --- */
+  --glow-gold-soft:   0 0 20px rgba(201,162,39,0.20);
+  --glow-gold-medium: 0 0 24px rgba(201,162,39,0.12);
+  --glow-gold-card:   0 8px 32px rgba(201,162,39,0.15);
+  --glow-maroon-soft: 0 0 20px rgba(93,46,62,0.35);
+}
+
+/* ============================================================
+   TYPE SCALE
+   ============================================================
+   Three families with sharply distinct roles:
+     • Cinzel       — display, headings, name, stat values.
+                       Always UPPERCASE, wide tracking.
+                       Heraldic, carved-in-stone feel.
+     • JetBrains Mono — labels, section eyebrows, kickers,
+                       button text, log markers ([SYSTEM: ONLINE]).
+                       Always lowercase or UPPERCASE, never mixed.
+                       Wide letter-spacing (0.15em–0.30em).
+     • Inter        — body copy. The "humans" voice.
+                       Sentence case, normal tracking.
+   ============================================================ */
+:root {
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* tracking */
+  --track-wide:   0.15em;
+  --track-wider:  0.20em;
+  --track-widest: 0.25em;
+  --track-mono:   0.30em;   /* extreme for system labels */
+}
+
+/* ---------- Semantic type classes ---------- */
+
+.h-display,
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: var(--track-wide);
+  color: var(--fg-1);
+  text-transform: uppercase;
+}
+
+.h1, h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.875rem, 3.5vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: var(--track-widest);
+  color: var(--fg-1);
+  text-transform: uppercase;
+}
+
+.h2, h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: var(--track-wider);
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: var(--track-wider);
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.kicker {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: var(--track-widest);
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.eyebrow--danger { color: var(--crimson); }
+.eyebrow--muted  { color: var(--fg-4); }
+
+.system-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.p, p {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--fg-3);
+  text-wrap: pretty;
+}
+
+.lead {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--fg-5);
+}
+
+.meta,
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--track-wider);
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.btn-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--track-widest);
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--gold);
+}
+
+code, .code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  color: var(--cyan);
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--void);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb { background: var(--gold-40); }
+
+/* ---------- Decorative primitives ---------- */
+
+/* Horizontal hairline rule used between sections (gold gradient). */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-30), transparent);
+}
+.rule-cyan {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--cyan-25), transparent);
+}
+.rule-maroon {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--maroon-60), transparent);
+}
+
+/* Short divider with center diamond, used under section eyebrows. */
+.divider-diamond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.divider-diamond::before,
+.divider-diamond::after {
+  content: "";
+  flex: 1;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold));
+}
+.divider-diamond::before {
+  background: linear-gradient(to left, var(--gold), transparent);
+}

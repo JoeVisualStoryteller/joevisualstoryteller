@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Borders + corners</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); }
+  .card { padding: 22px 28px; }
+  .grp  { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; color: var(--cyan); text-transform: uppercase; margin: 0 0 14px; }
+  .row { display:grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+  .b { aspect-ratio: 1.1/.9; background: var(--surface); display:flex; align-items:flex-end; padding: 10px; font-family: var(--font-mono); font-size: 9px; color: var(--fg-4); letter-spacing: .15em; text-transform: uppercase; }
+  .b1 { border: 1px solid var(--gold-20); }
+  .b2 { border: 1px solid var(--gold-60); }
+  .b3 { border: 1px solid var(--gold-15); border-top: 2px solid var(--gold); }
+</style></head>
+<body>
+<div class="card">
+  <p class="grp">// BORDERS — radius:0 always</p>
+  <div class="row">
+    <div class="b b1">1px · gold @ 20%</div>
+    <div class="b b2">1px · gold @ 60%</div>
+    <div class="b b3">+ 2px gold banner-top</div>
+  </div>
+</div>
+</body></html>

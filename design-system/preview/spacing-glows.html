@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Hover glows</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); }
+  .card { padding: 22px 28px; }
+  .grp  { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; color: var(--cyan); text-transform: uppercase; margin: 0 0 16px; }
+  .row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .b { padding: 22px 12px; text-align:center; font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); letter-spacing: .18em; text-transform: uppercase; background: var(--surface); border: 1px solid var(--gold-20); }
+  .b1 { box-shadow: 0 0 20px rgba(201,162,39,.20); }
+  .b2 { box-shadow: 0 0 24px rgba(201,162,39,.12); border-color: var(--gold-60); }
+  .b3 { box-shadow: 0 8px 32px rgba(201,162,39,.15); transform: translateY(-2px); }
+</style></head>
+<body>
+<div class="card">
+  <p class="grp">// GLOWS — replaces drop shadows</p>
+  <div class="row">
+    <div class="b b1">0 0 20px · button</div>
+    <div class="b b2">0 0 24px · halo</div>
+    <div class="b b3">0 8 32px · lift</div>
+  </div>
+</div>
+</body></html>

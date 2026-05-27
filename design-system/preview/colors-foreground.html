@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Colors — Foreground scale</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); color: var(--fg-1); }
+  .card { padding: 20px 24px; }
+  .row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .sw { display:flex; flex-direction:column; gap: 6px; align-items:center; text-align:center; }
+  .chip { width: 100%; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center; }
+  .chip span { font-family: var(--font-sans); font-size: 14px; color: var(--fg-1); }
+  .name { font-family: var(--font-mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--fg-1); }
+  .grp  { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; color: var(--cyan); text-transform: uppercase; margin: 0 0 14px; }
+</style></head>
+<body>
+<div class="card">
+  <p class="grp">// FOREGROUND ON VOID</p>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:#08080d"><span style="color:#e8e0cc">Aa</span></div><span class="name">fg-1</span></div>
+    <div class="sw"><div class="chip" style="background:#08080d"><span style="color:rgba(232,224,204,.80)">Aa</span></div><span class="name">fg-2</span></div>
+    <div class="sw"><div class="chip" style="background:#08080d"><span style="color:rgba(232,224,204,.70)">Aa</span></div><span class="name">fg-3</span></div>
+    <div class="sw"><div class="chip" style="background:#08080d"><span style="color:#6b7280">Aa</span></div><span class="name">fg-4</span></div>
+    <div class="sw"><div class="chip" style="background:#08080d"><span style="color:#4b5563">Aa</span></div><span class="name">fg-5</span></div>
+    <div class="sw"><div class="chip" style="background:#08080d"><span style="color:#374151">Aa</span></div><span class="name">fg-6</span></div>
+  </div>
+</div>
+</body></html>

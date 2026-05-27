@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Corner rune</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body { margin:0; background: var(--void); }
+  .card { padding: 22px 24px; }
+  .grp  { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; color: var(--cyan); text-transform: uppercase; margin: 0 0 12px; }
+  .stage { position: relative; height: 200px; border: 1px solid var(--gold-20); background: #08080d; }
+  .rune { position: absolute; width: 56px; height: 56px; opacity: .18; }
+  .tl { top: 12px; left: 12px; }
+  .tr { top: 12px; right: 12px; transform: scaleX(-1); }
+  .bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
+  .br { bottom: 12px; right: 12px; transform: rotate(180deg); }
+  .label { position: absolute; inset: 0; display:flex; align-items:center; justify-content:center; font-family: var(--font-mono); font-size: 11px; color: var(--fg-4); letter-spacing: .25em; text-transform: uppercase; }
+</style></head>
+<body>
+<div class="card">
+  <p class="grp">// CORNER RUNE — signature decoration</p>
+  <div class="stage">
+    <img class="rune tl" src="../assets/corner-rune.svg" alt="">
+    <img class="rune tr" src="../assets/corner-rune.svg" alt="">
+    <img class="rune bl" src="../assets/corner-rune.svg" alt="">
+    <img class="rune br" src="../assets/corner-rune.svg" alt="">
+    <div class="label">all four corners · 18% opacity · gold</div>
+  </div>
+</div>
+</body></html>

@@ -1,7 +1,7 @@
 export const heroContent = {
   systemLabel: '[ SYSTEM: ONLINE ]',
   name: 'JOSEPH H. DUNN II',
-  subtitle: 'Systems Engineer · AI Architect · Digital Tactician',
+  subtitle: 'Systems Engineer · Digital Tactician',
   tagline:
     '10+ years forging resilient systems across military and enterprise domains. Where ancient discipline meets modern technology.',
 }

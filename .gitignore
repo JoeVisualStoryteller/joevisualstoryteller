@@ -27,3 +27,8 @@ dist-ssr
 
 # macOS system files
 .DS_Store
+
+# Bundler artifacts
+.parcel-cache/
+bundle.html
+mockup.html

@@ -29,7 +29,7 @@ export interface SkillGroup {
 }
 
 export const skillsData: SkillGroup[] = [
-  { category: 'AI Tools', items: ['ChatGPT', 'GitHub Copilot', 'Claude AI', 'Azure OpenAI'] },
+  { category: 'AI Tools', items: ['ChatGPT', 'Ollama', 'Claude AI', 'Azure OpenAI'] },
   { category: 'Cloud Platforms', items: ['AWS', 'Microsoft Azure', 'Google Cloud'] },
   { category: 'Automation', items: ['PowerShell', 'Python', 'Bash', 'Ansible'] },
   { category: 'Security', items: ['Zero Trust', 'SIEM', 'Vulnerability Mgmt', 'NIST/RMF'] },

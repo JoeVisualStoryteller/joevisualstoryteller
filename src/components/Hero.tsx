@@ -1,4 +1,5 @@
 import { heroContent } from '../data/content'
+import { useTypewriter } from '../hooks/useTypewriter'
 
 type RunePos = 'tl' | 'tr' | 'bl' | 'br'
 
@@ -41,6 +42,8 @@ function CornerRune({ pos }: { pos: RunePos }) {
 }
 
 export default function Hero() {
+  const { displayed, done } = useTypewriter(heroContent.tagline)
+
   return (
     <section
       id="home"
@@ -95,8 +98,11 @@ export default function Hero() {
           {heroContent.subtitle}
         </p>
 
-        <p className="font-sans text-base text-gray-600 max-w-md mx-auto mb-12 leading-relaxed">
-          {heroContent.tagline}
+        <p className="font-sans text-base text-gray-600 max-w-md mx-auto mb-12 leading-relaxed min-h-[4rem]">
+          {displayed}
+          {!done && (
+            <span className="inline-block w-[2px] h-[1em] bg-gold/70 ml-0.5 align-middle animate-cursor-blink" />
+          )}
         </p>
 
         <div className="flex gap-5 justify-center flex-wrap">

@@ -36,3 +36,42 @@ export const skillsData: SkillGroup[] = [
   { category: 'Infrastructure', items: ['Active Directory', 'VMware', 'Hyper-V', 'Cisco Networking'] },
   { category: 'ITSM / CRM', items: ['ServiceNow', 'Salesforce', 'Jira', 'Remedy'] },
 ]
+
+export interface ChronicleAct {
+  act: string
+  label: string
+  period: string
+  narrative: string
+  tools: string[]
+  quote: string
+}
+
+export const chronicleData: ChronicleAct[] = [
+  {
+    act: 'ACT I',
+    label: 'The Foundation',
+    period: '2014 – 2018',
+    narrative:
+      'Military intelligence forged the fundamentals — secure networks, disciplined process, and the craft of operating under pressure. Every system hardened, every access controlled, every threat mapped.',
+    tools: ['Active Directory', 'Cisco Networking', 'VMware', 'SIEM', 'NIST / RMF'],
+    quote: 'Zero Trust before it had a name.',
+  },
+  {
+    act: 'ACT II',
+    label: 'The Expansion',
+    period: '2018 – 2022',
+    narrative:
+      'Enterprise domains demanded scale. Cloud platforms became the new battlefield. Automation replaced repetition with precision — transforming manual operations into repeatable, resilient pipelines.',
+    tools: ['Microsoft Azure', 'AWS', 'PowerShell', 'Ansible', 'ServiceNow'],
+    quote: '100+ systems architected and defended.',
+  },
+  {
+    act: 'ACT III',
+    label: 'The Augmentation',
+    period: '2022 – Present',
+    narrative:
+      'AI changed the equation. The mission shifted from managing systems to multiplying human capability — deploying intelligence at scale, accelerating teams, and rewriting what one operator can accomplish.',
+    tools: ['Claude AI', 'ChatGPT', 'Ollama', 'Azure OpenAI', 'Python'],
+    quote: '8× productivity gains through AI adoption.',
+  },
+]

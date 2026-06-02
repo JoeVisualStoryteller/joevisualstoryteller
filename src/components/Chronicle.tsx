@@ -2,6 +2,8 @@ import { chronicleData } from '../data/content'
 import SectionHeader from './SectionHeader'
 import Reveal from './Reveal'
 
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+
 export default function Chronicle() {
   return (
     <section id="chronicle" className="relative py-28 px-8 bg-void">
@@ -17,7 +19,7 @@ export default function Chronicle() {
 
           <div className="space-y-16">
             {chronicleData.map((act, i) => (
-              <Reveal key={act.act} delay={i * 120}>
+              <Reveal key={act.label} delay={i * 120}>
                 <div className="md:pl-12 relative">
                   {/* Spine dot */}
                   <div className="absolute -left-[4px] top-[6px] w-[14px] h-[14px] rounded-full border border-gold/60 bg-void hidden md:flex items-center justify-center">
@@ -30,7 +32,7 @@ export default function Chronicle() {
                     <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-6">
                       <div className="flex items-baseline gap-4">
                         <span className="font-cinzel text-xs tracking-[0.35em] text-gold/50 uppercase">
-                          {act.act}
+                          {`ACT ${ROMAN[i]}`}
                         </span>
                         <h3 className="font-cinzel text-xl md:text-2xl font-semibold text-parchment tracking-wide">
                           {act.label}

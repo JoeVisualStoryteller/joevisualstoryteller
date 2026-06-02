@@ -1,24 +1,18 @@
 import { useEffect, useState } from 'react'
-
-const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Chronicle', href: '#chronicle' },
-  { label: 'Skills', href: '#skills' },
-]
+import { navSections } from '../data/content'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
+    const handleScroll = () => {
+      const next = window.scrollY > 20
+      if (next !== scrolled) setScrolled(next)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // Close menu on any nav link click
-  const handleLinkClick = () => setMenuOpen(false)
+  }, [scrolled])
 
   return (
     <nav
@@ -36,13 +30,13 @@ export default function Nav() {
 
         {/* Desktop links */}
         <div className="hidden sm:flex gap-6 lg:gap-10">
-          {links.map(({ label, href }) => (
+          {navSections.map(({ id, navLabel }) => (
             <a
-              key={label}
-              href={href}
+              key={id}
+              href={`#${id}`}
               className="font-mono text-xs tracking-widest uppercase text-gray-500 hover:text-gold transition-colors"
             >
-              {label}
+              {navLabel}
             </a>
           ))}
         </div>
@@ -54,23 +48,23 @@ export default function Nav() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
         >
-          <span className={`block h-px w-5 bg-current transition-transform duration-200 ${menuOpen ? 'translate-y-2 rotate-45' : ''}`} />
-          <span className={`block h-px w-5 bg-current transition-opacity duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block h-px w-5 bg-current transition-transform duration-200 ${menuOpen ? '-translate-y-2 -rotate-45' : ''}`} />
+          <span className={`block h-px w-5 bg-current transition-all duration-200 ${menuOpen ? 'translate-y-2 rotate-45' : ''}`} />
+          <span className={`block h-px w-5 bg-current transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block h-px w-5 bg-current transition-all duration-200 ${menuOpen ? '-translate-y-2 -rotate-45' : ''}`} />
         </button>
       </div>
 
       {/* Mobile dropdown */}
       {menuOpen && (
         <div className="sm:hidden flex flex-col border-t border-gold/20 bg-void/95 backdrop-blur-md">
-          {links.map(({ label, href }) => (
+          {navSections.map(({ id, navLabel }) => (
             <a
-              key={label}
-              href={href}
-              onClick={handleLinkClick}
+              key={id}
+              href={`#${id}`}
+              onClick={() => setMenuOpen(false)}
               className="font-mono text-xs tracking-widest uppercase text-gray-400 hover:text-gold px-5 py-4 border-b border-gold/10 last:border-b-0 transition-colors"
             >
-              {label}
+              {navLabel}
             </a>
           ))}
         </div>

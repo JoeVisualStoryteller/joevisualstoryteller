@@ -13,17 +13,19 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           {/* Bio */}
           <Reveal delay={80} direction="left">
-            <p className="font-mono text-xs tracking-[0.2em] text-crimson uppercase mb-4">
-              {aboutContent.fileLabel}
-            </p>
-            {aboutContent.bio.map((paragraph, i) => (
-              <p
-                key={i}
-                className="font-sans text-base text-parchment/70 leading-relaxed mb-5 last:mb-0"
-              >
-                {paragraph}
+            <div>
+              <p className="font-mono text-xs tracking-[0.2em] text-crimson uppercase mb-4">
+                {aboutContent.fileLabel}
               </p>
-            ))}
+              {aboutContent.bio.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="font-sans text-base text-parchment/70 leading-relaxed mb-5 last:mb-0"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </Reveal>
 
           {/* Stats */}

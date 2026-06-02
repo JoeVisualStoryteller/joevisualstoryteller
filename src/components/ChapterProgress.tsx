@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
+import { navSections } from '../data/content'
 
-const CHAPTERS = [
-  { id: 'home', label: 'Prologue' },
-  { id: 'about', label: 'The Operator' },
-  { id: 'chronicle', label: 'The Chronicle' },
-  { id: 'skills', label: 'Arsenal' },
-]
+const DOT_SPACING = 52
+const ACTIVE_ZONE_INSET = 40 // % of viewport height trimmed from top+bottom to define "active" band
+const ACTIVE_ZONE_MARGIN = `-${ACTIVE_ZONE_INSET}% 0px -${ACTIVE_ZONE_INSET}% 0px`
 
 export default function ChapterProgress() {
   const [active, setActive] = useState('home')
@@ -15,7 +13,8 @@ export default function ChapterProgress() {
     const handleScroll = () => {
       const { scrollTop, scrollHeight, clientHeight } = document.documentElement
       const pct = scrollTop / (scrollHeight - clientHeight)
-      setScrollPct(isNaN(pct) ? 0 : Math.min(1, Math.max(0, pct)))
+      const clamped = isNaN(pct) ? 0 : Math.round(Math.min(1, Math.max(0, pct)) * 1000) / 1000
+      setScrollPct((prev) => (clamped === prev ? prev : clamped))
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -28,23 +27,23 @@ export default function ChapterProgress() {
           if (e.isIntersecting) setActive(e.target.id)
         })
       },
-      { rootMargin: '-40% 0px -40% 0px' }
+      { rootMargin: ACTIVE_ZONE_MARGIN }
     )
-    CHAPTERS.forEach(({ id }) => {
+    navSections.forEach(({ id }) => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
     })
     return () => observer.disconnect()
   }, [])
 
-  const trackHeight = (CHAPTERS.length - 1) * 52
+  const trackHeight = (navSections.length - 1) * DOT_SPACING
 
   return (
     <nav
       aria-label="Chapter progress"
       className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
     >
-      <div className="relative flex flex-col" style={{ gap: '52px' }}>
+      <div className="relative flex flex-col" style={{ gap: `${DOT_SPACING}px` }}>
         {/* Track */}
         <div
           className="absolute left-[5px] top-[5px] w-px bg-gold/15 pointer-events-none"
@@ -56,14 +55,14 @@ export default function ChapterProgress() {
           style={{ height: `${scrollPct * trackHeight}px` }}
         />
 
-        {CHAPTERS.map(({ id, label }) => {
+        {navSections.map(({ id, chapterLabel }) => {
           const isActive = active === id
           return (
             <a
               key={id}
               href={`#${id}`}
               className="flex items-center gap-3 group"
-              aria-label={`Go to ${label}`}
+              aria-label={`Go to ${chapterLabel}`}
             >
               <div
                 className={`w-[11px] h-[11px] rounded-full border transition-all duration-300 shrink-0 ${
@@ -79,7 +78,7 @@ export default function ChapterProgress() {
                     : 'text-gold/0 -translate-x-1 group-hover:text-gold/40 group-hover:opacity-100 group-hover:translate-x-0'
                 }`}
               >
-                {label}
+                {chapterLabel}
               </span>
             </a>
           )

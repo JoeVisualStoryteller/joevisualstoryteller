@@ -37,8 +37,20 @@ export const skillsData: SkillGroup[] = [
   { category: 'ITSM / CRM', items: ['ServiceNow', 'Salesforce', 'Jira', 'Remedy'] },
 ]
 
+export interface NavSection {
+  id: string
+  navLabel: string
+  chapterLabel: string
+}
+
+export const navSections: NavSection[] = [
+  { id: 'home',      navLabel: 'Home',      chapterLabel: 'Prologue'      },
+  { id: 'about',     navLabel: 'About',     chapterLabel: 'The Operator'  },
+  { id: 'chronicle', navLabel: 'Chronicle', chapterLabel: 'The Chronicle' },
+  { id: 'skills',    navLabel: 'Skills',    chapterLabel: 'Arsenal'       },
+]
+
 export interface ChronicleAct {
-  act: string
   label: string
   period: string
   narrative: string
@@ -48,7 +60,6 @@ export interface ChronicleAct {
 
 export const chronicleData: ChronicleAct[] = [
   {
-    act: 'ACT I',
     label: 'The Foundation',
     period: '2014 – 2018',
     narrative:
@@ -57,7 +68,6 @@ export const chronicleData: ChronicleAct[] = [
     quote: 'Zero Trust before it had a name.',
   },
   {
-    act: 'ACT II',
     label: 'The Expansion',
     period: '2018 – 2022',
     narrative:
@@ -66,7 +76,6 @@ export const chronicleData: ChronicleAct[] = [
     quote: '100+ systems architected and defended.',
   },
   {
-    act: 'ACT III',
     label: 'The Augmentation',
     period: '2022 – Present',
     narrative:

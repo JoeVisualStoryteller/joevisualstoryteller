@@ -32,3 +32,6 @@ dist-ssr
 .parcel-cache/
 bundle.html
 mockup.html
+
+# TypeScript build info
+*.tsbuildinfo

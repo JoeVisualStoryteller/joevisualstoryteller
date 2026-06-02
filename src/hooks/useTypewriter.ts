@@ -9,8 +9,10 @@ export function useTypewriter(text: string, speed = 32, startDelay = 1400) {
     setDisplayed('')
     setDone(false)
 
+    let interval: ReturnType<typeof setInterval> | undefined
+
     const timeout = setTimeout(() => {
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         i++
         setDisplayed(text.slice(0, i))
         if (i >= text.length) {
@@ -18,10 +20,12 @@ export function useTypewriter(text: string, speed = 32, startDelay = 1400) {
           setDone(true)
         }
       }, speed)
-      return () => clearInterval(interval)
     }, startDelay)
 
-    return () => clearTimeout(timeout)
+    return () => {
+      clearTimeout(timeout)
+      clearInterval(interval)
+    }
   }, [text, speed, startDelay])
 
   return { displayed, done }

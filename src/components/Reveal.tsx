@@ -13,17 +13,21 @@ export default function Reveal({ children, delay = 0, className = '', direction 
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    let revealTimeout: ReturnType<typeof setTimeout> | undefined
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => el.classList.add('revealed'), delay)
+          revealTimeout = setTimeout(() => el.classList.add('revealed'), delay)
           observer.unobserve(el)
         }
       },
       { threshold: 0.08 }
     )
     observer.observe(el)
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      clearTimeout(revealTimeout)
+    }
   }, [delay])
 
   return (

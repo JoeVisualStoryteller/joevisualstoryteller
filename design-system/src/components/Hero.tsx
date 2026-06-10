@@ -1,4 +1,5 @@
 import { heroContent } from '../data/content'
+import { useTypewriter } from '../hooks/useTypewriter'
 
 type RunePos = 'tl' | 'tr' | 'bl' | 'br'
 
@@ -41,6 +42,8 @@ function CornerRune({ pos }: { pos: RunePos }) {
 }
 
 export default function Hero() {
+  const { displayed, done } = useTypewriter(heroContent.tagline)
+
   return (
     <section
       id="home"
@@ -53,8 +56,8 @@ export default function Hero() {
           backgroundImage: [
             'linear-gradient(rgba(201,162,39,0.04) 1px, transparent 1px)',
             'linear-gradient(90deg, rgba(201,162,39,0.04) 1px, transparent 1px)',
-            'linear-gradient(rgba(6,182,212,0.025) 1px, transparent 1px)',
-            'linear-gradient(90deg, rgba(6,182,212,0.025) 1px, transparent 1px)',
+            'linear-gradient(rgba(125,211,252,0.025) 1px, transparent 1px)',
+            'linear-gradient(90deg, rgba(125,211,252,0.025) 1px, transparent 1px)',
           ].join(', '),
           backgroundSize: '80px 80px, 80px 80px, 20px 20px, 20px 20px',
         }}
@@ -95,8 +98,11 @@ export default function Hero() {
           {heroContent.subtitle}
         </p>
 
-        <p className="font-sans text-base text-gray-600 max-w-md mx-auto mb-12 leading-relaxed">
-          {heroContent.tagline}
+        <p className="font-sans text-base text-gray-600 max-w-md mx-auto mb-12 leading-relaxed min-h-[4rem]">
+          {displayed}
+          {!done && (
+            <span className="inline-block w-[2px] h-[1em] bg-gold/70 ml-0.5 align-middle animate-cursor-blink" />
+          )}
         </p>
 
         <div className="flex gap-5 justify-center flex-wrap">

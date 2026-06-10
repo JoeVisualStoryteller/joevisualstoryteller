@@ -1,7 +1,7 @@
 export const heroContent = {
   systemLabel: '[ SYSTEM: ONLINE ]',
   name: 'JOSEPH H. DUNN II',
-  subtitle: 'Systems Engineer · AI Architect · Digital Tactician',
+  subtitle: 'Systems Engineer · Digital Tactician',
   tagline:
     '10+ years forging resilient systems across military and enterprise domains. Where ancient discipline meets modern technology.',
 }
@@ -29,10 +29,58 @@ export interface SkillGroup {
 }
 
 export const skillsData: SkillGroup[] = [
-  { category: 'AI Tools', items: ['ChatGPT', 'GitHub Copilot', 'Claude AI', 'Azure OpenAI'] },
+  { category: 'AI Tools', items: ['ChatGPT', 'Ollama', 'Claude AI', 'Azure OpenAI'] },
   { category: 'Cloud Platforms', items: ['AWS', 'Microsoft Azure', 'Google Cloud'] },
   { category: 'Automation', items: ['PowerShell', 'Python', 'Bash', 'Ansible'] },
   { category: 'Security', items: ['Zero Trust', 'SIEM', 'Vulnerability Mgmt', 'NIST/RMF'] },
   { category: 'Infrastructure', items: ['Active Directory', 'VMware', 'Hyper-V', 'Cisco Networking'] },
   { category: 'ITSM / CRM', items: ['ServiceNow', 'Salesforce', 'Jira', 'Remedy'] },
+]
+
+export interface NavSection {
+  id: string
+  navLabel: string
+  chapterLabel: string
+}
+
+export const navSections: NavSection[] = [
+  { id: 'home',      navLabel: 'Home',      chapterLabel: 'Prologue'      },
+  { id: 'about',     navLabel: 'About',     chapterLabel: 'The Operator'  },
+  { id: 'chronicle', navLabel: 'Chronicle', chapterLabel: 'The Chronicle' },
+  { id: 'skills',    navLabel: 'Skills',    chapterLabel: 'Arsenal'       },
+]
+
+export interface ChronicleAct {
+  label: string
+  period: string
+  narrative: string
+  tools: string[]
+  quote: string
+}
+
+export const chronicleData: ChronicleAct[] = [
+  {
+    label: 'The Foundation',
+    period: '2014 – 2018',
+    narrative:
+      'Military intelligence forged the fundamentals — secure networks, disciplined process, and the craft of operating under pressure. Every system hardened, every access controlled, every threat mapped.',
+    tools: ['Active Directory', 'Cisco Networking', 'VMware', 'SIEM', 'NIST / RMF'],
+    quote: 'Zero Trust before it had a name.',
+  },
+  {
+    label: 'The Expansion',
+    period: '2018 – 2022',
+    narrative:
+      'Enterprise domains demanded scale. Cloud platforms became the new battlefield. Automation replaced repetition with precision — transforming manual operations into repeatable, resilient pipelines.',
+    tools: ['Microsoft Azure', 'AWS', 'PowerShell', 'Ansible', 'ServiceNow'],
+    quote: '100+ systems architected and defended.',
+  },
+  {
+    label: 'The Augmentation',
+    period: '2022 – Present',
+    narrative:
+      'AI changed the equation. The mission shifted from managing systems to multiplying human capability — deploying intelligence at scale, accelerating teams, and rewriting what one operator can accomplish.',
+    tools: ['Claude AI', 'ChatGPT', 'Ollama', 'Azure OpenAI', 'Python'],
+    quote: '8× productivity gains through AI adoption.',
+  },
 ]

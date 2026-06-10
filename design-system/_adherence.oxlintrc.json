@@ -20,6 +20,7 @@
               "src/**",
               "src/components/**",
               "src/data/**",
+              "src/hooks/**",
               "ui_kits/portfolio/**"
             ],
             "message": "Import design-system components from 'index.js', not component internals."

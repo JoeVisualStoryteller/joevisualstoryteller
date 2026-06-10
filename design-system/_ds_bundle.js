@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"JosephDunnDesignSystem_988385","components":[{"name":"App","sourcePath":"src/App.tsx"},{"name":"About","sourcePath":"src/components/About.tsx"},{"name":"Footer","sourcePath":"src/components/Footer.tsx"},{"name":"Hero","sourcePath":"src/components/Hero.tsx"},{"name":"Nav","sourcePath":"src/components/Nav.tsx"},{"name":"SectionHeader","sourcePath":"src/components/SectionHeader.tsx"},{"name":"Skills","sourcePath":"src/components/Skills.tsx"}],"sourceHashes":{"repo-changes/tailwind.config.js":"7f1b0289efad","src/App.tsx":"db0023695bea","src/components/About.tsx":"b3d620b16be2","src/components/Footer.tsx":"b7d37e1c1255","src/components/Hero.tsx":"2bd404a354ad","src/components/Nav.tsx":"36fc5723c506","src/components/SectionHeader.tsx":"2119cf5bf281","src/components/Skills.tsx":"a2e28104ee22","src/data/content.ts":"2f5f15b35bee","src/main.tsx":"27b0ddfab3c1","ui_kits/portfolio/Contact.jsx":"0a56eacf29a2","ui_kits/portfolio/Deployments.jsx":"3b04890455bf","ui_kits/portfolio/KitAbout.jsx":"e9b3eb88ee9f","ui_kits/portfolio/KitFooter.jsx":"a77242e630b1","ui_kits/portfolio/KitHero.jsx":"66409b1626ab","ui_kits/portfolio/KitNav.jsx":"071ccf7acd75","ui_kits/portfolio/KitSectionHeader.jsx":"a3f689e14ba6","ui_kits/portfolio/KitSkills.jsx":"1dac5d239eb8","ui_kits/portfolio/Runes.jsx":"9ec0abc73554","ui_kits/portfolio/Summon.jsx":"d834c5ac8463","ui_kits/portfolio/content.js":"c17746552f1a"},"inlinedExternals":[],"unexposedExports":[{"name":"aboutContent","sourcePath":"src/data/content.ts"},{"name":"heroContent","sourcePath":"src/data/content.ts"},{"name":"skillsData","sourcePath":"src/data/content.ts"}]} */
+/* @ds-bundle: {"format":3,"namespace":"JosephDunnDesignSystem_988385","components":[{"name":"App","sourcePath":"src/App.tsx"},{"name":"About","sourcePath":"src/components/About.tsx"},{"name":"ChapterProgress","sourcePath":"src/components/ChapterProgress.tsx"},{"name":"Chronicle","sourcePath":"src/components/Chronicle.tsx"},{"name":"Footer","sourcePath":"src/components/Footer.tsx"},{"name":"Hero","sourcePath":"src/components/Hero.tsx"},{"name":"Nav","sourcePath":"src/components/Nav.tsx"},{"name":"Reveal","sourcePath":"src/components/Reveal.tsx"},{"name":"SectionHeader","sourcePath":"src/components/SectionHeader.tsx"},{"name":"Skills","sourcePath":"src/components/Skills.tsx"}],"sourceHashes":{"repo-changes/tailwind.config.js":"7f1b0289efad","src/App.tsx":"79a8e112fc70","src/components/About.tsx":"c33cd3e15edc","src/components/ChapterProgress.tsx":"df5263298362","src/components/Chronicle.tsx":"8ecbb74408b4","src/components/Footer.tsx":"b7d37e1c1255","src/components/Hero.tsx":"9928f4d449a1","src/components/Nav.tsx":"7e31d80f05ba","src/components/Reveal.tsx":"e61a0b873c41","src/components/SectionHeader.tsx":"2119cf5bf281","src/components/Skills.tsx":"90e7f5a5335f","src/data/content.ts":"e17580ca570d","src/hooks/useTypewriter.ts":"ecc2d21b10a8","src/main.tsx":"27b0ddfab3c1","ui_kits/portfolio/Contact.jsx":"0a56eacf29a2","ui_kits/portfolio/Deployments.jsx":"3b04890455bf","ui_kits/portfolio/KitAbout.jsx":"e9b3eb88ee9f","ui_kits/portfolio/KitFooter.jsx":"a77242e630b1","ui_kits/portfolio/KitHero.jsx":"66409b1626ab","ui_kits/portfolio/KitNav.jsx":"071ccf7acd75","ui_kits/portfolio/KitSectionHeader.jsx":"a3f689e14ba6","ui_kits/portfolio/KitSkills.jsx":"1dac5d239eb8","ui_kits/portfolio/Runes.jsx":"9ec0abc73554","ui_kits/portfolio/Summon.jsx":"d834c5ac8463","ui_kits/portfolio/content.js":"c17746552f1a"},"inlinedExternals":[],"unexposedExports":[{"name":"aboutContent","sourcePath":"src/data/content.ts"},{"name":"chronicleData","sourcePath":"src/data/content.ts"},{"name":"heroContent","sourcePath":"src/data/content.ts"},{"name":"navSections","sourcePath":"src/data/content.ts"},{"name":"skillsData","sourcePath":"src/data/content.ts"},{"name":"useTypewriter","sourcePath":"src/hooks/useTypewriter.ts"}]} */
 
 (() => {
 
@@ -97,47 +97,45 @@ function Footer() {
 Object.assign(__ds_scope, { Footer });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/Footer.tsx", error: String((e && e.message) || e) }); }
 
-// src/components/Nav.tsx
+// src/components/Reveal.tsx
 try { (() => {
 const {
   useEffect,
-  useState
+  useRef,
+  ReactNode
 } = React;
-const links = [{
-  label: 'Home',
-  href: '#home'
-}, {
-  label: 'About',
-  href: '#about'
-}, {
-  label: 'Skills',
-  href: '#skills'
-}];
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+function Reveal({
+  children,
+  delay = 0,
+  className = '',
+  direction = 'up'
+}) {
+  const ref = useRef(null);
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  return /*#__PURE__*/React.createElement("nav", {
-    className: `fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 h-16 border-b border-gold/30 transition-colors duration-300 ${scrolled ? 'bg-void/95 backdrop-blur-md' : 'bg-void/60 backdrop-blur-sm'}`
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "#home",
-    className: "font-cinzel text-xl font-bold text-gold tracking-widest hover:text-parchment transition-colors"
-  }, "JHD"), /*#__PURE__*/React.createElement("div", {
-    className: "flex gap-10"
-  }, links.map(({
-    label,
-    href
-  }) => /*#__PURE__*/React.createElement("a", {
-    key: label,
-    href: href,
-    className: "font-mono text-xs tracking-widest uppercase text-gray-500 hover:text-gold transition-colors"
-  }, label))));
+    const el = ref.current;
+    if (!el) return;
+    let revealTimeout;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        revealTimeout = setTimeout(() => el.classList.add('revealed'), delay);
+        observer.unobserve(el);
+      }
+    }, {
+      threshold: 0.08
+    });
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      clearTimeout(revealTimeout);
+    };
+  }, [delay]);
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    className: `reveal reveal-${direction} ${className}`
+  }, children);
 }
-Object.assign(__ds_scope, { Nav });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/Nav.tsx", error: String((e && e.message) || e) }); }
+Object.assign(__ds_scope, { Reveal });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/Reveal.tsx", error: String((e && e.message) || e) }); }
 
 // src/components/SectionHeader.tsx
 try { (() => {
@@ -179,7 +177,7 @@ try { (() => {
 const heroContent = {
   systemLabel: '[ SYSTEM: ONLINE ]',
   name: 'JOSEPH H. DUNN II',
-  subtitle: 'Systems Engineer · AI Architect · Digital Tactician',
+  subtitle: 'Systems Engineer · Digital Tactician',
   tagline: '10+ years forging resilient systems across military and enterprise domains. Where ancient discipline meets modern technology.'
 };
 const aboutContent = {
@@ -203,7 +201,7 @@ const aboutContent = {
 };
 const skillsData = [{
   category: 'AI Tools',
-  items: ['ChatGPT', 'GitHub Copilot', 'Claude AI', 'Azure OpenAI']
+  items: ['ChatGPT', 'Ollama', 'Claude AI', 'Azure OpenAI']
 }, {
   category: 'Cloud Platforms',
   items: ['AWS', 'Microsoft Azure', 'Google Cloud']
@@ -220,7 +218,43 @@ const skillsData = [{
   category: 'ITSM / CRM',
   items: ['ServiceNow', 'Salesforce', 'Jira', 'Remedy']
 }];
-Object.assign(__ds_scope, { heroContent, aboutContent, skillsData });
+const navSections = [{
+  id: 'home',
+  navLabel: 'Home',
+  chapterLabel: 'Prologue'
+}, {
+  id: 'about',
+  navLabel: 'About',
+  chapterLabel: 'The Operator'
+}, {
+  id: 'chronicle',
+  navLabel: 'Chronicle',
+  chapterLabel: 'The Chronicle'
+}, {
+  id: 'skills',
+  navLabel: 'Skills',
+  chapterLabel: 'Arsenal'
+}];
+const chronicleData = [{
+  label: 'The Foundation',
+  period: '2014 – 2018',
+  narrative: 'Military intelligence forged the fundamentals — secure networks, disciplined process, and the craft of operating under pressure. Every system hardened, every access controlled, every threat mapped.',
+  tools: ['Active Directory', 'Cisco Networking', 'VMware', 'SIEM', 'NIST / RMF'],
+  quote: 'Zero Trust before it had a name.'
+}, {
+  label: 'The Expansion',
+  period: '2018 – 2022',
+  narrative: 'Enterprise domains demanded scale. Cloud platforms became the new battlefield. Automation replaced repetition with precision — transforming manual operations into repeatable, resilient pipelines.',
+  tools: ['Microsoft Azure', 'AWS', 'PowerShell', 'Ansible', 'ServiceNow'],
+  quote: '100+ systems architected and defended.'
+}, {
+  label: 'The Augmentation',
+  period: '2022 – Present',
+  narrative: 'AI changed the equation. The mission shifted from managing systems to multiplying human capability — deploying intelligence at scale, accelerating teams, and rewriting what one operator can accomplish.',
+  tools: ['Claude AI', 'ChatGPT', 'Ollama', 'Azure OpenAI', 'Python'],
+  quote: '8× productivity gains through AI adoption.'
+}];
+Object.assign(__ds_scope, { heroContent, aboutContent, skillsData, navSections, chronicleData });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "src/data/content.ts", error: String((e && e.message) || e) }); }
 
 // src/components/About.tsx
@@ -233,17 +267,23 @@ function About() {
     className: "absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"
   }), /*#__PURE__*/React.createElement("div", {
     className: "max-w-5xl mx-auto"
-  }, /*#__PURE__*/React.createElement(__ds_scope.SectionHeader, {
+  }, /*#__PURE__*/React.createElement(__ds_scope.Reveal, null, /*#__PURE__*/React.createElement(__ds_scope.SectionHeader, {
     label: __ds_scope.aboutContent.sectionLabel,
     title: __ds_scope.aboutContent.sectionTitle
-  }), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: "grid grid-cols-1 md:grid-cols-2 gap-16 items-start"
+  }, /*#__PURE__*/React.createElement(__ds_scope.Reveal, {
+    delay: 80,
+    direction: "left"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
     className: "font-mono text-xs tracking-[0.2em] text-crimson uppercase mb-4"
   }, __ds_scope.aboutContent.fileLabel), __ds_scope.aboutContent.bio.map((paragraph, i) => /*#__PURE__*/React.createElement("p", {
     key: i,
     className: "font-sans text-base text-parchment/70 leading-relaxed mb-5 last:mb-0"
-  }, paragraph))), /*#__PURE__*/React.createElement("div", {
+  }, paragraph)))), /*#__PURE__*/React.createElement(__ds_scope.Reveal, {
+    delay: 160,
+    direction: "right"
+  }, /*#__PURE__*/React.createElement("div", {
     className: "grid grid-cols-2 gap-4"
   }, __ds_scope.aboutContent.stats.map(stat => /*#__PURE__*/React.createElement("div", {
     key: stat.label,
@@ -252,10 +292,286 @@ function About() {
     className: "font-cinzel text-4xl font-bold text-gold leading-none mb-2"
   }, stat.value), /*#__PURE__*/React.createElement("div", {
     className: "font-mono text-xs tracking-widest text-gray-500 uppercase"
-  }, stat.label)))))));
+  }, stat.label))))))));
 }
 Object.assign(__ds_scope, { About });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/About.tsx", error: String((e && e.message) || e) }); }
+
+// src/components/ChapterProgress.tsx
+try { (() => {
+const {
+  useState,
+  useEffect
+} = React;
+const DOT_SPACING = 52;
+const ACTIVE_ZONE_INSET = 40; // % of viewport height trimmed from top+bottom to define "active" band
+const ACTIVE_ZONE_MARGIN = `-${ACTIVE_ZONE_INSET}% 0px -${ACTIVE_ZONE_INSET}% 0px`;
+function ChapterProgress() {
+  const [active, setActive] = useState('home');
+  const [scrollPct, setScrollPct] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const {
+        scrollTop,
+        scrollHeight,
+        clientHeight
+      } = document.documentElement;
+      const pct = scrollTop / (scrollHeight - clientHeight);
+      const clamped = isNaN(pct) ? 0 : Math.round(Math.min(1, Math.max(0, pct)) * 1000) / 1000;
+      setScrollPct(prev => clamped === prev ? prev : clamped);
+    };
+    window.addEventListener('scroll', handleScroll, {
+      passive: true
+    });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) setActive(e.target.id);
+      });
+    }, {
+      rootMargin: ACTIVE_ZONE_MARGIN
+    });
+    __ds_scope.navSections.forEach(({
+      id
+    }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+  const trackHeight = (__ds_scope.navSections.length - 1) * DOT_SPACING;
+  return /*#__PURE__*/React.createElement("nav", {
+    "aria-label": "Chapter progress",
+    className: "fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "relative flex flex-col",
+    style: {
+      gap: `${DOT_SPACING}px`
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute left-[5px] top-[5px] w-px bg-gold/15 pointer-events-none",
+    style: {
+      height: `${trackHeight}px`
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "absolute left-[5px] top-[5px] w-px bg-gold/50 pointer-events-none transition-all duration-150",
+    style: {
+      height: `${scrollPct * trackHeight}px`
+    }
+  }), __ds_scope.navSections.map(({
+    id,
+    chapterLabel
+  }) => {
+    const isActive = active === id;
+    return /*#__PURE__*/React.createElement("a", {
+      key: id,
+      href: `#${id}`,
+      className: "flex items-center gap-3 group",
+      "aria-label": `Go to ${chapterLabel}`
+    }, /*#__PURE__*/React.createElement("div", {
+      className: `w-[11px] h-[11px] rounded-full border transition-all duration-300 shrink-0 ${isActive ? 'bg-gold border-gold shadow-[0_0_10px_rgba(201,162,39,0.7)]' : 'bg-transparent border-gold/30 group-hover:border-gold/60'}`
+    }), /*#__PURE__*/React.createElement("span", {
+      className: `font-mono text-[9px] tracking-[0.2em] uppercase whitespace-nowrap transition-all duration-300 ${isActive ? 'text-gold opacity-100 translate-x-0' : 'text-gold/0 -translate-x-1 group-hover:text-gold/40 group-hover:opacity-100 group-hover:translate-x-0'}`
+    }, chapterLabel));
+  })));
+}
+Object.assign(__ds_scope, { ChapterProgress });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/ChapterProgress.tsx", error: String((e && e.message) || e) }); }
+
+// src/components/Chronicle.tsx
+try { (() => {
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+function Chronicle() {
+  return /*#__PURE__*/React.createElement("section", {
+    id: "chronicle",
+    className: "relative py-28 px-8 bg-void"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "max-w-4xl mx-auto"
+  }, /*#__PURE__*/React.createElement(__ds_scope.Reveal, null, /*#__PURE__*/React.createElement(__ds_scope.SectionHeader, {
+    label: "// THE ARC",
+    title: "The Chronicle"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute left-[11px] top-4 bottom-4 w-px bg-gradient-to-b from-gold/40 via-gold/20 to-transparent hidden md:block"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-16"
+  }, __ds_scope.chronicleData.map((act, i) => /*#__PURE__*/React.createElement(__ds_scope.Reveal, {
+    key: act.label,
+    delay: i * 120
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "md:pl-12 relative"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute -left-[4px] top-[6px] w-[14px] h-[14px] rounded-full border border-gold/60 bg-void hidden md:flex items-center justify-center"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-[5px] h-[5px] rounded-full bg-gold/80"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "border border-gold/12 bg-surface/60 p-8 hover:border-gold/30 hover:shadow-[0_0_40px_rgba(201,162,39,0.07)] transition-all duration-500 group"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-6"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-baseline gap-4"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "font-cinzel text-xs tracking-[0.35em] text-gold/50 uppercase"
+  }, `ACT ${ROMAN[i]}`), /*#__PURE__*/React.createElement("h3", {
+    className: "font-cinzel text-xl md:text-2xl font-semibold text-parchment tracking-wide"
+  }, act.label)), /*#__PURE__*/React.createElement("span", {
+    className: "font-mono text-xs tracking-widest text-gray-600"
+  }, act.period)), /*#__PURE__*/React.createElement("div", {
+    className: "w-full h-px bg-gradient-to-r from-gold/25 to-transparent mb-6"
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "font-sans text-base text-parchment/65 leading-relaxed mb-7"
+  }, act.narrative), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-wrap gap-2 mb-7"
+  }, act.tools.map(tool => /*#__PURE__*/React.createElement("span", {
+    key: tool,
+    className: "font-mono text-[10px] tracking-widest uppercase text-cyan/70 border border-cyan/20 px-3 py-1 group-hover:border-cyan/35 group-hover:text-cyan/90 transition-all duration-300"
+  }, tool))), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-3"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-4 h-px bg-gold/40 shrink-0"
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "font-cinzel text-xs tracking-[0.15em] text-gold/70 italic"
+  }, act.quote))))))))));
+}
+Object.assign(__ds_scope, { Chronicle });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/Chronicle.tsx", error: String((e && e.message) || e) }); }
+
+// src/components/Nav.tsx
+try { (() => {
+const {
+  useEffect,
+  useState
+} = React;
+function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const next = window.scrollY > 20;
+      if (next !== scrolled) setScrolled(next);
+    };
+    window.addEventListener('scroll', handleScroll, {
+      passive: true
+    });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrolled]);
+  return /*#__PURE__*/React.createElement("nav", {
+    className: `fixed top-0 left-0 right-0 z-50 border-b border-gold/30 transition-colors duration-300 ${scrolled ? 'bg-void/95 backdrop-blur-md' : 'bg-void/60 backdrop-blur-sm'}`
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center justify-between px-5 sm:px-10 h-16"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#home",
+    className: "font-cinzel text-xl font-bold text-gold tracking-widest hover:text-parchment transition-colors"
+  }, "JHD"), /*#__PURE__*/React.createElement("div", {
+    className: "hidden sm:flex gap-6 lg:gap-10"
+  }, __ds_scope.navSections.map(({
+    id,
+    navLabel
+  }) => /*#__PURE__*/React.createElement("a", {
+    key: id,
+    href: `#${id}`,
+    className: "font-mono text-xs tracking-widest uppercase text-gray-500 hover:text-gold transition-colors"
+  }, navLabel))), /*#__PURE__*/React.createElement("button", {
+    className: "sm:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 text-gold",
+    onClick: () => setMenuOpen(o => !o),
+    "aria-label": menuOpen ? 'Close menu' : 'Open menu',
+    "aria-expanded": menuOpen
+  }, /*#__PURE__*/React.createElement("span", {
+    className: `block h-px w-5 bg-current transition-all duration-200 ${menuOpen ? 'translate-y-2 rotate-45' : ''}`
+  }), /*#__PURE__*/React.createElement("span", {
+    className: `block h-px w-5 bg-current transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`
+  }), /*#__PURE__*/React.createElement("span", {
+    className: `block h-px w-5 bg-current transition-all duration-200 ${menuOpen ? '-translate-y-2 -rotate-45' : ''}`
+  }))), menuOpen && /*#__PURE__*/React.createElement("div", {
+    className: "sm:hidden flex flex-col border-t border-gold/20 bg-void/95 backdrop-blur-md"
+  }, __ds_scope.navSections.map(({
+    id,
+    navLabel
+  }) => /*#__PURE__*/React.createElement("a", {
+    key: id,
+    href: `#${id}`,
+    onClick: () => setMenuOpen(false),
+    className: "font-mono text-xs tracking-widest uppercase text-gray-400 hover:text-gold px-5 py-4 border-b border-gold/10 last:border-b-0 transition-colors"
+  }, navLabel))));
+}
+Object.assign(__ds_scope, { Nav });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/Nav.tsx", error: String((e && e.message) || e) }); }
+
+// src/components/Skills.tsx
+try { (() => {
+function Skills() {
+  return /*#__PURE__*/React.createElement("section", {
+    id: "skills",
+    className: "relative py-28 px-8 bg-[#0a0a10]"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/25 to-transparent"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "max-w-5xl mx-auto"
+  }, /*#__PURE__*/React.createElement(__ds_scope.Reveal, null, /*#__PURE__*/React.createElement(__ds_scope.SectionHeader, {
+    label: "// LOADOUT",
+    title: "Arsenal"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+  }, __ds_scope.skillsData.map((group, i) => /*#__PURE__*/React.createElement(__ds_scope.Reveal, {
+    key: group.category,
+    delay: i * 60
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "bg-surface border border-gold/15 border-t-2 border-t-gold p-6 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,162,39,0.15)] transition-all h-full"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "font-mono text-xs tracking-[0.2em] text-cyan uppercase mb-4"
+  }, "\u25B8 ", group.category), /*#__PURE__*/React.createElement("ul", {
+    className: "space-y-2"
+  }, group.items.map(item => /*#__PURE__*/React.createElement("li", {
+    key: item,
+    className: "font-sans text-sm text-parchment/80 flex items-center gap-2 pb-2 border-b border-white/[0.04] last:border-0 last:pb-0"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-crimson text-[0.5rem] shrink-0"
+  }, "\u25C6"), item)))))))));
+}
+Object.assign(__ds_scope, { Skills });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/Skills.tsx", error: String((e && e.message) || e) }); }
+
+// src/hooks/useTypewriter.ts
+try { (() => {
+const {
+  useState,
+  useEffect
+} = React;
+function useTypewriter(text, speed = 32, startDelay = 1400) {
+  const [displayed, setDisplayed] = useState('');
+  const [done, setDone] = useState(false);
+  useEffect(() => {
+    let i = 0;
+    setDisplayed('');
+    setDone(false);
+    let interval;
+    const timeout = setTimeout(() => {
+      interval = setInterval(() => {
+        i++;
+        setDisplayed(text.slice(0, i));
+        if (i >= text.length) {
+          clearInterval(interval);
+          setDone(true);
+        }
+      }, speed);
+    }, startDelay);
+    return () => {
+      clearTimeout(timeout);
+      clearInterval(interval);
+    };
+  }, [text, speed, startDelay]);
+  return {
+    displayed,
+    done
+  };
+}
+Object.assign(__ds_scope, { useTypewriter });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "src/hooks/useTypewriter.ts", error: String((e && e.message) || e) }); }
 
 // src/components/Hero.tsx
 try { (() => {
@@ -298,13 +614,17 @@ function CornerRune({
   })));
 }
 function Hero() {
+  const {
+    displayed,
+    done
+  } = __ds_scope.useTypewriter(__ds_scope.heroContent.tagline);
   return /*#__PURE__*/React.createElement("section", {
     id: "home",
     className: "relative min-h-screen flex items-center justify-center overflow-hidden bg-void"
   }, /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-0",
     style: {
-      backgroundImage: ['linear-gradient(rgba(201,162,39,0.04) 1px, transparent 1px)', 'linear-gradient(90deg, rgba(201,162,39,0.04) 1px, transparent 1px)', 'linear-gradient(rgba(6,182,212,0.025) 1px, transparent 1px)', 'linear-gradient(90deg, rgba(6,182,212,0.025) 1px, transparent 1px)'].join(', '),
+      backgroundImage: ['linear-gradient(rgba(201,162,39,0.04) 1px, transparent 1px)', 'linear-gradient(90deg, rgba(201,162,39,0.04) 1px, transparent 1px)', 'linear-gradient(rgba(125,211,252,0.025) 1px, transparent 1px)', 'linear-gradient(90deg, rgba(125,211,252,0.025) 1px, transparent 1px)'].join(', '),
       backgroundSize: '80px 80px, 80px 80px, 20px 20px, 20px 20px'
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -336,8 +656,10 @@ function Hero() {
   }), /*#__PURE__*/React.createElement("p", {
     className: "font-mono text-xs md:text-sm tracking-[0.15em] text-gray-500 uppercase mb-8"
   }, __ds_scope.heroContent.subtitle), /*#__PURE__*/React.createElement("p", {
-    className: "font-sans text-base text-gray-600 max-w-md mx-auto mb-12 leading-relaxed"
-  }, __ds_scope.heroContent.tagline), /*#__PURE__*/React.createElement("div", {
+    className: "font-sans text-base text-gray-600 max-w-md mx-auto mb-12 leading-relaxed min-h-[4rem]"
+  }, displayed, !done && /*#__PURE__*/React.createElement("span", {
+    className: "inline-block w-[2px] h-[1em] bg-gold/70 ml-0.5 align-middle animate-cursor-blink"
+  })), /*#__PURE__*/React.createElement("div", {
     className: "flex gap-5 justify-center flex-wrap"
   }, /*#__PURE__*/React.createElement("a", {
     href: "#about",
@@ -350,42 +672,10 @@ function Hero() {
 Object.assign(__ds_scope, { Hero });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/Hero.tsx", error: String((e && e.message) || e) }); }
 
-// src/components/Skills.tsx
-try { (() => {
-function Skills() {
-  return /*#__PURE__*/React.createElement("section", {
-    id: "skills",
-    className: "relative py-28 px-8 bg-[#0a0a10]"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/25 to-transparent"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "max-w-5xl mx-auto"
-  }, /*#__PURE__*/React.createElement(__ds_scope.SectionHeader, {
-    label: "// LOADOUT",
-    title: "Arsenal"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-  }, __ds_scope.skillsData.map(group => /*#__PURE__*/React.createElement("div", {
-    key: group.category,
-    className: "bg-surface border border-gold/15 border-t-2 border-t-gold p-6 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,162,39,0.15)] transition-all"
-  }, /*#__PURE__*/React.createElement("p", {
-    className: "font-mono text-xs tracking-[0.2em] text-cyan uppercase mb-4"
-  }, "\u25B8 ", group.category), /*#__PURE__*/React.createElement("ul", {
-    className: "space-y-2"
-  }, group.items.map(item => /*#__PURE__*/React.createElement("li", {
-    key: item,
-    className: "font-sans text-sm text-parchment/80 flex items-center gap-2 pb-2 border-b border-white/[0.04] last:border-0 last:pb-0"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "text-crimson text-[0.5rem] shrink-0"
-  }, "\u25C6"), item))))))));
-}
-Object.assign(__ds_scope, { Skills });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/Skills.tsx", error: String((e && e.message) || e) }); }
-
 // src/App.tsx
 try { (() => {
 function App() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__ds_scope.Nav, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(__ds_scope.Hero, null), /*#__PURE__*/React.createElement(__ds_scope.About, null), /*#__PURE__*/React.createElement(__ds_scope.Skills, null)), /*#__PURE__*/React.createElement(__ds_scope.Footer, null));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__ds_scope.ChapterProgress, null), /*#__PURE__*/React.createElement(__ds_scope.Nav, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(__ds_scope.Hero, null), /*#__PURE__*/React.createElement(__ds_scope.About, null), /*#__PURE__*/React.createElement(__ds_scope.Chronicle, null), /*#__PURE__*/React.createElement(__ds_scope.Skills, null)), /*#__PURE__*/React.createElement(__ds_scope.Footer, null));
 }
 Object.assign(__ds_scope, { App });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "src/App.tsx", error: String((e && e.message) || e) }); }
@@ -966,11 +1256,17 @@ __ds_ns.App = __ds_scope.App;
 
 __ds_ns.About = __ds_scope.About;
 
+__ds_ns.ChapterProgress = __ds_scope.ChapterProgress;
+
+__ds_ns.Chronicle = __ds_scope.Chronicle;
+
 __ds_ns.Footer = __ds_scope.Footer;
 
 __ds_ns.Hero = __ds_scope.Hero;
 
 __ds_ns.Nav = __ds_scope.Nav;
+
+__ds_ns.Reveal = __ds_scope.Reveal;
 
 __ds_ns.SectionHeader = __ds_scope.SectionHeader;
 

@@ -35,3 +35,6 @@ mockup.html
 
 # TypeScript build info
 *.tsbuildinfo
+
+# Claude Code project instructions
+CLAUDE.md

@@ -1,0 +1,178 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "repo-changes/**",
+              "src/**",
+              "src/components/**",
+              "src/data/**",
+              "ui_kits/portfolio/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Cinzel|JetBrains Mono|Inter))/i]",
+        "message": "Font not provided by the design system. Available: Cinzel, JetBrains Mono, Inter."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--accent-pearl",
+      "--alert",
+      "--bg",
+      "--bg-band",
+      "--bg-panel",
+      "--border",
+      "--border-strong",
+      "--ceremony",
+      "--crimson",
+      "--crimson-30",
+      "--cyan",
+      "--cyan-04",
+      "--cyan-25",
+      "--danger",
+      "--diamond",
+      "--fg-1",
+      "--fg-2",
+      "--fg-3",
+      "--fg-4",
+      "--fg-5",
+      "--fg-6",
+      "--font-display",
+      "--font-mono",
+      "--font-sans",
+      "--glow-gold-card",
+      "--glow-gold-medium",
+      "--glow-gold-soft",
+      "--glow-maroon-soft",
+      "--gold",
+      "--gold-04",
+      "--gold-12",
+      "--gold-15",
+      "--gold-20",
+      "--gold-30",
+      "--gold-40",
+      "--gold-60",
+      "--hairline",
+      "--highlight",
+      "--light-blue",
+      "--maroon",
+      "--maroon-12",
+      "--maroon-30",
+      "--maroon-60",
+      "--parchment",
+      "--raised",
+      "--raised-2",
+      "--rare",
+      "--rule",
+      "--signal",
+      "--surface",
+      "--track-mono",
+      "--track-wide",
+      "--track-wider",
+      "--track-widest",
+      "--void"
+    ],
+    "tokenKinds": {
+      "--void": "color",
+      "--surface": "color",
+      "--raised": "color",
+      "--raised-2": "color",
+      "--gold": "color",
+      "--crimson": "color",
+      "--diamond": "color",
+      "--cyan": "color",
+      "--light-blue": "color",
+      "--maroon": "color",
+      "--ceremony": "color",
+      "--parchment": "color",
+      "--fg-1": "color",
+      "--fg-2": "color",
+      "--fg-3": "color",
+      "--fg-4": "color",
+      "--fg-5": "color",
+      "--fg-6": "color",
+      "--gold-04": "color",
+      "--gold-12": "color",
+      "--gold-15": "color",
+      "--gold-20": "color",
+      "--gold-30": "color",
+      "--gold-40": "color",
+      "--gold-60": "color",
+      "--cyan-25": "color",
+      "--cyan-04": "color",
+      "--crimson-30": "color",
+      "--maroon-12": "color",
+      "--maroon-30": "color",
+      "--maroon-60": "color",
+      "--hairline": "color",
+      "--bg": "color",
+      "--bg-band": "color",
+      "--bg-panel": "color",
+      "--border": "color",
+      "--border-strong": "color",
+      "--rule": "color",
+      "--danger": "color",
+      "--accent-pearl": "color",
+      "--rare": "color",
+      "--alert": "color",
+      "--signal": "color",
+      "--highlight": "color",
+      "--glow-gold-soft": "shadow",
+      "--glow-gold-medium": "shadow",
+      "--glow-gold-card": "shadow",
+      "--glow-maroon-soft": "shadow",
+      "--font-display": "font",
+      "--font-mono": "font",
+      "--font-sans": "font",
+      "--track-wide": "spacing",
+      "--track-wider": "spacing",
+      "--track-widest": "spacing",
+      "--track-mono": "spacing"
+    },
+    "fontFamilies": [
+      "Cinzel",
+      "Inter",
+      "JetBrains Mono"
+    ]
+  }
+}

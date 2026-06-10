@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Portfolio" name="Portfolio UI Kit" subtitle="Full clickable recreation of the portfolio site" viewport="1280x720" -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -14,16 +15,19 @@
 
   <script src="content.js"></script>
   <script type="text/babel" src="Runes.jsx"></script>
-  <script type="text/babel" src="Nav.jsx"></script>
-  <script type="text/babel" src="Hero.jsx"></script>
-  <script type="text/babel" src="SectionHeader.jsx"></script>
-  <script type="text/babel" src="About.jsx"></script>
-  <script type="text/babel" src="Skills.jsx"></script>
-  <script type="text/babel" src="Summon.jsx"></script>
-  <script type="text/babel" src="Footer.jsx"></script>
+  <script type="text/babel" src="KitNav.jsx"></script>
+  <script type="text/babel" src="KitHero.jsx"></script>
+  <script type="text/babel" src="KitSectionHeader.jsx"></script>
+  <script type="text/babel" src="KitAbout.jsx"></script>
+  <script type="text/babel" src="KitSkills.jsx"></script>
+  <script type="text/babel" src="Deployments.jsx"></script>
+  <script type="text/babel" src="Contact.jsx"></script>
+  <script type="text/babel" src="KitFooter.jsx"></script>
 
   <script type="text/babel">
     const { useState, useEffect } = React;
+    const { Nav, Hero, About, Skills, Deployments, Contact, Footer } = window.JHDKit;
+
     function App() {
       const [active, setActive] = useState('home');
       const data = window.JHD_CONTENT;
@@ -36,9 +40,9 @@
 
       // Track active section via scroll
       useEffect(() => {
-        const sections = ['home', 'about', 'skills'];
+        const sections = ['home', 'about', 'skills', 'deployments', 'contact'];
         const onScroll = () => {
-          const y = window.scrollY + 100;
+          const y = window.scrollY + 120;
           let cur = 'home';
           for (const id of sections) {
             const el = document.getElementById(id);
@@ -57,7 +61,8 @@
             <Hero data={data.hero} onCta={go} />
             <About data={data.about} />
             <Skills data={data.skills} />
-            <Summon email="jdunn0423@gmail.com" />
+            <Deployments data={data.deployments} />
+            <Contact email="jdunn0423@gmail.com" />
           </main>
           <Footer />
         </>

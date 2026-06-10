@@ -1,5 +1,6 @@
 // Skills.jsx — LOADOUT section. Cards with gold banner-top.
-function Skills({ data }) {
+const SectionHeader = (window.JHDKit = window.JHDKit || {}).SectionHeader;
+function KitSkills({ data }) {
   return (
     <section id="skills" className="section section--alt">
       <div className="section__rule-top section__rule-top--cyan" />
@@ -23,4 +24,4 @@ function Skills({ data }) {
     </section>
   );
 }
-window.Skills = Skills;
+window.JHDKit.Skills = KitSkills;

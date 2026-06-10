@@ -15,4 +15,5 @@ function Summon({ email = 'jdunn0423@gmail.com' }) {
     </section>
   );
 }
-window.Summon = Summon;
+window.JHDKit = window.JHDKit || {};
+window.JHDKit.Summon = Summon;

@@ -21,5 +21,6 @@ function Diamond({ size = 16 }) {
   );
 }
 
-window.CornerRune = CornerRune;
-window.Diamond = Diamond;
+window.JHDKit = window.JHDKit || {};
+window.JHDKit.CornerRune = CornerRune;
+window.JHDKit.Diamond = Diamond;

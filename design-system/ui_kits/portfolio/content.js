@@ -1,10 +1,12 @@
 // content.js — Joseph's portfolio copy. Theatrical third-person; tactical kickers.
+// Deployments are placeholder case studies — replace with real project data before shipping.
 window.JHD_CONTENT = {
   hero: {
     systemLabel: '[ SYSTEM: ONLINE ]',
     name: 'JOSEPH H. DUNN II',
     subtitle: 'Systems Engineer · AI Architect · Digital Tactician',
-    tagline: '10+ years forging resilient systems across military and enterprise domains. Where ancient discipline meets modern technology.',
+    // Tagline v2 — concrete proof over generic metaphor
+    tagline: 'A decade across military intelligence and enterprise cloud — forging systems under real operational pressure. 8× productivity gains. Still running.',
   },
   about: {
     sectionLabel: '// IDENTIFICATION',
@@ -29,5 +31,38 @@ window.JHD_CONTENT = {
     { category: 'Security',         items: ['Zero Trust', 'SIEM', 'Vulnerability Mgmt', 'NIST/RMF'] },
     { category: 'Infrastructure',   items: ['Active Directory', 'VMware', 'Hyper-V', 'Cisco Networking'] },
     { category: 'ITSM / CRM',       items: ['ServiceNow', 'Salesforce', 'Jira', 'Remedy'] },
+  ],
+  // ── DEPLOYMENTS ─────────────────────────────────────────────────────────────
+  // Replace [BRACKET] fields with real project details.
+  // Set featured: true on the one you want as the hero card.
+  deployments: [
+    {
+      featured: true,
+      codename: 'OPERATION VELOCITY',
+      classification: 'AI AUGMENTATION · ENTERPRISE',
+      desc: 'Designed and deployed a GPT-powered automation suite that eliminated manual bottlenecks across three business units. Integrated into daily workflows — tools remain in active service.',
+      problem: 'Manual processes consumed 80% of team capacity. Repetitive data processing, report generation, and ticket routing left no bandwidth for strategic work.',
+      outcome: '8×',
+      outcomeLabel: 'Productivity Gain',
+      stack: ['Azure OpenAI', 'Python', 'PowerShell', 'SharePoint'],
+    },
+    {
+      codename: 'PROJECT IRONGATE',
+      classification: 'SECURITY · ZERO TRUST',
+      desc: 'Architected and executed a full Zero Trust migration. Closed all critical CVEs, enforced least-privilege access across the estate, and passed the compliance audit on schedule.',
+      problem: 'Legacy flat-network with 14 open compliance findings. Full audit 90 days out.',
+      outcome: '0',
+      outcomeLabel: 'Critical Findings at Audit',
+      stack: ['Azure AD', 'Defender XDR', 'NIST RMF', 'SIEM'],
+    },
+    {
+      codename: 'ATLAS MIGRATION',
+      classification: 'CLOUD · INFRASTRUCTURE',
+      desc: 'Phased lift-and-shift of an aging on-prem estate to AWS and Azure. Decommissioned legacy hardware, implemented infrastructure-as-code, and stood up DR for the first time.',
+      problem: '100+ physical servers on two EOL operating systems. No disaster recovery.',
+      outcome: '40%',
+      outcomeLabel: 'Infrastructure Cost Reduction',
+      stack: ['AWS', 'Azure', 'Terraform', 'Ansible'],
+    },
   ],
 };

@@ -1,5 +1,5 @@
 // Footer.jsx — wordmark + transmission ending.
-function Footer() {
+function KitFooter() {
   return (
     <footer className="footer">
       <p className="footer__mark">JOSEPH H. DUNN II</p>
@@ -7,4 +7,5 @@ function Footer() {
     </footer>
   );
 }
-window.Footer = Footer;
+window.JHDKit = window.JHDKit || {};
+window.JHDKit.Footer = KitFooter;

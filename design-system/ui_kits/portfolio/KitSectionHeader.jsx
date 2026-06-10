@@ -1,5 +1,6 @@
 // SectionHeader.jsx — mono eyebrow, diamond-flanked rule, display title.
-function SectionHeader({ label, title }) {
+const Diamond = (window.JHDKit = window.JHDKit || {}).Diamond;
+function KitSectionHeader({ label, title }) {
   return (
     <div className="section-header">
       <p className="section-header__eyebrow">{label}</p>
@@ -12,4 +13,4 @@ function SectionHeader({ label, title }) {
     </div>
   );
 }
-window.SectionHeader = SectionHeader;
+window.JHDKit.SectionHeader = KitSectionHeader;

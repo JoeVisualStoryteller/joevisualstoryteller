@@ -1,0 +1,15 @@
+/* ============================================================
+   JOSEPH H. DUNN II — DESIGN SYSTEM
+   Root stylesheet entry point — import this one file to get
+   all tokens, typography, and base surface styles.
+   ============================================================ */
+
+@import url('./colors_and_type.css');
+
+/* ── Base ── */
+html  { scroll-behavior: smooth; }
+body  { background-color: #08080d; color: #e8e0cc; }
+
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #08080d; }
+::-webkit-scrollbar-thumb { background: rgba(201, 162, 39, 0.4); }

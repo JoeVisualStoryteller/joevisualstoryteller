@@ -1,5 +1,6 @@
 // Hero.jsx — full-viewport hero with 4 corner runes, circuit grid, scanlines, vignette.
-function Hero({ data, onCta }) {
+const CornerRune = (window.JHDKit = window.JHDKit || {}).CornerRune;
+function KitHero({ data, onCta }) {
   return (
     <section id="home" className="hero">
       <div className="hero__grid" />
@@ -27,4 +28,4 @@ function Hero({ data, onCta }) {
     </section>
   );
 }
-window.Hero = Hero;
+window.JHDKit.Hero = KitHero;

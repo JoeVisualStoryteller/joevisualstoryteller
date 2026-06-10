@@ -1,5 +1,6 @@
 // About.jsx — IDENTIFICATION section. Bio left, 2x2 stat grid right.
-function About({ data }) {
+const SectionHeader = (window.JHDKit = window.JHDKit || {}).SectionHeader;
+function KitAbout({ data }) {
   return (
     <section id="about" className="section">
       <div className="section__rule-top section__rule-top--gold" />
@@ -23,4 +24,4 @@ function About({ data }) {
     </section>
   );
 }
-window.About = About;
+window.JHDKit.About = KitAbout;

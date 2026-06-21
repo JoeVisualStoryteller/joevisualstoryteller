@@ -41,6 +41,14 @@
       {
         "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Cinzel|JetBrains Mono|Inter))/i]",
         "message": "Font not provided by the design system. Available: Cinzel, JetBrains Mono, Inter."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|detailLabel|detail|column|key|ref|className|style|children)$/]",
+        "message": "<StatCard> doesn't accept that prop. Declared props: value, label, detailLabel, detail, column."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute[name.name='column'] > Literal[value!=/^(?:left|right)$/]",
+        "message": "<StatCard> column must be one of 'left' | 'right'."
       }
     ]
   },
@@ -55,7 +63,11 @@
     }
   ],
   "x-omelette": {
-    "components": {},
+    "components": {
+      "StatCard": {
+        "replaces": []
+      }
+    },
     "tokens": [
       "--accent-pearl",
       "--alert",

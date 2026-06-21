@@ -86,7 +86,6 @@ to avoid name collisions with the DS compiler:
 - [ ] `index.html` — if script load order or App markup changed
 
 All kit exports go through `window.JHDKit` (not bare `window.X`):
-
 ```js
 window.JHDKit = window.JHDKit || {};
 window.JHDKit.MyComponent = MyComponent;
@@ -102,7 +101,6 @@ import — intentional, so the DS in-browser bundler doesn't choke on the
 npm dependency. Do not revert it to a static import.
 
 Correct form:
-
 ```ts
 // @ds-bundle-skip — Vite app entry; not a design system component.
 import { StrictMode } from 'react'
@@ -126,7 +124,6 @@ import('react-dom/client').then(({ createRoot }) => {
 > "Pull latest from GitHub and run check_design_system"
 
 A clean result looks like:
-
 ```
 Components: App, About, … No issues found.
 ```

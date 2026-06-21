@@ -8,7 +8,7 @@ A medieval × cyber-tactical design system for **Joseph H. Dunn II** — Systems
 
 This system was reverse-engineered from one source codebase the user attached:
 
-- **GitHub:** [`JoeVisualStoryteller/joevisualstoryteller`](https://github.com/JoeVisualStoryteller/joevisualstoryteller) — React 19 + Vite + Tailwind portfolio site. The Tailwind config (`tailwind.config.js`) is the authoritative palette + font reference; component files in `src/components/` define the layout primitives (Hero, About, Nav, Skills, SectionHeader, Footer).
+- **GitHub:** [`JoeVisualStoryteller/joevisualstoryteller`](https://github.com/JoeVisualStoryteller/joevisualstoryteller) — React 19 + Vite + Tailwind portfolio site. The Tailwind config (`tailwind.config.js`) is the authoritative palette + font reference; component files in `src/components/` define the layout primitives (Hero, About, Nav, Skills, SectionHeader, Footer, StatCard, Chronicle, ChapterProgress, Reveal).
 - **Cinzel.zip** (uploaded) — Google Fonts' Cinzel family, the display face used throughout. Extracted into `fonts/`.
 
 You can explore the source repo for additional context and component implementations; it is the canonical reference any agent building for Joseph should consult first.
@@ -18,17 +18,33 @@ You can explore the source repo for additional context and component implementat
 ```
 .
 ├── README.md                  ← you are here
+├── CONTRIBUTING.md            ← Claude Code contribution checklist
 ├── SKILL.md                   ← Claude Code skill manifest
 ├── colors_and_type.css        ← single source of truth for colors + type
+├── styles.css                 ← root entry point (@import + base body styles)
 ├── fonts/                     ← self-hosted Cinzel (TTF + variable)
 ├── assets/                    ← logos, runes, icon SVGs
 ├── preview/                   ← Design-System-tab cards
 ├── ui_kits/
 │   └── portfolio/             ← React JSX recreation of the portfolio site
 │       ├── README.md
-│       ├── index.html         ← interactive demo
-│       └── *.jsx              ← Nav, Hero, About, Skills, Footer + atoms
+│       ├── index.html         ← interactive demo (Nav→Hero→About→Skills→Deployments→Contact→Footer)
+│       ├── Kit*.jsx           ← namespaced wrappers (window.JHDKit.*)
+│       ├── Deployments.jsx    ← FIELD RECORDS — case study cards
+│       ├── Contact.jsx        ← COMMS — split panel + channel links
+│       └── content.js         ← all copy + stat detail data
 └── src/                       ← reference: original source from the repo
+    ├── components/
+    │   ├── StatCard.tsx        ← interactive résumé stat (hover-dwell dossier)
+    │   ├── StatCard.d.ts       ← type definition
+    │   ├── StatCard.html       ← @dsCard thumbnail
+    │   ├── Chronicle.tsx       ← timeline / history block
+    │   ├── ChapterProgress.tsx ← reading-progress indicator
+    │   └── Reveal.tsx          ← scroll-triggered reveal wrapper
+    ├── hooks/
+    │   └── useTypewriter.ts    ← typewriter animation hook
+    └── data/
+        └── content.ts          ← typed content + StatDetailItem[]
 ```
 
 ## At a glance
@@ -84,6 +100,14 @@ The voice is the brand's most distinctive asset. It is **theatrical, third-perso
 > `// LOADOUT`
 > **Arsenal**
 
+> `// FIELD RECORDS`
+> **Deployments**
+> Featured case study card + compact grid. Stack tags in mono, outcome metrics in gold.
+
+> `// COMMS`
+> **Open a Channel**
+> Split panel: message channels left, ceremonial Summon CTA right.
+
 ---
 
 ## Visual Foundations
@@ -135,6 +159,7 @@ Everything else is plain `transition-colors duration-300` or `transition-all`. N
 - **Bordered button (primary):** `border: 1px solid gold; color: gold;` → on hover, `background: rgba(gold, 0.10); box-shadow: 0 0 20px rgba(gold, 0.20)` (the "torchlight" glow).
 - **Ghost button:** `color: gray-600; border: 1px solid transparent;` → on hover, `color: parchment`.
 - **Card:** `border: 1px solid rgba(gold, 0.20)` → on hover, `border: 1px solid rgba(gold, 0.60); box-shadow: 0 0 24px rgba(gold, 0.12)`. Skills card adds `transform: translateY(-4px)`.
+- **Stat card:** `border: 1px solid rgba(gold, 0.20)` → on 600ms hover dwell, border brightens to 60% gold and a tooltip dossier appears above the card, anchored by a 45°-rotated caret. The dossier has a scanline overlay, cyan eyebrow, and a list of résumé items with mono date ranges. Tooltip anchors left for left-column cards, right for right-column cards (mobile-safe).
 - **Nav link:** `color: gray-500` → on hover, `color: gold`.
 - **Wordmark link:** `color: gold` → on hover, `color: parchment` (inversion).
 - **No press states defined in the codebase.** Default browser :active behavior. If extending, prefer a brief opacity dip to 0.9 over a scale-shrink.

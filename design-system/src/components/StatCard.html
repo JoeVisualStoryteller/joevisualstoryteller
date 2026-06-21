@@ -1,0 +1,47 @@
+<!-- @dsCard group="Components" name="Stat Card" subtitle="Hover-dwell tooltip — résumé dossier for each stat" viewport="700x340" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Stat Card</title>
+<script src="../../_ds_bundle.js"></script>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--void);}
+  .wrap{padding:188px 28px 28px;}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .stat{position:relative;background:var(--surface);border:1px solid var(--gold-20);padding:22px 12px;text-align:center;}
+  .stat.active{border-color:var(--gold-60);box-shadow:var(--glow-gold-medium);}
+  .v{font-family:var(--font-display);font-weight:700;color:var(--gold);font-size:36px;line-height:1;margin-bottom:6px;}
+  .l{font-family:var(--font-mono);font-size:10px;color:var(--fg-4);letter-spacing:.2em;text-transform:uppercase;}
+  .dossier{position:absolute;bottom:100%;left:0;margin-bottom:12px;width:240px;}
+  .dossier__card{position:relative;overflow:hidden;background:var(--void);border:1px solid var(--gold-60);box-shadow:var(--glow-gold-medium);padding:16px;text-align:left;}
+  .dossier__scan{position:absolute;inset:0;opacity:.06;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0,transparent 2px,var(--cyan) 3px);}
+  .dossier__eyebrow{position:relative;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
+  .dossier__rule{position:relative;height:1px;margin-bottom:12px;background:linear-gradient(to right,var(--gold-40),transparent);}
+  .dossier__list{position:relative;list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+  .dossier__item{display:flex;align-items:baseline;justify-content:space-between;gap:12px;}
+  .dossier__name{display:flex;align-items:baseline;gap:8px;font-family:var(--font-sans);font-size:13px;color:var(--parchment);}
+  .dossier__bullet{color:var(--gold);opacity:.7;font-size:10px;}
+  .dossier__meta{font-family:var(--font-mono);font-size:10px;color:var(--cyan);white-space:nowrap;}
+  .caret{position:absolute;bottom:100%;left:50%;margin-bottom:6px;width:12px;height:12px;transform:translateX(-50%) rotate(45deg);background:var(--void);border-right:1px solid var(--gold-60);border-bottom:1px solid var(--gold-60);}
+</style></head>
+<body>
+<div class="wrap"><div class="grid">
+  <div class="stat active">
+    <div class="dossier"><div class="dossier__card">
+      <div class="dossier__scan"></div>
+      <div class="dossier__eyebrow">// SERVICE RECORD</div>
+      <div class="dossier__rule"></div>
+      <ul class="dossier__list">
+        <li class="dossier__item"><span class="dossier__name"><span class="dossier__bullet">▸</span>United States Army</span><span class="dossier__meta">2008–2021</span></li>
+        <li class="dossier__item"><span class="dossier__name"><span class="dossier__bullet">▸</span>THTBC</span><span class="dossier__meta">2021–2022</span></li>
+        <li class="dossier__item"><span class="dossier__name"><span class="dossier__bullet">▸</span>Tactis</span><span class="dossier__meta">2022–2026</span></li>
+        <li class="dossier__item"><span class="dossier__name"><span class="dossier__bullet">▸</span>Briviant</span><span class="dossier__meta">2026–Present</span></li>
+      </ul>
+    </div></div>
+    <div class="caret"></div>
+    <div class="v">10+</div><div class="l">Years Experience</div>
+  </div>
+  <div class="stat"><div class="v">100+</div><div class="l">Systems Managed</div></div>
+  <div class="stat"><div class="v">4</div><div class="l">Roles Held</div></div>
+  <div class="stat"><div class="v">3</div><div class="l">Cloud Platforms</div></div>
+</div></div>
+</body></html>

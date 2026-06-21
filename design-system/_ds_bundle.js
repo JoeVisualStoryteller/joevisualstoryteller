@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"JosephDunnDesignSystem_988385","components":[{"name":"App","sourcePath":"src/App.tsx"},{"name":"About","sourcePath":"src/components/About.tsx"},{"name":"ChapterProgress","sourcePath":"src/components/ChapterProgress.tsx"},{"name":"Chronicle","sourcePath":"src/components/Chronicle.tsx"},{"name":"Footer","sourcePath":"src/components/Footer.tsx"},{"name":"Hero","sourcePath":"src/components/Hero.tsx"},{"name":"Nav","sourcePath":"src/components/Nav.tsx"},{"name":"Reveal","sourcePath":"src/components/Reveal.tsx"},{"name":"SectionHeader","sourcePath":"src/components/SectionHeader.tsx"},{"name":"Skills","sourcePath":"src/components/Skills.tsx"}],"sourceHashes":{"repo-changes/tailwind.config.js":"7f1b0289efad","src/App.tsx":"79a8e112fc70","src/components/About.tsx":"c33cd3e15edc","src/components/ChapterProgress.tsx":"df5263298362","src/components/Chronicle.tsx":"8ecbb74408b4","src/components/Footer.tsx":"b7d37e1c1255","src/components/Hero.tsx":"9928f4d449a1","src/components/Nav.tsx":"7e31d80f05ba","src/components/Reveal.tsx":"e61a0b873c41","src/components/SectionHeader.tsx":"2119cf5bf281","src/components/Skills.tsx":"90e7f5a5335f","src/data/content.ts":"e17580ca570d","src/hooks/useTypewriter.ts":"ecc2d21b10a8","src/main.tsx":"27b0ddfab3c1","ui_kits/portfolio/Contact.jsx":"0a56eacf29a2","ui_kits/portfolio/Deployments.jsx":"3b04890455bf","ui_kits/portfolio/KitAbout.jsx":"e9b3eb88ee9f","ui_kits/portfolio/KitFooter.jsx":"a77242e630b1","ui_kits/portfolio/KitHero.jsx":"66409b1626ab","ui_kits/portfolio/KitNav.jsx":"071ccf7acd75","ui_kits/portfolio/KitSectionHeader.jsx":"a3f689e14ba6","ui_kits/portfolio/KitSkills.jsx":"1dac5d239eb8","ui_kits/portfolio/Runes.jsx":"9ec0abc73554","ui_kits/portfolio/Summon.jsx":"d834c5ac8463","ui_kits/portfolio/content.js":"c17746552f1a"},"inlinedExternals":[],"unexposedExports":[{"name":"aboutContent","sourcePath":"src/data/content.ts"},{"name":"chronicleData","sourcePath":"src/data/content.ts"},{"name":"heroContent","sourcePath":"src/data/content.ts"},{"name":"navSections","sourcePath":"src/data/content.ts"},{"name":"skillsData","sourcePath":"src/data/content.ts"},{"name":"useTypewriter","sourcePath":"src/hooks/useTypewriter.ts"}]} */
+/* @ds-bundle: {"format":3,"namespace":"JosephDunnDesignSystem_988385","components":[{"name":"App","sourcePath":"src/App.tsx"},{"name":"About","sourcePath":"src/components/About.tsx"},{"name":"ChapterProgress","sourcePath":"src/components/ChapterProgress.tsx"},{"name":"Chronicle","sourcePath":"src/components/Chronicle.tsx"},{"name":"Footer","sourcePath":"src/components/Footer.tsx"},{"name":"Hero","sourcePath":"src/components/Hero.tsx"},{"name":"Nav","sourcePath":"src/components/Nav.tsx"},{"name":"Reveal","sourcePath":"src/components/Reveal.tsx"},{"name":"SectionHeader","sourcePath":"src/components/SectionHeader.tsx"},{"name":"Skills","sourcePath":"src/components/Skills.tsx"},{"name":"StatCard","sourcePath":"src/components/StatCard.tsx"}],"sourceHashes":{"repo-changes/tailwind.config.js":"7f1b0289efad","src/App.tsx":"79a8e112fc70","src/components/About.tsx":"712bb63af76f","src/components/ChapterProgress.tsx":"df5263298362","src/components/Chronicle.tsx":"8ecbb74408b4","src/components/Footer.tsx":"b7d37e1c1255","src/components/Hero.tsx":"9928f4d449a1","src/components/Nav.tsx":"7e31d80f05ba","src/components/Reveal.tsx":"e61a0b873c41","src/components/SectionHeader.tsx":"2119cf5bf281","src/components/Skills.tsx":"90e7f5a5335f","src/components/StatCard.tsx":"e70885ef924a","src/data/content.ts":"a7eb5e4c5c7f","src/hooks/useTypewriter.ts":"ecc2d21b10a8","src/main.tsx":"27b0ddfab3c1","ui_kits/portfolio/Contact.jsx":"0a56eacf29a2","ui_kits/portfolio/Deployments.jsx":"3b04890455bf","ui_kits/portfolio/KitAbout.jsx":"e9b3eb88ee9f","ui_kits/portfolio/KitFooter.jsx":"a77242e630b1","ui_kits/portfolio/KitHero.jsx":"66409b1626ab","ui_kits/portfolio/KitNav.jsx":"071ccf7acd75","ui_kits/portfolio/KitSectionHeader.jsx":"a3f689e14ba6","ui_kits/portfolio/KitSkills.jsx":"1dac5d239eb8","ui_kits/portfolio/Runes.jsx":"9ec0abc73554","ui_kits/portfolio/Summon.jsx":"d834c5ac8463","ui_kits/portfolio/content.js":"c17746552f1a"},"inlinedExternals":[],"unexposedExports":[{"name":"aboutContent","sourcePath":"src/data/content.ts"},{"name":"chronicleData","sourcePath":"src/data/content.ts"},{"name":"heroContent","sourcePath":"src/data/content.ts"},{"name":"navSections","sourcePath":"src/data/content.ts"},{"name":"skillsData","sourcePath":"src/data/content.ts"},{"name":"useTypewriter","sourcePath":"src/hooks/useTypewriter.ts"}]} */
 
 (() => {
 
@@ -172,6 +172,113 @@ function SectionHeader({
 Object.assign(__ds_scope, { SectionHeader });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/SectionHeader.tsx", error: String((e && e.message) || e) }); }
 
+// src/components/StatCard.tsx
+try { (() => {
+const {
+  useEffect,
+  useRef,
+  useState
+} = React;
+/** Hover dwell (ms) before the dossier reveals. Within the 0.5–1s spec. */
+const HOVER_DELAY = 600;
+function StatCard({
+  value,
+  label,
+  detailLabel,
+  detail,
+  column
+}) {
+  const [open, setOpen] = useState(false);
+  const timerRef = useRef(undefined);
+  const tooltipId = `stat-${label.replace(/\s+/g, '-').toLowerCase()}`;
+  const hasDetail = detail.length > 0;
+
+  // Mobile: anchor to the box's outer edge and grow inward so the dossier
+  // stays on-screen. Desktop (sm+): there's room, so center it over the box.
+  const alignClasses = column === 'left' ? 'left-0 sm:left-1/2 sm:-translate-x-1/2' : 'right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2';
+  const clearTimer = () => {
+    if (timerRef.current !== undefined) {
+      clearTimeout(timerRef.current);
+      timerRef.current = undefined;
+    }
+  };
+
+  // Pointer hover → reveal after the dwell delay.
+  const handleEnter = () => {
+    clearTimer();
+    timerRef.current = setTimeout(() => setOpen(true), HOVER_DELAY);
+  };
+
+  // Leave / blur → dismiss immediately.
+  const handleClose = () => {
+    clearTimer();
+    setOpen(false);
+  };
+
+  // Keyboard focus and touch-tap (which focuses) reveal at once — no dwell.
+  const handleOpenNow = () => {
+    clearTimer();
+    setOpen(true);
+  };
+  useEffect(() => clearTimer, []);
+
+  // Dismiss with Escape while the dossier is open.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = e => {
+      if (e.key === 'Escape') handleClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "relative h-full",
+    onMouseEnter: hasDetail ? handleEnter : undefined,
+    onMouseLeave: hasDetail ? handleClose : undefined
+  }, /*#__PURE__*/React.createElement("div", {
+    role: hasDetail ? 'button' : undefined,
+    tabIndex: hasDetail ? 0 : undefined,
+    "aria-expanded": hasDetail ? open : undefined,
+    "aria-describedby": open ? tooltipId : undefined,
+    onFocus: hasDetail ? handleOpenNow : undefined,
+    onBlur: hasDetail ? handleClose : undefined,
+    className: "flex h-full flex-col items-center justify-center bg-surface border border-gold/20 p-6 text-center select-none transition-all duration-300 hover:border-gold/60 hover:shadow-[0_0_24px_rgba(201,162,39,0.12)] focus:outline-none focus-visible:border-gold/60 focus-visible:shadow-[0_0_24px_rgba(201,162,39,0.12)]"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "font-cinzel text-4xl font-bold text-gold leading-none mb-2"
+  }, value), /*#__PURE__*/React.createElement("div", {
+    className: "font-mono text-xs tracking-widest text-gray-500 uppercase"
+  }, label)), open && hasDetail && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    id: tooltipId,
+    role: "tooltip",
+    className: `pointer-events-none absolute bottom-full z-30 mb-3 w-64 max-w-[calc(100vw-3rem)] ${alignClasses}`
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "animate-tooltip-in relative overflow-hidden border border-gold/50 bg-void p-4 text-left shadow-[0_0_24px_rgba(201,162,39,0.18)]"
+  }, /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true",
+    className: "pointer-events-none absolute inset-0 opacity-[0.06] bg-[repeating-linear-gradient(0deg,transparent_0px,transparent_2px,rgba(125,211,252,0.6)_3px)]"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "relative font-mono text-[10px] tracking-[0.2em] text-cyan/80 uppercase mb-2"
+  }, detailLabel), /*#__PURE__*/React.createElement("div", {
+    className: "relative mb-3 h-px w-full bg-gradient-to-r from-gold/40 to-transparent"
+  }), /*#__PURE__*/React.createElement("ul", {
+    className: "relative space-y-2"
+  }, detail.map(item => /*#__PURE__*/React.createElement("li", {
+    key: item.name,
+    className: "flex items-baseline justify-between gap-x-3"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "flex items-baseline gap-2 font-sans text-[13px] leading-snug text-parchment/90"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-[10px] leading-none text-gold/70"
+  }, "\u25B8"), item.name), item.meta && /*#__PURE__*/React.createElement("span", {
+    className: "font-mono text-[10px] tracking-wider text-cyan/70 whitespace-nowrap"
+  }, item.meta)))))), /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true",
+    className: "pointer-events-none absolute bottom-full left-1/2 z-30 mb-[6px] h-3 w-3 -translate-x-1/2 rotate-45 border-b border-r border-gold/50 bg-void"
+  })));
+}
+Object.assign(__ds_scope, { StatCard });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/StatCard.tsx", error: String((e && e.message) || e) }); }
+
 // src/data/content.ts
 try { (() => {
 const heroContent = {
@@ -185,18 +292,68 @@ const aboutContent = {
   sectionTitle: 'About the Operator',
   fileLabel: '▸ PROFILE.LOG',
   bio: ['Joseph H. Dunn II is a battle-hardened systems engineer with over a decade of service spanning military intelligence and enterprise IT. He has designed, deployed, and defended critical infrastructure across government and commercial domains.', 'Specializing in AI-augmented automation and cloud architecture, he bridges the gap between strategic vision and operational execution — transforming legacy environments into resilient, modern systems.', 'A proven force multiplier: led programs that achieved 8× productivity gains through AI adoption, deploying tools that still serve enterprise teams today.'],
+  // `detail` powers the hover dossier on each stat box (the interactive résumé).
+  // Years Experience, Roles Held, and Cloud Platforms are confirmed.
+  // TODO(Joseph): Systems Managed categories are approximate — refine if you want.
   stats: [{
     value: '10+',
-    label: 'Years Experience'
+    label: 'Years Experience',
+    detailLabel: '// SERVICE RECORD',
+    detail: [{
+      name: 'United States Army',
+      meta: '2008 – 2021'
+    }, {
+      name: 'THTBC',
+      meta: '2021 – 2022'
+    }, {
+      name: 'Tactis',
+      meta: '2022 – 2026'
+    }, {
+      name: 'Briviant',
+      meta: '2026 – Present'
+    }]
   }, {
     value: '100+',
-    label: 'Systems Managed'
+    label: 'Systems Managed',
+    detailLabel: '// DEPLOYMENTS',
+    detail: [{
+      name: 'Active Directory forests'
+    }, {
+      name: 'VMware / Hyper-V hosts'
+    }, {
+      name: 'Cloud workloads'
+    }, {
+      name: 'Security appliances'
+    }, {
+      name: 'AI systems'
+    }]
   }, {
     value: '4',
-    label: 'Service Branches'
+    label: 'Roles Held',
+    detailLabel: '// CAREER LADDER',
+    detail: [{
+      name: 'System Administrator'
+    }, {
+      name: 'Systems Engineer',
+      meta: 'AI · Infra'
+    }, {
+      name: 'IT Manager',
+      meta: 'Operations'
+    }, {
+      name: 'IT Director',
+      meta: 'AI'
+    }]
   }, {
     value: '3',
-    label: 'Cloud Platforms'
+    label: 'Cloud Platforms',
+    detailLabel: '// ENVIRONMENTS',
+    detail: [{
+      name: 'Amazon Web Services'
+    }, {
+      name: 'Microsoft Azure'
+    }, {
+      name: 'Google Cloud'
+    }]
   }]
 };
 const skillsData = [{
@@ -259,6 +416,7 @@ Object.assign(__ds_scope, { heroContent, aboutContent, skillsData, navSections, 
 
 // src/components/About.tsx
 try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function About() {
   return /*#__PURE__*/React.createElement("section", {
     id: "about",
@@ -284,15 +442,11 @@ function About() {
     delay: 160,
     direction: "right"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "grid grid-cols-2 gap-4"
-  }, __ds_scope.aboutContent.stats.map(stat => /*#__PURE__*/React.createElement("div", {
+    className: "grid grid-cols-2 auto-rows-fr gap-4"
+  }, __ds_scope.aboutContent.stats.map((stat, i) => /*#__PURE__*/React.createElement(__ds_scope.StatCard, _extends({
     key: stat.label,
-    className: "bg-surface border border-gold/20 p-6 text-center hover:border-gold/60 hover:shadow-[0_0_24px_rgba(201,162,39,0.12)] transition-all"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "font-cinzel text-4xl font-bold text-gold leading-none mb-2"
-  }, stat.value), /*#__PURE__*/React.createElement("div", {
-    className: "font-mono text-xs tracking-widest text-gray-500 uppercase"
-  }, stat.label))))))));
+    column: i % 2 === 0 ? 'left' : 'right'
+  }, stat))))))));
 }
 Object.assign(__ds_scope, { About });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "src/components/About.tsx", error: String((e && e.message) || e) }); }
@@ -1271,5 +1425,7 @@ __ds_ns.Reveal = __ds_scope.Reveal;
 __ds_ns.SectionHeader = __ds_scope.SectionHeader;
 
 __ds_ns.Skills = __ds_scope.Skills;
+
+__ds_ns.StatCard = __ds_scope.StatCard;
 
 })();

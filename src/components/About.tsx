@@ -1,6 +1,7 @@
 import { aboutContent } from '../data/content'
 import SectionHeader from './SectionHeader'
 import Reveal from './Reveal'
+import StatCard from './StatCard'
 
 export default function About() {
   return (
@@ -30,19 +31,9 @@ export default function About() {
 
           {/* Stats */}
           <Reveal delay={160} direction="right">
-            <div className="grid grid-cols-2 gap-4">
-              {aboutContent.stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="bg-surface border border-gold/20 p-6 text-center hover:border-gold/60 hover:shadow-[0_0_24px_rgba(201,162,39,0.12)] transition-all"
-                >
-                  <div className="font-cinzel text-4xl font-bold text-gold leading-none mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="font-mono text-xs tracking-widest text-gray-500 uppercase">
-                    {stat.label}
-                  </div>
-                </div>
+            <div className="grid grid-cols-2 auto-rows-fr gap-4">
+              {aboutContent.stats.map((stat, i) => (
+                <StatCard key={stat.label} column={i % 2 === 0 ? 'left' : 'right'} {...stat} />
               ))}
             </div>
           </Reveal>

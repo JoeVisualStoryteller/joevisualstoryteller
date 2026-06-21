@@ -81,3 +81,14 @@ body {
 .animate-cursor-blink {
   animation: cursor-blink 0.85s step-end infinite;
 }
+
+/* ── Stat dossier tooltip (interactive résumé) ── */
+/* Opacity + slight rise only — no translateX, so the tooltip's
+   -translate-x-1/2 centering is preserved during the animation. */
+@keyframes tooltip-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-tooltip-in {
+  animation: tooltip-in 0.18s ease forwards;
+}

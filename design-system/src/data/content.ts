@@ -6,6 +6,22 @@ export const heroContent = {
     '10+ years forging resilient systems across military and enterprise domains. Where ancient discipline meets modern technology.',
 }
 
+export interface StatDetailItem {
+  /** Org, system, branch, or platform name */
+  name: string
+  /** Optional supporting detail — dates, role, or context shown right-aligned */
+  meta?: string
+}
+
+export interface Stat {
+  value: string
+  label: string
+  /** Terminal-style eyebrow shown at the top of the hover dossier */
+  detailLabel: string
+  /** Items that back the headline number — powers the hover tooltip */
+  detail: StatDetailItem[]
+}
+
 export const aboutContent = {
   sectionLabel: '// IDENTIFICATION',
   sectionTitle: 'About the Operator',
@@ -15,12 +31,55 @@ export const aboutContent = {
     'Specializing in AI-augmented automation and cloud architecture, he bridges the gap between strategic vision and operational execution — transforming legacy environments into resilient, modern systems.',
     'A proven force multiplier: led programs that achieved 8× productivity gains through AI adoption, deploying tools that still serve enterprise teams today.',
   ],
+  // `detail` powers the hover dossier on each stat box (the interactive résumé).
+  // Years Experience, Roles Held, and Cloud Platforms are confirmed.
+  // TODO(Joseph): Systems Managed categories are approximate — refine if you want.
   stats: [
-    { value: '10+', label: 'Years Experience' },
-    { value: '100+', label: 'Systems Managed' },
-    { value: '4', label: 'Service Branches' },
-    { value: '3', label: 'Cloud Platforms' },
-  ],
+    {
+      value: '10+',
+      label: 'Years Experience',
+      detailLabel: '// SERVICE RECORD',
+      detail: [
+        { name: 'United States Army', meta: '2008 – 2021' },
+        { name: 'THTBC', meta: '2021 – 2022' },
+        { name: 'Tactis', meta: '2022 – 2026' },
+        { name: 'Briviant', meta: '2026 – Present' },
+      ],
+    },
+    {
+      value: '100+',
+      label: 'Systems Managed',
+      detailLabel: '// DEPLOYMENTS',
+      detail: [
+        { name: 'Active Directory forests' },
+        { name: 'VMware / Hyper-V hosts' },
+        { name: 'Cloud workloads' },
+        { name: 'Security appliances' },
+        { name: 'AI systems' },
+      ],
+    },
+    {
+      value: '4',
+      label: 'Roles Held',
+      detailLabel: '// CAREER LADDER',
+      detail: [
+        { name: 'System Administrator' },
+        { name: 'Systems Engineer', meta: 'AI · Infra' },
+        { name: 'IT Manager', meta: 'Operations' },
+        { name: 'IT Director', meta: 'AI' },
+      ],
+    },
+    {
+      value: '3',
+      label: 'Cloud Platforms',
+      detailLabel: '// ENVIRONMENTS',
+      detail: [
+        { name: 'Amazon Web Services' },
+        { name: 'Microsoft Azure' },
+        { name: 'Google Cloud' },
+      ],
+    },
+  ] satisfies Stat[],
 }
 
 export interface SkillGroup {

@@ -64,9 +64,9 @@ export const aboutContent = {
       detailLabel: '// CAREER LADDER',
       detail: [
         { name: 'System Administrator' },
-        { name: 'Systems Engineer', meta: 'AI · Infra' },
-        { name: 'IT Manager', meta: 'Operations' },
-        { name: 'IT Director', meta: 'AI' },
+        { name: 'IT Manager' },
+        { name: 'Systems Engineer' },
+        { name: 'AI Engineer' },
       ],
     },
     {

@@ -32,6 +32,24 @@ npm run deploy
 
 `npm run deploy` builds and publishes `dist/` with `gh-pages`. Run lint and build before deploying.
 
+## GitHub Pages release workflow
+
+The production site is published from the generated `gh-pages` branch at:
+
+```text
+https://joevisualstoryteller.github.io/joevisualstoryteller/
+```
+
+After committing and pushing source changes to `main`, publish the site from the repository root:
+
+```bash
+npm install
+npm run lint
+npm run deploy
+```
+
+`npm run deploy` runs `npm run build` first, then executes `gh-pages -d dist` to publish the production bundle. Do not hand-edit `dist/` or the `gh-pages` branch. Confirm the deployment command reports `Published`, then check the URL above after GitHub Pages finishes serving the update.
+
 ## Content-first changes
 
 For copy, skills, statistics, navigation labels, and chronology, update `src/data/content.ts` first. Keep these IDs stable and unique because both navigation and `ChapterProgress` resolve them as section anchors:

@@ -6,8 +6,8 @@ export const heroContent = {
   philosophy: 'Simplifying complex systems. Slow is smooth. Smooth is fast. Master the basics.',
   summary:
     'Amplify success through cross-team collaboration and high-agency ICs who can carry hard problems end to end. Systems engineering, infrastructure architecture, security, automation, and applied AI for environments where reliability is part of the product.',
-  location: 'Wildomar, CA · Remote',
-  currentRole: 'Senior technical authority for operations and production infrastructure',
+  location: 'Southern California · Remote',
+  currentRole: 'Staff engineer focused on resilient operations and production infrastructure',
 }
 
 export interface ImpactMetric {
@@ -17,8 +17,8 @@ export interface ImpactMetric {
 }
 
 export const impactMetrics: ImpactMetric[] = [
-  { value: '746', label: 'Physical hosts', detail: 'Production fleet under technical authority' },
-  { value: '1,500+', label: 'Virtual machines', detail: 'Multi-tenant infrastructure at scale' },
+  { value: '700+', label: 'Physical hosts', detail: 'Large-scale production fleet experience' },
+  { value: '1,000+', label: 'Virtual machines', detail: 'Multi-tenant infrastructure at scale' },
   { value: '100K+', label: 'Lifetime customers', detail: 'Platforms supporting real customer operations' },
   { value: '0', label: 'Data loss', detail: 'Cyberattack containment and recovery outcome' },
   { value: '8×', label: 'Productivity gain', detail: 'Reported result from applied AI adoption' },
@@ -51,12 +51,12 @@ export const caseStudies: CaseStudy[] = [
     number: '01',
     title: 'Set the platform direction.',
     summary:
-      'A governed delivery platform for a large Apple Silicon hosting fleet, built to make provisioning repeatable and production changes verifiable.',
-    metric: '746 / 1,500+',
+      'A governed delivery platform for a large-scale production hosting fleet, built to make provisioning repeatable and production changes verifiable.',
+    metric: '700+ / 1,000+',
     metricLabel: 'physical hosts / virtual machines',
-    tags: ['Proxmox', 'VMware ESXi', 'Tart', 'Jenkins', 'Packer'],
+    tags: ['Fleet automation', 'Virtualization', 'CI/CD', 'Image pipelines'],
     points: [
-      'Architected approval-gated cloning, inventory, IP allocation, and standardized host, network, and credential configuration.',
+      'Architected approval-gated provisioning, inventory, placement, and standardized configuration controls.',
       'Established capacity-aware placement, backup and retention rules, ownership standards, and CI/CD modernization.',
     ],
   },
@@ -77,7 +77,7 @@ export const caseStudies: CaseStudy[] = [
     number: '03',
     title: 'Make applied AI an operating capability.',
     summary:
-      'Production AI systems that connect language models to infrastructure, support, billing, identity, and internal knowledge—with human-in-the-loop controls where they matter.',
+      'Production AI systems that connect language models to operational workflows and internal knowledge—with human-in-the-loop controls where they matter.',
     metric: '10,000+',
     metricLabel: 'documents in governed RAG platform',
     tags: ['FastAPI', 'TypeScript', 'MCP', 'RAG', 'Human-in-the-loop'],
@@ -134,9 +134,9 @@ export const capabilityGroups: CapabilityGroup[] = [
     items: ['Technical authority', 'Operating-model design', 'Hiring', 'Mentoring', 'Executive communication', 'Budget ownership'],
   },
   {
-    category: 'Credentials',
+    category: 'Credentials & frameworks',
     description: 'Formal grounding for work across commercial and Department of Defense environments.',
-    items: ['Active Secret clearance', 'Security+', 'AWS Solutions Architect', 'Azure Administrator', 'ITIL v4'],
+    items: ['Security+', 'AWS Solutions Architect', 'Azure Administrator', 'ITIL v4'],
   },
 ]
 
@@ -150,9 +150,9 @@ export interface CareerEntry {
 export const careerData: CareerEntry[] = [
   {
     role: 'Staff Engineer, Operations',
-    company: 'Briviant LLC',
+    company: 'Private infrastructure company',
     period: 'Jan 2026 — Present',
-    detail: 'Promoted from Senior Systems Engineer; company-wide operations and production infrastructure authority.',
+    detail: 'Promoted from Senior Systems Engineer; company-wide operations and production infrastructure scope.',
   },
   {
     role: 'Systems Engineer, AI & Business Applications',

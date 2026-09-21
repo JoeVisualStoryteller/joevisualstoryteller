@@ -209,7 +209,7 @@ function SystemMap() {
   }, [])
 
   return (
-    <div ref={mapRef} className="system-map" role="img" aria-label="Operational footprint: 746 physical hosts, 1,500 plus virtual machines, 10,000 plus documents, and zero data loss during recovery">
+    <div ref={mapRef} className="system-map" role="img" aria-label="Operational footprint: more than 700 physical hosts, more than 1,000 virtual machines, more than 10,000 documents, and zero data loss during recovery">
       <div className="system-map__chrome" aria-hidden="true">
         <div className="window-dots"><i /><i /><i /></div>
         <span>ops / production footprint</span>
@@ -230,11 +230,11 @@ function SystemMap() {
       </div>
 
       <div ref={(node) => { nodeRefs.current[0] = node }} className="map-node map-node--top map-node--floating">
-        <strong>746</strong>
+        <strong>700+</strong>
         <span>physical hosts</span>
       </div>
       <div ref={(node) => { nodeRefs.current[1] = node }} className="map-node map-node--right map-node--floating">
-        <strong>1,500+</strong>
+        <strong>1,000+</strong>
         <span>virtual machines</span>
       </div>
       <div ref={(node) => { nodeRefs.current[2] = node }} className="map-node map-node--bottom map-node--floating">

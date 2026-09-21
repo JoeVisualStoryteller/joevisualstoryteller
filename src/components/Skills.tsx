@@ -1,35 +1,28 @@
-import { skillsData } from '../data/content'
-import SectionHeader from './SectionHeader'
-import Reveal from './Reveal'
+import { capabilityGroups } from '../data/content'
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-28 px-8 bg-[#0a0a10]">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/25 to-transparent" />
-      <div className="max-w-5xl mx-auto">
-        <Reveal>
-          <SectionHeader label="// LOADOUT" title="Arsenal" />
-        </Reveal>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {skillsData.map((group, i) => (
-            <Reveal key={group.category} delay={i * 60}>
-              <div className="bg-surface border border-gold/15 border-t-2 border-t-gold p-6 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,162,39,0.15)] transition-all h-full">
-                <p className="font-mono text-xs tracking-[0.2em] text-cyan uppercase mb-4">
-                  ▸ {group.category}
-                </p>
-                <ul className="space-y-2">
-                  {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="font-sans text-sm text-parchment/80 flex items-center gap-2 pb-2 border-b border-white/[0.04] last:border-0 last:pb-0"
-                    >
-                      <span className="text-crimson text-[0.5rem] shrink-0">◆</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+    <section id="capabilities" className="section section--blueprint">
+      <div className="shell">
+        <div className="section-heading section-heading--work">
+          <p className="eyebrow">03 / Capabilities</p>
+          <h2>The stack is bigger than the tools.</h2>
+          <p className="section-heading__intro">Architecture, governance, automation, and leadership are the connective tissue between technology and an outcome.</p>
+        </div>
+
+        <div className="capability-grid">
+          {capabilityGroups.map((group, index) => (
+            <article className="capability-card" key={group.category}>
+              <div className="capability-card__top">
+                <span>0{index + 1}</span>
+                <span className="capability-card__mark" aria-hidden="true">↗</span>
               </div>
-            </Reveal>
+              <h3>{group.category}</h3>
+              <p>{group.description}</p>
+              <div className="capability-card__items">
+                {group.items.map((item) => <span key={item}>{item}</span>)}
+              </div>
+            </article>
           ))}
         </div>
       </div>

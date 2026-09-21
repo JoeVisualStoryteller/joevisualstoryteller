@@ -1,145 +1,194 @@
 export const heroContent = {
-  systemLabel: '[ SYSTEM: ONLINE ]',
-  name: 'JOSEPH H. DUNN II',
-  subtitle: 'Systems Engineer · Digital Tactician',
-  tagline:
-    '10+ years forging resilient systems across military and enterprise domains. Where ancient discipline meets modern technology.',
+  eyebrow: 'Systems / Operations / Applied AI',
+  name: 'Joseph Henry Dunn II',
+  title: 'Staff Engineer, Operations.',
+  principle: 'Force enabler for engineering teams.',
+  philosophy: 'Simplifying complex systems. Slow is smooth. Smooth is fast. Master the basics.',
+  summary:
+    'Amplify success through cross-team collaboration and high-agency ICs who can carry hard problems end to end. Systems engineering, infrastructure architecture, security, automation, and applied AI for environments where reliability is part of the product.',
+  location: 'Wildomar, CA · Remote',
+  currentRole: 'Senior technical authority for operations and production infrastructure',
 }
 
-export interface StatDetailItem {
-  /** Org, system, branch, or platform name */
-  name: string
-  /** Optional supporting detail — dates, role, or context shown right-aligned */
-  meta?: string
-}
-
-export interface Stat {
+export interface ImpactMetric {
   value: string
   label: string
-  /** Terminal-style eyebrow shown at the top of the hover dossier */
-  detailLabel: string
-  /** Items that back the headline number — powers the hover tooltip */
-  detail: StatDetailItem[]
+  detail: string
 }
+
+export const impactMetrics: ImpactMetric[] = [
+  { value: '746', label: 'Physical hosts', detail: 'Production fleet under technical authority' },
+  { value: '1,500+', label: 'Virtual machines', detail: 'Multi-tenant infrastructure at scale' },
+  { value: '100K+', label: 'Lifetime customers', detail: 'Platforms supporting real customer operations' },
+  { value: '0', label: 'Data loss', detail: 'Cyberattack containment and recovery outcome' },
+  { value: '8×', label: 'Productivity gain', detail: 'Reported result from applied AI adoption' },
+  { value: '18+', label: 'Years engineering', detail: 'Commercial and Department of Defense environments' },
+]
 
 export const aboutContent = {
-  sectionLabel: '// IDENTIFICATION',
-  sectionTitle: 'About the Operator',
-  fileLabel: '▸ PROFILE.LOG',
-  bio: [
-    'Joseph H. Dunn II is a battle-hardened systems engineer with over a decade of service spanning military intelligence and enterprise IT. He has designed, deployed, and defended critical infrastructure across government and commercial domains.',
-    'Specializing in AI-augmented automation and cloud architecture, he bridges the gap between strategic vision and operational execution — transforming legacy environments into resilient, modern systems.',
-    'A proven force multiplier: led programs that achieved 8× productivity gains through AI adoption, deploying tools that still serve enterprise teams today.',
+  eyebrow: '01 / Operating signal',
+  title: 'Amplify team and department success.',
+  body: [
+    'Joseph is a Staff Engineer, Operations and systems engineer by trade. He sets architecture, security, reliability, automation, and production-change standards across company-wide infrastructure.',
+    'His work moves between the physical fleet, virtual platforms, cloud services, security controls, delivery pipelines, and the teams responsible for keeping the system useful. The goal is not dependence on one expert; it is a clear operating model and individual contributors who can own hard problems end to end.',
   ],
-  // `detail` powers the hover dossier on each stat box (the interactive résumé).
-  // Years Experience, Roles Held, and Cloud Platforms are confirmed.
-  // TODO(Joseph): Systems Managed categories are approximate — refine if you want.
-  stats: [
-    {
-      value: '10+',
-      label: 'Years Experience',
-      detailLabel: '// SERVICE RECORD',
-      detail: [
-        { name: 'United States Army', meta: '2008 – 2021' },
-        { name: 'THTBC', meta: '2021 – 2022' },
-        { name: 'Tactis', meta: '2022 – 2026' },
-        { name: 'Briviant', meta: '2026 – Present' },
-      ],
-    },
-    {
-      value: '100+',
-      label: 'Systems Managed',
-      detailLabel: '// DEPLOYMENTS',
-      detail: [
-        { name: 'Active Directory forests' },
-        { name: 'VMware / Hyper-V hosts' },
-        { name: 'Cloud workloads' },
-        { name: 'Security appliances' },
-        { name: 'AI systems' },
-      ],
-    },
-    {
-      value: '4',
-      label: 'Roles Held',
-      detailLabel: '// CAREER LADDER',
-      detail: [
-        { name: 'System Administrator' },
-        { name: 'IT Manager' },
-        { name: 'Systems Engineer' },
-        { name: 'AI Engineer' },
-      ],
-    },
-    {
-      value: '3',
-      label: 'Cloud Platforms',
-      detailLabel: '// ENVIRONMENTS',
-      detail: [
-        { name: 'Amazon Web Services' },
-        { name: 'Microsoft Azure' },
-        { name: 'Google Cloud' },
-      ],
-    },
-  ] satisfies Stat[],
+  scopeLabel: 'Current scope',
+  scope: ['Production infrastructure', 'AI engineering leadership', 'Security and recovery', 'Operating-model design'],
 }
 
-export interface SkillGroup {
+export interface CaseStudy {
+  number: string
+  title: string
+  summary: string
+  metric: string
+  metricLabel: string
+  tags: string[]
+  points: string[]
+}
+
+export const caseStudies: CaseStudy[] = [
+  {
+    number: '01',
+    title: 'Set the platform direction.',
+    summary:
+      'A governed delivery platform for a large Apple Silicon hosting fleet, built to make provisioning repeatable and production changes verifiable.',
+    metric: '746 / 1,500+',
+    metricLabel: 'physical hosts / virtual machines',
+    tags: ['Proxmox', 'VMware ESXi', 'Tart', 'Jenkins', 'Packer'],
+    points: [
+      'Architected approval-gated cloning, inventory, IP allocation, and standardized host, network, and credential configuration.',
+      'Established capacity-aware placement, backup and retention rules, ownership standards, and CI/CD modernization.',
+    ],
+  },
+  {
+    number: '02',
+    title: 'See the threat. Neutralize it fast.',
+    summary:
+      'Recognizing a developing cyber threat, containing it quickly, and coordinating the response before it became a larger operational event.',
+    metric: '0',
+    metricLabel: 'data loss during recovery',
+    tags: ['Incident response', 'NIST 800-53', 'Evidence handling', 'Recovery'],
+    points: [
+      'Detected the threat, removed persistence, reduced exposure, and coordinated containment across technical and executive teams before the incident could expand.',
+      'Preserved data through recovery, delivered evidence, and strengthened controls against recurrence using NIST SP 800-53 Rev. 5.',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Make applied AI an operating capability.',
+    summary:
+      'Production AI systems that connect language models to infrastructure, support, billing, identity, and internal knowledge—with human-in-the-loop controls where they matter.',
+    metric: '10,000+',
+    metricLabel: 'documents in governed RAG platform',
+    tags: ['FastAPI', 'TypeScript', 'MCP', 'RAG', 'Human-in-the-loop'],
+    points: [
+      'Established reusable patterns for tool calling, provider fallbacks, audit trails, local-first execution, and cost controls.',
+      'Improved answer accuracy by more than 40%, reduced manual work by 60%, and contributed to an 8× productivity gain.',
+    ],
+  },
+  {
+    number: '04',
+    title: 'Build the operating model around the work.',
+    summary:
+      'Creating the conditions around the technology: clear ownership, useful standards, and enough context for individual contributors to make good decisions without waiting for permission.',
+    metric: '4',
+    metricLabel: 'operational domains established',
+    tags: ['Org design', 'Hiring', 'Mentoring', '$1M+ budget', '24/7 support'],
+    points: [
+      'Defined and filled four positions, established ownership across four operational domains, and mentored engineers across systems, software, web, and database disciplines.',
+      'Previously built and developed an IT organization of 70+ personnel and led a $1M IT portfolio with 95%+ SLA compliance.',
+    ],
+  },
+]
+
+export interface CapabilityGroup {
   category: string
+  description: string
   items: string[]
 }
 
-export const skillsData: SkillGroup[] = [
-  { category: 'AI Tools', items: ['ChatGPT', 'Ollama', 'Claude AI', 'Azure OpenAI'] },
-  { category: 'Cloud Platforms', items: ['AWS', 'Microsoft Azure', 'Google Cloud'] },
-  { category: 'Automation', items: ['PowerShell', 'Python', 'Bash', 'Ansible'] },
-  { category: 'Security', items: ['Zero Trust', 'SIEM', 'Vulnerability Mgmt', 'NIST/RMF'] },
-  { category: 'Infrastructure', items: ['Active Directory', 'VMware', 'Hyper-V', 'Cisco Networking'] },
-  { category: 'ITSM / CRM', items: ['ServiceNow', 'Salesforce', 'Jira', 'Remedy'] },
+export const capabilityGroups: CapabilityGroup[] = [
+  {
+    category: 'Platform architecture',
+    description: 'Designing platforms that can be understood, governed, and operated after launch.',
+    items: ['Proxmox', 'VMware ESXi', 'Linux', 'AWS', 'Azure', 'MySQL', 'REST APIs'],
+  },
+  {
+    category: 'Security & governance',
+    description: 'Making security controls part of the operating model, not a last-minute gate.',
+    items: ['Incident response', 'NIST SP 800-53', 'Zero Trust', 'IAM', 'CMMC', 'DISA STIG', 'RMF'],
+  },
+  {
+    category: 'Automation & delivery',
+    description: 'Replacing recurring manual effort with observable, repeatable workflows.',
+    items: ['Python', 'PowerShell', 'TypeScript', 'FastAPI', 'Jenkins', 'GitHub Actions', 'GitLab CI/CD'],
+  },
+  {
+    category: 'Applied AI systems',
+    description: 'LLMs and agentic workflows built with boundaries, traceability, and human-in-the-loop judgment.',
+    items: ['LLMs', 'RAG', 'MCP integrations', 'Tool calling', 'Amazon Bedrock', 'Amazon Q', 'SageMaker'],
+  },
+  {
+    category: 'Operations leadership',
+    description: 'Creating the conditions for teams to move with clear ownership, strong fundamentals, and sound judgment.',
+    items: ['Technical authority', 'Operating-model design', 'Hiring', 'Mentoring', 'Executive communication', 'Budget ownership'],
+  },
+  {
+    category: 'Credentials',
+    description: 'Formal grounding for work across commercial and Department of Defense environments.',
+    items: ['Active Secret clearance', 'Security+', 'AWS Solutions Architect', 'Azure Administrator', 'ITIL v4'],
+  },
+]
+
+export interface CareerEntry {
+  role: string
+  company: string
+  period: string
+  detail: string
+}
+
+export const careerData: CareerEntry[] = [
+  {
+    role: 'Staff Engineer, Operations',
+    company: 'Briviant LLC',
+    period: 'Jan 2026 — Present',
+    detail: 'Promoted from Senior Systems Engineer; company-wide operations and production infrastructure authority.',
+  },
+  {
+    role: 'Systems Engineer, AI & Business Applications',
+    company: 'Tactis LLC',
+    period: 'Jan 2024 — Oct 2025',
+    detail: 'Directed a CTO-backed AI and business-applications transformation across five departments.',
+  },
+  {
+    role: 'Systems Administrator, Business Applications & Infrastructure',
+    company: 'Tactis LLC',
+    period: 'Aug 2022 — Jan 2024',
+    detail: 'Led cloud, identity, fleet management, ServiceNow, SIEM, and automation across the operating environment.',
+  },
+  {
+    role: 'Information Technology Manager',
+    company: 'Tlingit Haida Tribal Business Corporation',
+    period: 'Apr 2021 — Apr 2022',
+    detail: 'Directed a $1M IT portfolio, service desk, network, systems operations, and CMMC Level 2 readiness.',
+  },
+  {
+    role: 'Information Management Director / Senior Systems Administrator',
+    company: 'United States Army',
+    period: 'Apr 2008 — Apr 2021',
+    detail: 'Set mission-critical infrastructure strategy across 500+ classified and unclassified systems and developed a 70+ person IT organization.',
+  },
 ]
 
 export interface NavSection {
   id: string
-  navLabel: string
-  chapterLabel: string
+  label: string
 }
 
 export const navSections: NavSection[] = [
-  { id: 'home',      navLabel: 'Home',      chapterLabel: 'Prologue'      },
-  { id: 'about',     navLabel: 'About',     chapterLabel: 'The Operator'  },
-  { id: 'chronicle', navLabel: 'Chronicle', chapterLabel: 'The Chronicle' },
-  { id: 'skills',    navLabel: 'Skills',    chapterLabel: 'Arsenal'       },
-]
-
-export interface ChronicleAct {
-  label: string
-  period: string
-  narrative: string
-  tools: string[]
-  quote: string
-}
-
-export const chronicleData: ChronicleAct[] = [
-  {
-    label: 'The Foundation',
-    period: '2014 – 2018',
-    narrative:
-      'Military intelligence forged the fundamentals — secure networks, disciplined process, and the craft of operating under pressure. Every system hardened, every access controlled, every threat mapped.',
-    tools: ['Active Directory', 'Cisco Networking', 'VMware', 'SIEM', 'NIST / RMF'],
-    quote: 'Zero Trust before it had a name.',
-  },
-  {
-    label: 'The Expansion',
-    period: '2018 – 2022',
-    narrative:
-      'Enterprise domains demanded scale. Cloud platforms became the new battlefield. Automation replaced repetition with precision — transforming manual operations into repeatable, resilient pipelines.',
-    tools: ['Microsoft Azure', 'AWS', 'PowerShell', 'Ansible', 'ServiceNow'],
-    quote: '100+ systems architected and defended.',
-  },
-  {
-    label: 'The Augmentation',
-    period: '2022 – Present',
-    narrative:
-      'AI changed the equation. The mission shifted from managing systems to multiplying human capability — deploying intelligence at scale, accelerating teams, and rewriting what one operator can accomplish.',
-    tools: ['Claude AI', 'ChatGPT', 'Ollama', 'Azure OpenAI', 'Python'],
-    quote: '8× productivity gains through AI adoption.',
-  },
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'Signal' },
+  { id: 'work', label: 'Selected work' },
+  { id: 'capabilities', label: 'Capabilities' },
+  { id: 'contact', label: 'Contact' },
 ]

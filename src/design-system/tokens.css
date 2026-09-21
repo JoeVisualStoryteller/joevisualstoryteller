@@ -1,0 +1,72 @@
+:root {
+  /* Quiet Signal: a dark, calm instrument for complex systems. */
+  --ds-color-void: #07090d;
+  --ds-color-ink: #0d1118;
+  --ds-color-surface: #121821;
+  --ds-color-surface-raised: #18212d;
+  --ds-color-surface-glass: rgba(21, 30, 42, 0.76);
+  --ds-color-nav-glass: rgba(31, 39, 51, 0.22);
+  --ds-color-nav-glass-scrolled: rgba(25, 32, 43, 0.3);
+  --ds-color-nav-line: rgba(220, 230, 246, 0.22);
+  --ds-color-nav-highlight: rgba(255, 255, 255, 0.12);
+  --ds-color-white: #f4f7fb;
+  --ds-color-muted: #a8b3c2;
+  --ds-color-faint: #778496;
+  --ds-color-blue: #91adff;
+  --ds-color-blue-strong: #5277f7;
+  --ds-color-blue-soft: rgba(145, 173, 255, 0.12);
+  --ds-color-green: #7bd3a8;
+  --ds-color-line: rgba(194, 210, 236, 0.14);
+  --ds-color-line-strong: rgba(145, 173, 255, 0.38);
+
+  --ds-font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --ds-font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --ds-font-data: "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
+
+  --ds-text-meta: 0.72rem;
+  --ds-text-small: 0.88rem;
+  --ds-text-body: 1rem;
+  --ds-text-lead: 1.22rem;
+
+  --ds-space-1: 0.25rem;
+  --ds-space-2: 0.5rem;
+  --ds-space-3: 0.75rem;
+  --ds-space-4: 1rem;
+  --ds-space-5: 1.5rem;
+  --ds-space-6: 2rem;
+  --ds-space-7: 3rem;
+  --ds-space-8: 4rem;
+  --ds-space-9: 6rem;
+  --ds-space-10: 9rem;
+
+  --ds-radius-sm: 10px;
+  --ds-radius-md: 16px;
+  --ds-radius-lg: 24px;
+  --ds-radius-window: 28px;
+  --ds-radius-pill: 999px;
+
+  --ds-shadow-panel: 0 18px 48px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --ds-shadow-window: 0 30px 90px rgba(0, 0, 0, 0.34), 0 0 72px rgba(82, 119, 247, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.09);
+  --ds-shadow-focus: 0 0 0 4px rgba(145, 173, 255, 0.16);
+  --ds-transition: 180ms ease;
+
+  /* Compatibility aliases used by the component stylesheet. */
+  --black: var(--ds-color-void);
+  --night: var(--ds-color-ink);
+  --ink: var(--ds-color-ink);
+  --panel: var(--ds-color-surface);
+  --panel-bright: var(--ds-color-surface-raised);
+  --blue: var(--ds-color-blue-strong);
+  --blue-bright: var(--ds-color-blue);
+  --blue-dim: #314d9e;
+  --white: var(--ds-color-white);
+  --muted: var(--ds-color-muted);
+  --faint: var(--ds-color-faint);
+  --line: var(--ds-color-line);
+  --blue-line: var(--ds-color-line-strong);
+  --shell-width: 1240px;
+  --glass-fill: var(--ds-color-surface-glass);
+  --glass-fill-strong: rgba(24, 33, 45, 0.9);
+  --glass-line: var(--ds-color-line);
+  --glass-highlight: rgba(255, 255, 255, 0.08);
+}

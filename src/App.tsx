@@ -1,21 +1,21 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import About from './components/About'
-import Chronicle from './components/Chronicle'
+import Experience from './components/Experience'
 import Skills from './components/Skills'
-import ChapterProgress from './components/ChapterProgress'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 export default function App() {
   return (
     <>
-      <ChapterProgress />
       <Nav />
       <main>
         <Hero />
         <About />
-        <Chronicle />
+        <Experience />
         <Skills />
+        <Contact />
       </main>
       <Footer />
     </>

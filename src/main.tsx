@@ -1,7 +1,6 @@
-// @ds-bundle-skip — Vite app entry; not a design system component.
-// react-dom/client loaded dynamically so the DS in-browser bundler doesn't
-// try to resolve it as a static dependency.
+// Vite app entry.
 import { StrictMode } from 'react'
+import './design-system/tokens.css'
 import './index.css'
 import App from './App.tsx'
 

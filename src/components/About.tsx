@@ -1,42 +1,36 @@
-import { aboutContent } from '../data/content'
-import SectionHeader from './SectionHeader'
-import Reveal from './Reveal'
-import StatCard from './StatCard'
+import { aboutContent, impactMetrics } from '../data/content'
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 px-8 bg-void">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-      <div className="max-w-5xl mx-auto">
-        <Reveal>
-          <SectionHeader label={aboutContent.sectionLabel} title={aboutContent.sectionTitle} />
-        </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          {/* Bio */}
-          <Reveal delay={80} direction="left">
-            <div>
-              <p className="font-mono text-xs tracking-[0.2em] text-crimson uppercase mb-4">
-                {aboutContent.fileLabel}
-              </p>
-              {aboutContent.bio.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="font-sans text-base text-parchment/70 leading-relaxed mb-5 last:mb-0"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </Reveal>
+    <section id="about" className="section section--black">
+      <div className="shell">
+        <div className="section-heading section-heading--split">
+          <p className="eyebrow">{aboutContent.eyebrow}</p>
+          <h2>{aboutContent.title}</h2>
+        </div>
 
-          {/* Stats */}
-          <Reveal delay={160} direction="right">
-            <div className="grid grid-cols-2 auto-rows-fr gap-4">
-              {aboutContent.stats.map((stat, i) => (
-                <StatCard key={stat.label} column={i % 2 === 0 ? 'left' : 'right'} {...stat} />
+        <div className="signal-layout">
+          <div className="signal-copy">
+            {aboutContent.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+          <div className="scope-panel">
+            <p className="scope-panel__label">{aboutContent.scopeLabel}</p>
+            <ul>
+              {aboutContent.scope.map((item) => (
+                <li key={item}><span aria-hidden="true">+</span>{item}</li>
               ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="impact-grid">
+          {impactMetrics.slice(4).map((metric) => (
+            <div className="impact-card" key={metric.label}>
+              <strong>{metric.value}</strong>
+              <span>{metric.label}</span>
+              <p>{metric.detail}</p>
             </div>
-          </Reveal>
+          ))}
         </div>
       </div>
     </section>

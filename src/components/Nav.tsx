@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { navSections } from '../data/content'
 
 export default function Nav() {
+  const toggleRef = useRef<HTMLButtonElement>(null)
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -11,6 +12,24 @@ export default function Nav() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        toggleRef.current?.focus()
+      }
+    }
+    const desktop = window.matchMedia('(min-width: 701px)')
+    const closeOnDesktop = () => { if (desktop.matches) setMenuOpen(false) }
+    document.addEventListener('keydown', onKeyDown)
+    desktop.addEventListener('change', closeOnDesktop)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      desktop.removeEventListener('change', closeOnDesktop)
+    }
+  }, [menuOpen])
 
   const links = navSections.slice(1)
 
@@ -31,6 +50,9 @@ export default function Nav() {
         <a className="site-nav__cta" href="mailto:jdunn0423@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
 
         <button
+          ref={toggleRef}
+          type="button"
+          aria-controls="mobile-navigation"
           className="menu-toggle"
           onClick={() => setMenuOpen((open) => !open)}
           aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
@@ -41,8 +63,7 @@ export default function Nav() {
         </button>
       </div>
 
-      {menuOpen && (
-        <nav className="mobile-menu" aria-label="Mobile navigation">
+        <nav id="mobile-navigation" hidden={!menuOpen} className="mobile-menu" aria-label="Mobile navigation">
           {links.map(({ id, label }) => (
             <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>
               <span>{label}</span>
@@ -54,7 +75,6 @@ export default function Nav() {
             <span aria-hidden="true">↗</span>
           </a>
         </nav>
-      )}
     </header>
   )
 }

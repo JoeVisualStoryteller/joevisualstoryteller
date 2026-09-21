@@ -69,15 +69,24 @@ function SystemMap() {
     const nodes = nodeRefs.current
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-    if (!map || reduceMotion.matches) return
+    if (!map) return
 
     let physicsNodes: PhysicsNode[] = []
     let animationFrame = 0
+    let visible = false
+    let bounds = { width: 0, height: 0 }
+    const coreElement = map.querySelector<HTMLElement>('.map-core')
+    let core: PhysicsNode = { x: 0, y: 0, width: 132, height: 132, vx: 0, vy: 0 }
     let lastTime = performance.now()
 
     const layout = () => {
       const width = map.clientWidth
       const height = map.clientHeight
+      bounds = { width, height }
+      const coreWidth = coreElement?.offsetWidth ?? 132
+      const coreHeight = coreElement?.offsetHeight ?? 132
+      core = { x: width / 2 - coreWidth / 2, y: height / 2 - coreHeight / 2, width: coreWidth, height: coreHeight, vx: 0, vy: 0 }
+      if (reduceMotion.matches) return
       const elements = nodes.filter((node): node is HTMLDivElement => node !== null)
 
       if (!width || !height || elements.length !== 4) return
@@ -113,24 +122,12 @@ function SystemMap() {
     const animate = (time: number) => {
       const delta = Math.min((time - lastTime) / 1000, 0.032)
       lastTime = time
-      layout()
-
       if (physicsNodes.length === 4) {
-        const width = map.clientWidth
-        const height = map.clientHeight
+        const { width, height } = bounds
         const left = 22
         const top = 76
         const right = width - 22
         const bottom = height - 58
-        const coreElement = map.querySelector('.map-core')
-        const core: PhysicsNode = {
-          x: width / 2 - (coreElement?.clientWidth ?? 132) / 2,
-          y: height / 2 - (coreElement?.clientHeight ?? 132) / 2,
-          width: coreElement?.clientWidth ?? 132,
-          height: coreElement?.clientHeight ?? 132,
-          vx: 0,
-          vy: 0,
-        }
 
         physicsNodes.forEach((node) => {
           node.x += node.vx * delta
@@ -164,14 +161,50 @@ function SystemMap() {
       animationFrame = requestAnimationFrame(animate)
     }
 
+    const syncAnimation = () => {
+      cancelAnimationFrame(animationFrame)
+      const running = visible && !document.hidden && !reduceMotion.matches
+      map.dataset.paused = String(!running)
+      if (reduceMotion.matches) {
+        physicsNodes = []
+        nodes.forEach((node) => {
+          node?.style.removeProperty('left')
+          node?.style.removeProperty('top')
+          node?.style.removeProperty('transform')
+        })
+      } else {
+        layout()
+      }
+      if (running) {
+        lastTime = performance.now()
+        animationFrame = requestAnimationFrame(animate)
+      }
+    }
+
     const resizeObserver = new ResizeObserver(layout)
     resizeObserver.observe(map)
-    layout()
-    animationFrame = requestAnimationFrame(animate)
+    nodes.forEach((node) => { if (node) resizeObserver.observe(node) })
+    if (coreElement) resizeObserver.observe(coreElement)
+    const intersectionObserver = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting
+      syncAnimation()
+    })
+    intersectionObserver.observe(map)
+    reduceMotion.addEventListener('change', syncAnimation)
+    document.addEventListener('visibilitychange', syncAnimation)
+    syncAnimation()
 
     return () => {
       cancelAnimationFrame(animationFrame)
       resizeObserver.disconnect()
+      intersectionObserver.disconnect()
+      reduceMotion.removeEventListener('change', syncAnimation)
+      document.removeEventListener('visibilitychange', syncAnimation)
+      nodes.forEach((node) => {
+        node?.style.removeProperty('left')
+        node?.style.removeProperty('top')
+        node?.style.removeProperty('transform')
+      })
     }
   }, [])
 

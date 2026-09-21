@@ -1447,3 +1447,32 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Keep keyboard navigation available without changing the default layout. */
+.skip-link {
+  position: fixed;
+  z-index: 30;
+  top: 16px;
+  left: 16px;
+  padding: 12px 20px;
+  border-radius: var(--ds-radius-sm);
+  background: var(--ds-color-white);
+  color: var(--ds-color-void);
+  transform: translateY(calc(-100% - 24px));
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.mobile-menu[hidden] {
+  display: none;
+}
+
+.system-map[data-paused="true"] .map-core__pulse {
+  animation-play-state: paused;
+}
+
+.system-map[data-paused="true"] .map-node--floating {
+  will-change: auto;
+}

@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
 <title id="title">The IT Engineer — Joseph H. Dunn II</title><desc id="desc">An editorial cover: systems, operations, applied AI. Simplifying complex systems. Staff Engineer, Operations. Southern California.</desc>
-<rect width="1200" height="490" fill="#f5f1e8"/>
-<rect x="28" y="28" width="1144" height="64" fill="#122039"/>
-<g fill="#f5f1e8" font-family="Georgia, serif"><text x="54" y="69" font-size="30" font-style="italic">THE IT ENGINEER</text><text x="1144" y="66" text-anchor="end" font-size="17">VOL. 01 / 2026</text></g>
-<g fill="#122039"><text x="54" y="137" font-family="Arial, sans-serif" font-size="15" letter-spacing="3">SYSTEMS / OPERATIONS / APPLIED AI</text>
-<text x="49" y="228" font-family="Georgia, serif" font-size="81">Simplifying</text><text x="49" y="316" font-family="Georgia, serif" font-style="italic" font-size="81">complex systems.</text>
-<path d="M54 354H1146" stroke="#122039" stroke-width="1"/>
+<rect width="1200" height="490" fill="#f3f0e8"/>
+<rect x="28" y="28" width="1144" height="64" fill="#151b2d"/>
+<g fill="#f3f0e8" font-family="Georgia, serif"><text x="54" y="69" font-size="30" font-style="italic">THE IT ENGINEER</text><text x="1144" y="66" text-anchor="end" font-size="17">VOL. 01 / 2026</text></g>
+<g fill="#151b2d"><text fill="#35466b" x="54" y="137" font-family="Arial, sans-serif" font-size="15" letter-spacing="3">SYSTEMS / OPERATIONS / APPLIED AI</text>
+<text x="49" y="228" font-family="Georgia, serif" font-size="81">Simplifying</text><text x="49" y="316" font-family="Georgia, serif" fill="#777fb5" font-style="italic" font-size="81">complex systems.</text>
+<path d="M54 354H1146" stroke="#88654e" stroke-width="1"/>
 <text x="54" y="397" font-family="Georgia, serif" font-size="28">Joseph H. Dunn II</text>
 <text x="54" y="435" font-family="Arial, sans-serif" font-size="17">Staff Engineer, Operations</text>
 <text x="1146" y="398" text-anchor="end" font-family="Arial, sans-serif" font-size="15">SOUTHERN CALIFORNIA / REMOTE</text>

@@ -8,6 +8,13 @@ updates:
       time: "09:00"
       timezone: America/Los_Angeles
     open-pull-requests-limit: 5
+    ignore:
+      # typescript-eslint currently requires TypeScript <6.1.0.
+      - dependency-name: typescript
+        update-types: [version-update:semver-major]
+      # 6.2+ pulls in braces with GHSA-vfj7-8cjw-p6xm; revisit when fixed.
+      - dependency-name: gh-pages
+        versions: [">=6.2.0"]
     groups:
       npm-production:
         dependency-type: production

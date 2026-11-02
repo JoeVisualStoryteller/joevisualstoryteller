@@ -7,7 +7,7 @@ export default function Experience() {
         <div className="section-heading section-heading--work">
           <p className="eyebrow">02 / Staff engineering in practice</p>
           <h2>Direction, leverage, outcomes.</h2>
-          <p className="section-heading__intro">Staff engineering is the work between architecture, execution, and people: set the direction, create the operating model, and make other engineers more effective. These are the systems and teams Joseph moved forward.</p>
+          <p className="section-heading__intro">Setting technical direction, building operating models, and helping teams deliver lasting results.</p>
         </div>
 
         <div className="case-grid">
@@ -36,7 +36,7 @@ export default function Experience() {
         <div className="career-block">
           <div className="career-block__heading">
             <p className="eyebrow">Career path</p>
-            <p>Scope expanded from mission-critical systems to company-wide operations, applied AI, and organizational leverage.</p>
+            <p>From mission-critical systems to company-wide operations and applied AI.</p>
           </div>
           <div className="career-list">
             {careerData.map((entry) => (

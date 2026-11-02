@@ -1,9 +1,9 @@
 export const heroContent = {
   eyebrow: 'Systems / Operations / Applied AI',
   name: 'Joseph Henry Dunn II',
-  title: 'Staff Engineer, Operations.',
+  title: 'Staff Engineer',
   principle: 'Force enabler for engineering teams.',
-  philosophy: 'Simplifying complex systems. Slow is smooth. Smooth is fast. Master the basics.',
+  philosophy: 'Slow is smooth. Smooth is fast.',
   summary:
     'Amplify success through cross-team collaboration and high-agency ICs who can carry hard problems end to end. Systems engineering, infrastructure architecture, security, automation, and applied AI for environments where reliability is part of the product.',
   location: 'Southern California · Remote',
@@ -51,38 +51,38 @@ export const caseStudies: CaseStudy[] = [
     number: '01',
     title: 'Set the platform direction.',
     summary:
-      'A governed delivery platform for a large-scale production hosting fleet, built to make provisioning repeatable and production changes verifiable.',
+      'A governed platform for repeatable provisioning and verifiable production changes.',
     metric: '700+ / 1,000+',
     metricLabel: 'physical hosts / virtual machines',
     tags: ['Fleet automation', 'Virtualization', 'CI/CD', 'Image pipelines'],
     points: [
-      'Architected approval-gated provisioning, inventory, placement, and standardized configuration controls.',
-      'Established capacity-aware placement, backup and retention rules, ownership standards, and CI/CD modernization.',
+      'Architected approval-gated provisioning, inventory, placement, and configuration.',
+      'Established capacity, backup, retention, and ownership standards; modernized CI/CD.',
     ],
   },
   {
     number: '02',
     title: 'See the threat. Neutralize it fast.',
     summary:
-      'Recognizing a developing cyber threat, containing it quickly, and coordinating the response before it became a larger operational event.',
+      'Detected and contained a developing cyber threat before it expanded.',
     metric: '0',
     metricLabel: 'data loss during recovery',
     tags: ['Incident response', 'NIST 800-53', 'Evidence handling', 'Recovery'],
     points: [
-      'Detected the threat, removed persistence, reduced exposure, and coordinated containment across technical and executive teams before the incident could expand.',
-      'Preserved data through recovery, delivered evidence, and strengthened controls against recurrence using NIST SP 800-53 Rev. 5.',
+      'Removed persistence, reduced exposure, and coordinated technical and executive response.',
+      'Preserved data, delivered evidence, and strengthened controls using NIST SP 800-53 Rev. 5.',
     ],
   },
   {
     number: '03',
     title: 'Make applied AI an operating capability.',
     summary:
-      'Production AI systems that connect language models to operational workflows and internal knowledge—with human-in-the-loop controls where they matter.',
+      'Connected language models to workflows and internal knowledge with human oversight.',
     metric: '10,000+',
     metricLabel: 'documents in governed RAG platform',
     tags: ['FastAPI', 'TypeScript', 'MCP', 'RAG', 'Human-in-the-loop'],
     points: [
-      'Established reusable patterns for tool calling, provider fallbacks, audit trails, local-first execution, and cost controls.',
+      'Established patterns for tool calling, fallbacks, audit trails, local execution, and cost control.',
       'Improved answer accuracy by more than 40%, reduced manual work by 60%, and contributed to an 8× productivity gain.',
     ],
   },
@@ -90,13 +90,13 @@ export const caseStudies: CaseStudy[] = [
     number: '04',
     title: 'Build the operating model around the work.',
     summary:
-      'Creating the conditions around the technology: clear ownership, useful standards, and enough context for individual contributors to make good decisions without waiting for permission.',
+      'Built clear ownership and standards so engineers could make decisions independently.',
     metric: '4',
     metricLabel: 'operational domains established',
     tags: ['Org design', 'Hiring', 'Mentoring', '$1M+ budget', '24/7 support'],
     points: [
-      'Defined and filled four positions, established ownership across four operational domains, and mentored engineers across systems, software, web, and database disciplines.',
-      'Previously built and developed an IT organization of 70+ personnel and led a $1M IT portfolio with 95%+ SLA compliance.',
+      'Filled four positions, established ownership across four domains, and mentored engineers across disciplines.',
+      'Built a 70+ person IT organization and led a $1M portfolio with 95%+ SLA compliance.',
     ],
   },
 ]
@@ -152,23 +152,23 @@ export const careerData: CareerEntry[] = [
     role: 'Staff Engineer, Operations',
     company: 'Private infrastructure company',
     period: 'Jan 2026 — Present',
-    detail: 'Promoted from Senior Systems Engineer; company-wide operations and production infrastructure scope.',
+    detail: 'Promoted from Senior Systems Engineer; company-wide operations and infrastructure.',
   },
   {
-    role: 'Systems Engineer, AI & Business Applications',
-    company: 'Tactis LLC',
+    role: 'Systems Engineer, AI & Business Applications & Infrastructure',
+    company: 'Private federal contracting company',
     period: 'Jan 2024 — Oct 2025',
     detail: 'Directed a CTO-backed AI and business-applications transformation across five departments.',
   },
   {
     role: 'Systems Administrator, Business Applications & Infrastructure',
-    company: 'Tactis LLC',
+    company: 'Private federal contracting company',
     period: 'Aug 2022 — Jan 2024',
-    detail: 'Led cloud, identity, fleet management, ServiceNow, SIEM, and automation across the operating environment.',
+    detail: 'Led cloud, identity, fleet management, ServiceNow, SIEM, and automation.',
   },
   {
     role: 'Information Technology Manager',
-    company: 'Tlingit Haida Tribal Business Corporation',
+    company: 'Private federal contracting company',
     period: 'Apr 2021 — Apr 2022',
     detail: 'Directed a $1M IT portfolio, service desk, network, systems operations, and CMMC Level 2 readiness.',
   },
@@ -176,7 +176,7 @@ export const careerData: CareerEntry[] = [
     role: 'Information Management Director / Senior Systems Administrator',
     company: 'United States Army',
     period: 'Apr 2008 — Apr 2021',
-    detail: 'Set mission-critical infrastructure strategy across 500+ classified and unclassified systems and developed a 70+ person IT organization.',
+    detail: 'Set infrastructure strategy for 500+ classified and unclassified systems and developed a 70+ person IT organization.',
   },
 ]
 

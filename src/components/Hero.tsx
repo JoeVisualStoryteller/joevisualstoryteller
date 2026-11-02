@@ -68,6 +68,7 @@ function SystemMap() {
     const map = mapRef.current
     const nodes = nodeRefs.current
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const compactLayout = window.matchMedia('(max-width: 1080px)')
 
     if (!map) return
 
@@ -86,7 +87,7 @@ function SystemMap() {
       const coreWidth = coreElement?.offsetWidth ?? 132
       const coreHeight = coreElement?.offsetHeight ?? 132
       core = { x: width / 2 - coreWidth / 2, y: height / 2 - coreHeight / 2, width: coreWidth, height: coreHeight, vx: 0, vy: 0 }
-      if (reduceMotion.matches) return
+      if (reduceMotion.matches || compactLayout.matches) return
       const elements = nodes.filter((node): node is HTMLDivElement => node !== null)
 
       if (!width || !height || elements.length !== 4) return
@@ -163,9 +164,9 @@ function SystemMap() {
 
     const syncAnimation = () => {
       cancelAnimationFrame(animationFrame)
-      const running = visible && !document.hidden && !reduceMotion.matches
+      const running = visible && !document.hidden && !reduceMotion.matches && !compactLayout.matches
       map.dataset.paused = String(!running)
-      if (reduceMotion.matches) {
+      if (reduceMotion.matches || compactLayout.matches) {
         physicsNodes = []
         nodes.forEach((node) => {
           node?.style.removeProperty('left')
@@ -191,6 +192,7 @@ function SystemMap() {
     })
     intersectionObserver.observe(map)
     reduceMotion.addEventListener('change', syncAnimation)
+    compactLayout.addEventListener('change', syncAnimation)
     document.addEventListener('visibilitychange', syncAnimation)
     syncAnimation()
 
@@ -199,6 +201,7 @@ function SystemMap() {
       resizeObserver.disconnect()
       intersectionObserver.disconnect()
       reduceMotion.removeEventListener('change', syncAnimation)
+      compactLayout.removeEventListener('change', syncAnimation)
       document.removeEventListener('visibilitychange', syncAnimation)
       nodes.forEach((node) => {
         node?.style.removeProperty('left')
@@ -273,8 +276,6 @@ export default function Hero() {
           <div className="hero__meta">
             <span className="status-dot" aria-hidden="true" />
             <span>{heroContent.currentRole}</span>
-            <span className="hero__meta-divider" aria-hidden="true">/</span>
-            <span>{heroContent.location}</span>
           </div>
         </div>
 

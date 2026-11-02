@@ -21,7 +21,7 @@ export default function Nav() {
         toggleRef.current?.focus()
       }
     }
-    const desktop = window.matchMedia('(min-width: 701px)')
+    const desktop = window.matchMedia('(min-width: 1001px)')
     const closeOnDesktop = () => { if (desktop.matches) setMenuOpen(false) }
     document.addEventListener('keydown', onKeyDown)
     desktop.addEventListener('change', closeOnDesktop)

@@ -216,7 +216,6 @@ function SystemMap() {
       <div className="system-map__chrome" aria-hidden="true">
         <div className="window-dots"><i /><i /><i /></div>
         <span>ops / production footprint</span>
-        <span>⌁</span>
       </div>
       <div className="system-map__orb system-map__orb--outer" aria-hidden="true" />
       <div className="system-map__orb system-map__orb--inner" aria-hidden="true" />
@@ -264,18 +263,17 @@ export default function Hero() {
       <div className="shell hero__inner">
         <div className="hero__copy">
           <p className="eyebrow">{heroContent.eyebrow}</p>
-          <p className="hero__name">{heroContent.name}</p>
-          <h1>{heroContent.title}</h1>
+          <h1>{heroContent.name}</h1>
+          <p className="hero__title">{heroContent.title}</p>
           <p className="hero__principle">{heroContent.principle}</p>
-          <p className="hero__philosophy">{heroContent.philosophy}</p>
           <p className="hero__summary">{heroContent.summary}</p>
           <div className="hero__actions">
             <a className="button button--primary" href="#work">See selected work <span aria-hidden="true">↘</span></a>
             <a className="text-link" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
           </div>
           <div className="hero__meta">
-            <span className="status-dot" aria-hidden="true" />
-            <span>{heroContent.currentRole}</span>
+            <span className="hero__role"><span className="status-dot" aria-hidden="true" />{heroContent.currentRole}</span>
+            <span>{heroContent.location}</span>
           </div>
         </div>
 
@@ -283,7 +281,6 @@ export default function Hero() {
           <SystemMap />
           <div className="hero__visual-caption">
             <span>Operational footprint</span>
-            <span>Current signal / 01</span>
           </div>
         </div>
       </div>

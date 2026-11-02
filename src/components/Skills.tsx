@@ -15,7 +15,6 @@ export default function Skills() {
             <article className="capability-card" key={group.category}>
               <div className="capability-card__top">
                 <span>0{index + 1}</span>
-                <span className="capability-card__mark" aria-hidden="true">↗</span>
               </div>
               <h3>{group.category}</h3>
               <p>{group.description}</p>

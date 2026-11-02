@@ -13,7 +13,6 @@ export default function Contact() {
           <div className="contact__links">
             <a href="https://www.linkedin.com/in/josephdunn0423/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
             <a href="https://github.com/JoeVisualStoryteller" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <a href="https://joevisualstoryteller.github.io/joevisualstoryteller" target="_blank" rel="noreferrer">Portfolio <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </div>

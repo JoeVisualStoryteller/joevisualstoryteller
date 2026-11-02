@@ -3,7 +3,6 @@ export const heroContent = {
   name: 'Joseph Henry Dunn II',
   title: 'Staff Engineer',
   principle: 'Force enabler for engineering teams.',
-  philosophy: 'Slow is smooth. Smooth is fast.',
   summary:
     'Amplify success through cross-team collaboration and high-agency ICs who can carry hard problems end to end. Systems engineering, infrastructure architecture, security, automation, and applied AI for environments where reliability is part of the product.',
   location: 'Southern California · Remote',
@@ -17,19 +16,19 @@ export interface ImpactMetric {
 }
 
 export const impactMetrics: ImpactMetric[] = [
+  { value: '100K+', label: 'Lifetime customers', detail: 'Platforms supporting real customer operations' },
+  { value: '18+', label: 'Years engineering', detail: 'Commercial and Department of Defense environments' },
+  { value: '8×', label: 'Productivity gain', detail: 'Reported result from applied AI adoption' },
+  { value: '0', label: 'Data loss', detail: 'Cyberattack containment and recovery outcome' },
   { value: '700+', label: 'Physical hosts', detail: 'Large-scale production fleet experience' },
   { value: '1,000+', label: 'Virtual machines', detail: 'Multi-tenant infrastructure at scale' },
-  { value: '100K+', label: 'Lifetime customers', detail: 'Platforms supporting real customer operations' },
-  { value: '0', label: 'Data loss', detail: 'Cyberattack containment and recovery outcome' },
-  { value: '8×', label: 'Productivity gain', detail: 'Reported result from applied AI adoption' },
-  { value: '18+', label: 'Years engineering', detail: 'Commercial and Department of Defense environments' },
 ]
 
 export const aboutContent = {
   eyebrow: '01 / Operating signal',
   title: 'Amplify team and department success.',
   body: [
-    'Joseph is a Staff Engineer, Operations and systems engineer by trade. He sets architecture, security, reliability, automation, and production-change standards across company-wide infrastructure.',
+    'Joseph is a Staff Engineer in Operations and a systems engineer by trade. He sets architecture, security, reliability, automation, and production-change standards across company-wide infrastructure.',
     'His work moves between the physical fleet, virtual platforms, cloud services, security controls, delivery pipelines, and the teams responsible for keeping the system useful. The goal is not dependence on one expert; it is a clear operating model and individual contributors who can own hard problems end to end.',
   ],
   scopeLabel: 'Current scope',
@@ -93,10 +92,10 @@ export const caseStudies: CaseStudy[] = [
       'Built clear ownership and standards so engineers could make decisions independently.',
     metric: '4',
     metricLabel: 'operational domains established',
-    tags: ['Org design', 'Hiring', 'Mentoring', '$1M+ budget', '24/7 support'],
+    tags: ['Org design', 'Hiring', 'Mentoring', '$1M budget', '24/7 support'],
     points: [
       'Filled four positions, established ownership across four domains, and mentored engineers across disciplines.',
-      'Built a 70+ person IT organization and led a $1M portfolio with 95%+ SLA compliance.',
+      'Developed a 70+ person IT organization in the U.S. Army; later led a $1M IT portfolio with 95%+ SLA compliance as a federal contractor.',
     ],
   },
 ]
@@ -187,7 +186,7 @@ export interface NavSection {
 
 export const navSections: NavSection[] = [
   { id: 'home', label: 'Home' },
-  { id: 'about', label: 'Signal' },
+  { id: 'about', label: 'About' },
   { id: 'work', label: 'Selected work' },
   { id: 'capabilities', label: 'Capabilities' },
   { id: 'contact', label: 'Contact' },

@@ -1,4 +1,4 @@
-![The IT Engineer — Joseph H. Dunn II. Simplifying complex systems.](assets/readme-cover.svg)
+![The IT Engineer, volume 01: Joseph H. Dunn II. Simplifying complex systems.](assets/readme-cover.svg)
 
 <p align="center">
   <a href="https://joevisualstoryteller.github.io/joevisualstoryteller/">Explore my portfolio</a> ·

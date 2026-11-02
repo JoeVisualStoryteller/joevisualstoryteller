@@ -1,12 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
-<title id="title">The IT Engineer — Joseph H. Dunn II</title><desc id="desc">An editorial cover: systems, operations, applied AI. Simplifying complex systems. Staff Engineer, Operations. Southern California.</desc>
-<rect width="1200" height="490" fill="#f3f0e8"/>
-<rect x="28" y="28" width="1144" height="64" fill="#151b2d"/>
-<g fill="#f3f0e8" font-family="Georgia, serif"><text x="54" y="69" font-size="30" font-style="italic">THE IT ENGINEER</text><text x="1144" y="66" text-anchor="end" font-size="17">VOL. 01 / 2026</text></g>
-<g fill="#151b2d"><text fill="#35466b" x="54" y="137" font-family="Arial, sans-serif" font-size="15" letter-spacing="3">SYSTEMS / OPERATIONS / APPLIED AI</text>
-<text x="49" y="228" font-family="Georgia, serif" font-size="81">Simplifying</text><text x="49" y="316" font-family="Georgia, serif" fill="#777fb5" font-style="italic" font-size="81">complex systems.</text>
-<path d="M54 354H1146" stroke="#88654e" stroke-width="1"/>
-<text x="54" y="397" font-family="Georgia, serif" font-size="28">Joseph H. Dunn II</text>
-<text x="54" y="435" font-family="Arial, sans-serif" font-size="17">Staff Engineer, Operations</text>
-<text x="1146" y="398" text-anchor="end" font-family="Arial, sans-serif" font-size="15">SOUTHERN CALIFORNIA / REMOTE</text>
-<text x="1146" y="435" text-anchor="end" font-family="Georgia, serif" font-style="italic" font-size="20">Slow is smooth. Smooth is fast.</text></g></svg>
+  <title id="title">The IT Engineer — Joseph H. Dunn II</title>
+  <desc id="desc">A game magazine-inspired cover featuring an abstract systems diagram and a list of engineering disciplines. Staff Engineer, Operations. Southern California.</desc>
+  <rect width="1200" height="490" fill="#f3f0e8"/>
+  <rect x="8" y="8" width="1184" height="474" fill="none" stroke="#151b2d" stroke-width="4"/>
+  <rect x="16" y="16" width="1168" height="458" fill="none" stroke="#88654e" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="64" fill="#151b2d"/>
+  <g fill="#f3f0e8" font-family="Georgia, serif">
+    <text x="54" y="69" font-size="30" font-style="italic">THE IT ENGINEER</text>
+    <text x="1144" y="66" text-anchor="end" font-size="17">VOL. 01 / 2026</text>
+  </g>
+  <g fill="#151b2d">
+    <text x="54" y="130" fill="#35466b" font-family="Arial, sans-serif" font-size="14" letter-spacing="2.5">SYSTEMS / OPERATIONS / APPLIED AI</text>
+    <text x="51" y="190" font-family="Georgia, serif" font-size="58">Simplifying <tspan fill="#777fb5" font-style="italic">complex systems.</tspan></text>
+    <path d="M54 211H1146" stroke="#88654e"/>
+    <rect x="54" y="233" width="415" height="177" fill="#e5e1d9" stroke="#88654e"/>
+    <g fill="none" stroke="#35466b" stroke-width="2">
+      <path d="M127 323H209L260 275M209 323L260 369"/>
+      <circle cx="127" cy="323" r="27"/><circle cx="209" cy="323" r="10"/>
+      <rect x="260" y="258" width="125" height="34" rx="2"/><rect x="260" y="352" width="125" height="34" rx="2"/>
+    </g>
+    <circle cx="127" cy="323" r="8" fill="#777fb5"/>
+    <g font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="#35466b">
+      <text x="67" y="253">SYSTEMS MAP / 01</text><text x="322" y="280" text-anchor="middle">PLATFORM</text><text x="322" y="374" text-anchor="middle">PEOPLE</text>
+    </g>
+    <text x="506" y="258" font-family="Georgia, serif" font-size="25">Inside this edition</text>
+    <g font-family="Arial, sans-serif" font-size="17">
+      <g fill="#777fb5"><rect x="507" y="278" width="12" height="12"/><rect x="507" y="316" width="12" height="12"/><rect x="507" y="354" width="12" height="12"/></g>
+      <text x="532" y="290">Infrastructure</text><text x="532" y="328">Operations &amp; security</text><text x="532" y="366">Automation &amp; applied AI</text>
+      <g fill="#35466b" font-size="14"><text x="1138" y="290" text-anchor="end">01</text><text x="1138" y="328" text-anchor="end">02</text><text x="1138" y="366" text-anchor="end">03</text></g>
+      <path d="M532 300H1140M532 338H1140M532 376H1140" stroke="#c9c2b8"/>
+    </g>
+    <text x="54" y="445" font-family="Georgia, serif" font-size="21">Joseph H. Dunn II</text>
+    <text x="294" y="445" font-family="Arial, sans-serif" font-size="14">STAFF ENGINEER, OPERATIONS</text>
+    <text x="1144" y="445" text-anchor="end" font-family="Georgia, serif" font-style="italic" font-size="17">Slow is smooth. Smooth is fast.</text>
+  </g>
+</svg>

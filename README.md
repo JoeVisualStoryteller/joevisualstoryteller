@@ -1,4 +1,4 @@
-![The IT Engineer, volume 01: Joseph H. Dunn II. Simplifying complex systems.](assets/readme-cover-issue-01.svg)
+![The IT Engineer, volume 01: Joseph H. Dunn II. Simplifying complex systems.](assets/readme-cover-issue-01a.svg)
 
 <p align="center">
   <a href="https://joevisualstoryteller.github.io/joevisualstoryteller/">Explore my portfolio</a> ·
@@ -10,7 +10,7 @@
 
 ### A systems engineer by trade. A force enabler for teams.
 
-I'm Joseph, a **Staff Engineer, Operations**. My work connects infrastructure, security, automation, and applied AI with the people who keep production running.
+I'm Joseph, a **Staff Engineer**. My work connects infrastructure, security, automation, and applied AI with the people who keep production running.
 
 I focus on simplifying complex systems, setting clear standards, and helping engineers own hard problems from start to finish.
 

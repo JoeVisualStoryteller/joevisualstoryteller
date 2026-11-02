@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
   <title id="title">The IT Engineer — Joseph H. Dunn II</title>
-  <desc id="desc">A game magazine-inspired cover featuring an abstract systems diagram and a list of engineering disciplines. Staff Engineer, Operations. Southern California.</desc>
+  <desc id="desc">A game magazine-inspired cover featuring an abstract systems diagram and a list of engineering disciplines. Staff Engineer. Southern California.</desc>
   <rect width="1200" height="490" fill="#f3f0e8"/>
   <rect x="8" y="8" width="1184" height="474" fill="none" stroke="#151b2d" stroke-width="4"/>
   <rect x="16" y="16" width="1168" height="458" fill="none" stroke="#88654e" stroke-width="2"/>
@@ -31,7 +31,7 @@
       <path d="M532 300H1140M532 338H1140M532 376H1140" stroke="#c9c2b8"/>
     </g>
     <text x="54" y="445" font-family="Georgia, serif" font-size="21">Joseph H. Dunn II</text>
-    <text x="294" y="445" font-family="Arial, sans-serif" font-size="14">STAFF ENGINEER, OPERATIONS</text>
+    <text x="294" y="445" font-family="Arial, sans-serif" font-size="14">STAFF ENGINEER</text>
     <text x="1144" y="445" text-anchor="end" font-family="Georgia, serif" font-style="italic" font-size="17">Slow is smooth. Smooth is fast.</text>
   </g>
 </svg>

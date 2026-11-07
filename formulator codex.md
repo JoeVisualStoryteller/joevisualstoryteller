@@ -14,7 +14,7 @@ This repository contains Joseph Henry Dunn II’s single-page portfolio, focused
 | `src/design-system/tokens.css` | Runtime color, typography, spacing, radius, shadow, and transition tokens. |
 | `src/index.css` | Global styles, component styles, responsive rules, and motion preferences. |
 | `src/main.tsx` | App entry; imports tokens and styles, then mounts React. |
-| `DESIGN_SYSTEM.md` | Quiet Signal design principles and component guidance. Its listed colors differ from the current runtime tokens; check the CSS for actual values. |
+| `DESIGN_SYSTEM.md` | Crystal Chronicle design principles and component guidance. `src/design-system/tokens.css` remains the source of truth for runtime values. |
 | `vite.config.ts` | GitHub Pages base path: `/joevisualstoryteller/`. |
 | `assets/` | Repository assets, including the README cover. |
 
@@ -44,8 +44,8 @@ home | about | work | capabilities | contact
 
 ## Design and accessibility
 
-- Follow the Quiet Signal principles in `DESIGN_SYSTEM.md`: calm surfaces, restrained accents, useful evidence, and clear hierarchy. Use the runtime tokens in `src/design-system/tokens.css` for current values.
-- Use the existing system sans and monospace font stacks, rounded controls and panels, and the styles in `src/index.css`. Do not restore the old medieval theme or assume Tailwind is installed.
+- Follow the Crystal Chronicle principles in `DESIGN_SYSTEM.md`: framed crystal surfaces, restrained accents, useful evidence, and clear hierarchy. Use the runtime tokens in `src/design-system/tokens.css` for current values.
+- Use the existing system sans and monospace font stacks, Georgia display headings, 2px framed controls and panels, and the styles in `src/index.css`. Do not restore the old medieval theme or assume Tailwind is installed.
 - Preserve semantic landmarks, the skip link, visible keyboard focus, meaningful labels, and the mobile menu’s expanded state, Escape dismissal, and focus return.
 - The hero system map animates with browser observers and respects reduced motion, visibility, and viewport intersection. Preserve its accessible description and cleanup when changing it.
 - Verify desktop and mobile layouts, navigation anchors, keyboard behavior, and reduced-motion behavior for relevant changes.

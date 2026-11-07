@@ -1,24 +1,24 @@
 :root {
-  /* Quiet Signal: a dark, calm instrument for complex systems. */
-  --ds-color-void: #151b2d;
-  --ds-color-ink: #1c263e;
-  --ds-color-surface: #263552;
-  --ds-color-surface-raised: #35466b;
-  --ds-color-surface-glass: rgba(53, 70, 107, 0.76);
-  --ds-color-nav-glass: rgba(21, 27, 45, 0.22);
-  --ds-color-nav-glass-scrolled: rgba(21, 27, 45, 0.3);
-  --ds-color-nav-line: rgba(184, 193, 207, 0.22);
-  --ds-color-nav-highlight: rgba(255, 255, 255, 0.12);
-  --ds-color-white: #f3f0e8;
-  --ds-color-muted: #b8c1cf;
-  --ds-color-faint: #a1aec2;
-  --ds-color-blue: #a0a8d3;
-  --ds-color-blue-strong: #777fb5;
-  --ds-color-blue-soft: rgba(160, 168, 211, 0.12);
+  /* Crystal Chronicle: a fantasy-inspired, crystal-lit portfolio system. */
+  --ds-color-void: #07101f;
+  --ds-color-ink: #0b1830;
+  --ds-color-surface: #101f3a;
+  --ds-color-surface-raised: #102342;
+  --ds-color-surface-glass: rgba(19, 47, 79, 0.96);
+  --ds-color-nav-glass: rgba(5, 16, 35, 0.88);
+  --ds-color-nav-glass-scrolled: rgba(5, 16, 35, 0.96);
+  --ds-color-nav-line: rgba(177, 220, 235, 0.5);
+  --ds-color-nav-highlight: rgba(194, 229, 238, 0.12);
+  --ds-color-white: #f0f4f3;
+  --ds-color-muted: #c2d1dd;
+  --ds-color-faint: #a6bdcb;
+  --ds-color-blue: #a9e5f3;
+  --ds-color-blue-strong: #70c4de;
+  --ds-color-blue-soft: rgba(112, 196, 222, 0.13);
   --ds-color-leather: #88654e;
-  --ds-color-green: #b8c1cf;
-  --ds-color-line: rgba(184, 193, 207, 0.14);
-  --ds-color-line-strong: rgba(160, 168, 211, 0.38);
+    --ds-color-green: #a9e5f3;
+  --ds-color-line: rgba(162, 208, 226, 0.22);
+  --ds-color-line-strong: rgba(174, 226, 241, 0.48);
 
   --ds-font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   --ds-font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
@@ -40,34 +40,16 @@
   --ds-space-9: 6rem;
   --ds-space-10: 9rem;
 
-  --ds-radius-sm: 10px;
-  --ds-radius-md: 16px;
-  --ds-radius-lg: 24px;
-  --ds-radius-window: 28px;
+  --ds-radius-sm: 2px;
+  --ds-radius-md: 2px;
+  --ds-radius-lg: 2px;
+  --ds-radius-window: 2px;
   --ds-radius-pill: 999px;
 
-  --ds-shadow-panel: 0 18px 48px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  --ds-shadow-window: 0 30px 90px rgba(0, 0, 0, 0.34), 0 0 72px rgba(119, 127, 181, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.09);
-  --ds-shadow-focus: 0 0 0 4px rgba(160, 168, 211, 0.16);
+  --ds-shadow-panel: 0 18px 40px rgba(2, 8, 21, 0.33), inset 0 1px 0 rgba(169, 229, 243, 0.08);
+  --ds-shadow-window: 0 25px 80px rgba(2, 7, 19, 0.67), 0 0 60px rgba(121, 218, 250, 0.13), inset 0 1px 0 rgba(169, 229, 243, 0.09);
+  --ds-shadow-focus: 0 0 0 4px rgba(169, 229, 243, 0.2);
   --ds-transition: 180ms ease;
 
-  /* Compatibility aliases used by the component stylesheet. */
-  --black: var(--ds-color-void);
-  --night: var(--ds-color-ink);
-  --ink: var(--ds-color-ink);
-  --panel: var(--ds-color-surface);
-  --panel-bright: var(--ds-color-surface-raised);
-  --blue: var(--ds-color-blue-strong);
-  --blue-bright: var(--ds-color-blue);
-  --blue-dim: #35466b;
-  --white: var(--ds-color-white);
-  --muted: var(--ds-color-muted);
-  --faint: var(--ds-color-faint);
-  --line: var(--ds-color-line);
-  --blue-line: var(--ds-color-line-strong);
   --shell-width: 1240px;
-  --glass-fill: var(--ds-color-surface-glass);
-  --glass-fill-strong: rgba(53, 70, 107, 0.9);
-  --glass-line: var(--ds-color-line);
-  --glass-highlight: rgba(255, 255, 255, 0.08);
 }

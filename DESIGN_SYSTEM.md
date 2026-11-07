@@ -14,7 +14,7 @@ Crystal Chronicle is a fantasy-inspired, crystal-lit frame for explaining comple
 
 `src/design-system/tokens.css` is the source of truth; the values below summarize it.
 
-- **Color:** void `#07101f`, ink `#0b1830`, surface `#101f3a`, raised surface `#102342`, text `#f0f4f3`, muted `#c2d1dd`, faint `#a6bdcb`, crystal blue `#a9e5f3`, blue-strong `#70c4de`, leather `#88654e` (a warm accent that ties the site to the README cover).
+- **Color:** void `#07101f`, ink `#0b1830`, surface `#101f3a`, raised surface `#102342`, text `#f0f4f3`, muted `#c2d1dd`, faint `#a6bdcb`, crystal blue `#a9e5f3`, blue-strong `#70c4de`.
 - **Temperature:** deep navy page with cool cyan light. Hard-coded tints use the crystal blue (`169, 229, 243`) and blue-strong (`112, 196, 222`) channels.
 - **Type:** Georgia serif for display headings and metrics; native system sans for body copy; native system mono only for telemetry and technical metadata.
 - **Spacing:** 8-point rhythm from `0.25rem` through `9rem`.

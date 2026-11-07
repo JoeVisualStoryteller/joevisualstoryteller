@@ -1,34 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
   <title id="title">The IT Engineer — Joseph H. Dunn II</title>
   <desc id="desc">A game magazine-inspired cover featuring an abstract systems diagram and a list of engineering disciplines. Staff Engineer. Southern California.</desc>
-  <rect width="1200" height="490" fill="#f3f0e8"/>
-  <rect x="8" y="8" width="1184" height="474" fill="none" stroke="#151b2d" stroke-width="4"/>
-  <rect x="16" y="16" width="1168" height="458" fill="none" stroke="#88654e" stroke-width="2"/>
-  <rect x="28" y="28" width="1144" height="64" fill="#151b2d"/>
-  <g fill="#f3f0e8" font-family="Georgia, serif">
+  <rect width="1200" height="490" fill="#07101f"/>
+  <rect x="8" y="8" width="1184" height="474" fill="none" stroke="#a9e5f3" stroke-width="4"/>
+  <rect x="16" y="16" width="1168" height="458" fill="none" stroke="#70c4de" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="64" fill="#102342"/>
+  <g fill="#f0f4f3" font-family="Georgia, serif">
     <text x="54" y="69" font-size="30" font-style="italic">THE IT ENGINEER</text>
     <text x="1144" y="66" text-anchor="end" font-size="17">VOL. 01 / 2026</text>
   </g>
-  <g fill="#151b2d">
-    <text x="54" y="130" fill="#35466b" font-family="Arial, sans-serif" font-size="14" letter-spacing="2.5">SYSTEMS / OPERATIONS / APPLIED AI</text>
-    <text x="51" y="190" font-family="Georgia, serif" font-size="58">Simplifying <tspan fill="#777fb5" font-style="italic">complex systems.</tspan></text>
-    <path d="M54 211H1146" stroke="#88654e"/>
-    <rect x="54" y="233" width="415" height="177" fill="#e5e1d9" stroke="#88654e"/>
-    <g fill="none" stroke="#35466b" stroke-width="2">
+  <g fill="#f0f4f3">
+    <text x="54" y="130" fill="#c2d1dd" font-family="Arial, sans-serif" font-size="14" letter-spacing="2.5">SYSTEMS / OPERATIONS / APPLIED AI</text>
+    <text x="51" y="190" font-family="Georgia, serif" font-size="58">Simplifying <tspan fill="#a9e5f3" font-style="italic">complex systems.</tspan></text>
+    <path d="M54 211H1146" stroke="#70c4de"/>
+    <rect x="54" y="233" width="415" height="177" fill="#101f3a" stroke="#70c4de"/>
+    <g fill="none" stroke="#c2d1dd" stroke-width="2">
       <path d="M127 323H209L260 275M209 323L260 369"/>
       <circle cx="127" cy="323" r="27"/><circle cx="209" cy="323" r="10"/>
       <rect x="260" y="258" width="125" height="34" rx="2"/><rect x="260" y="352" width="125" height="34" rx="2"/>
     </g>
-    <circle cx="127" cy="323" r="8" fill="#777fb5"/>
-    <g font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="#35466b">
+    <circle cx="127" cy="323" r="8" fill="#a9e5f3"/>
+    <g font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="#c2d1dd">
       <text x="67" y="253">SYSTEMS MAP / 01</text><text x="322" y="280" text-anchor="middle">PLATFORM</text><text x="322" y="374" text-anchor="middle">PEOPLE</text>
     </g>
     <text x="506" y="258" font-family="Georgia, serif" font-size="25">Inside this edition</text>
     <g font-family="Arial, sans-serif" font-size="17">
-      <g fill="#777fb5"><rect x="507" y="278" width="12" height="12"/><rect x="507" y="316" width="12" height="12"/><rect x="507" y="354" width="12" height="12"/></g>
+      <g fill="#a9e5f3"><rect x="507" y="278" width="12" height="12"/><rect x="507" y="316" width="12" height="12"/><rect x="507" y="354" width="12" height="12"/></g>
       <text x="532" y="290">Infrastructure</text><text x="532" y="328">Operations &amp; security</text><text x="532" y="366">Automation &amp; applied AI</text>
-      <g fill="#35466b" font-size="14"><text x="1138" y="290" text-anchor="end">01</text><text x="1138" y="328" text-anchor="end">02</text><text x="1138" y="366" text-anchor="end">03</text></g>
-      <path d="M532 300H1140M532 338H1140M532 376H1140" stroke="#c9c2b8"/>
+      <g fill="#c2d1dd" font-size="14"><text x="1138" y="290" text-anchor="end">01</text><text x="1138" y="328" text-anchor="end">02</text><text x="1138" y="366" text-anchor="end">03</text></g>
+      <path d="M532 300H1140M532 338H1140M532 376H1140" stroke="#2a4a66"/>
     </g>
     <text x="54" y="445" font-family="Georgia, serif" font-size="21">Joseph H. Dunn II</text>
     <text x="294" y="445" font-family="Arial, sans-serif" font-size="14">STAFF ENGINEER</text>

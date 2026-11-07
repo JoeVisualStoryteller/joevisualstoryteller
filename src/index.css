@@ -1453,8 +1453,8 @@ button {
   will-change: auto;
 }
 
-/* Leather detail ties the dark website to the editorial cover. */
-.case-card__top { border-bottom: 1px solid var(--ds-color-leather); }
+/* Crystal line detail under each case-card header. */
+.case-card__top { border-bottom: 1px solid var(--ds-color-line-strong); }
 
 /* Crystal Chronicle: a fantasy-inspired skin for the portfolio. */
 body { background: #07101f; }

@@ -12,8 +12,7 @@
     "lint": "eslint .",
     "audit": "npm audit --audit-level=high",
     "check": "npm run lint && npm run build && npm run audit",
-    "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.3.0",
@@ -25,7 +24,6 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
     "eslint": "^10.12.0",
-    "gh-pages": "6.1.1",
     "typescript": "5.8.3",
     "typescript-eslint": "^8.71.1",
     "vite": "^8.3.4"

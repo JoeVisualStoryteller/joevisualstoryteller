@@ -52,7 +52,7 @@ home | about | work | capabilities | contact
 
 ## GitHub Pages release
 
-The site URL is https://joevisualstoryteller.github.io/joevisualstoryteller/. `npm run deploy` builds the app and publishes `dist/` to `gh-pages`. Publish only when requested. Commit and push source changes before a requested deployment, and identify the source commit in the generated deployment commit. Do not hand-edit `dist/` or the deployment branch. After publishing, verify the live site.
+The site URL is https://joevisualstoryteller.github.io/joevisualstoryteller/. Pushing to `main` deploys it: `.github/workflows/ci.yml` audits, lints, and builds, then publishes `dist/` to GitHub Pages only if those pass. Push to `main` only when a release is intended; use a branch otherwise. Do not hand-edit `dist/`. After pushing, confirm the Actions run succeeded and verify the live site.
 
 ## Change boundaries
 

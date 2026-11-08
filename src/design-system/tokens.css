@@ -1,5 +1,7 @@
 :root {
   /* Crystal Chronicle: a fantasy-inspired, crystal-lit portfolio system. */
+
+  /* Core palette */
   --ds-color-void: #07101f;
   --ds-color-ink: #0b1830;
   --ds-color-surface: #101f3a;
@@ -15,12 +17,62 @@
   --ds-color-blue: #a9e5f3;
   --ds-color-blue-strong: #70c4de;
   --ds-color-blue-soft: rgba(112, 196, 222, 0.13);
-    --ds-color-green: #a9e5f3;
   --ds-color-line: rgba(162, 208, 226, 0.22);
   --ds-color-line-strong: rgba(174, 226, 241, 0.48);
 
+  /* Crystal text and accents */
+  --ds-color-bright: #ffffff;
+  --ds-color-heading: #f4f6f2;
+  --ds-color-brand-mark: #e0f7fc;
+  --ds-color-node-value: #e3fbff;
+  --ds-color-metric: #d4f4fa;
+  --ds-color-eyebrow: #b6eaf4;
+  --ds-color-eyebrow-mark: #d3eaf0;
+  --ds-color-principle: #b5eaf6;
+  --ds-color-chrome-text: #d0eaf0;
+  --ds-color-tag-text: #d1e9ee;
+  --ds-color-descriptor: rgba(162, 208, 226, 0.78);
+
+  /* Crystal lines and fills */
+  --ds-color-nav-line-scrolled: rgba(162, 208, 226, 0.28);
+  --ds-color-frame-line: #92c6d37a;
+  --ds-color-window-line: #b0d6e18c;
+  --ds-color-chrome-line: #a9dfeb55;
+  --ds-color-core-line: #b5ebf5;
+  --ds-color-node-line: #8ccddd88;
+  --ds-color-orb-line: #a4e4f261;
+  --ds-color-map-line: rgba(169, 229, 243, 0.42);
+  --ds-color-map-grid: rgba(169, 229, 243, 0.08);
+  --ds-color-button-line: #b3e4ef;
+  --ds-color-case-header-line: #a6d7e661;
+  --ds-color-case-signal: #b9eefa;
+  --ds-color-metrics-line: #8cc9d980;
+  --ds-color-footer-line: #a5d7e55c;
+  --ds-color-tag-line: #a2d2e052;
+  --ds-color-tag-fill: #06152b80;
+  --ds-color-window-dot: #bcebf6;
+  --ds-color-blueprint-line: rgba(112, 196, 222, 0.18);
+  --ds-color-blueprint: #0c1b32;
+  --ds-color-mobile-menu: #0a1d3b;
+
+  /* Gradients */
+  --ds-gradient-nav: linear-gradient(180deg, rgba(31, 76, 119, 0.94), rgba(5, 20, 48, 0.97));
+  --ds-gradient-nav-scrolled: linear-gradient(180deg, rgba(31, 76, 119, 0.98), rgba(5, 20, 48, 0.99));
+  --ds-gradient-button: linear-gradient(180deg, #326b91, #102b54);
+  --ds-gradient-frame: linear-gradient(145deg, #1b4163, #0b1c38 72%);
+  --ds-gradient-window: linear-gradient(145deg, rgba(19, 61, 100, 0.76), rgba(3, 14, 35, 0.9));
+  --ds-gradient-core: linear-gradient(135deg, #2e7391cc, #071b3fe8);
+  --ds-gradient-node: linear-gradient(160deg, rgba(33, 83, 120, 0.95), rgba(4, 21, 50, 0.96));
+  --ds-gradient-case-signal: linear-gradient(90deg, transparent, var(--ds-color-case-signal), transparent);
+  --ds-gradient-section-ink: linear-gradient(180deg, #0b1930, #0b1629);
+  --ds-gradient-blueprint-glow: radial-gradient(ellipse at 80% 0%, #1a3b59 0, transparent 48%);
+  --ds-gradient-contact-glow: radial-gradient(ellipse at 80% 50%, #204665, transparent 45%);
+  --ds-gradient-hero-fade: linear-gradient(90deg, rgba(5, 13, 29, 0.98) 0%, rgba(5, 13, 29, 0.89) 34%, rgba(5, 13, 29, 0.35) 72%, rgba(5, 13, 29, 0.22) 100%), linear-gradient(0deg, var(--ds-color-void) 0%, transparent 48%);
+  --ds-gradient-hero-fade-mobile: linear-gradient(180deg, rgba(5, 13, 29, 0.78), rgba(5, 13, 29, 0.8) 55%, var(--ds-color-void) 100%);
+
+  /* Type */
   --ds-font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-  --ds-font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --ds-font-display: Georgia, 'Times New Roman', serif;
   --ds-font-data: "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
 
   --ds-text-meta: 0.72rem;
@@ -28,6 +80,7 @@
   --ds-text-body: 1rem;
   --ds-text-lead: 1.22rem;
 
+  /* Space */
   --ds-space-1: 0.25rem;
   --ds-space-2: 0.5rem;
   --ds-space-3: 0.75rem;
@@ -39,16 +92,35 @@
   --ds-space-9: 6rem;
   --ds-space-10: 9rem;
 
+  /* Shape */
+  --ds-radius-xs: 1px;
   --ds-radius-sm: 2px;
   --ds-radius-md: 2px;
   --ds-radius-lg: 2px;
   --ds-radius-window: 2px;
   --ds-radius-pill: 999px;
 
-  --ds-shadow-panel: 0 18px 40px rgba(2, 8, 21, 0.33), inset 0 1px 0 rgba(169, 229, 243, 0.08);
-  --ds-shadow-window: 0 25px 80px rgba(2, 7, 19, 0.67), 0 0 60px rgba(121, 218, 250, 0.13), inset 0 1px 0 rgba(169, 229, 243, 0.09);
+  /* Depth */
+  --ds-shadow-panel: inset 0 0 0 3px #0a1a31, inset 0 0 0 4px #a9dbe643, 0 18px 40px #02081555;
+  --ds-shadow-window: inset 0 0 0 4px rgba(4, 17, 38, 0.9), inset 0 0 0 5px rgba(166, 216, 231, 0.28), 0 25px 80px #020713aa, 0 0 60px #79dafa22;
+  --ds-shadow-nav: inset 0 0 0 3px rgba(4, 14, 32, 0.85), inset 0 0 0 4px rgba(194, 229, 238, 0.35), 0 12px 40px #020815aa;
+  --ds-shadow-button: inset 0 0 0 2px #163355, 0 0 18px #54b8db22;
+  --ds-shadow-cta-hover: 0 0 24px rgba(112, 196, 222, 0.24);
+  --ds-shadow-button-hover: 0 0 28px rgba(112, 196, 222, 0.32);
+  --ds-shadow-core: 0 0 45px #92e9ff66, inset 0 0 25px #83def52c;
+  --ds-shadow-node: inset 0 0 0 2px #071a34, 0 8px 25px #020a18a8;
+  --ds-shadow-orb-outer: 0 0 80px rgba(112, 196, 222, 0.12), inset 0 0 70px rgba(112, 196, 222, 0.07);
+  --ds-shadow-orb-inner: 0 0 42px rgba(169, 229, 243, 0.12), inset 0 0 30px rgba(169, 229, 243, 0.06);
+  --ds-shadow-status-ring: 0 0 0 4px rgba(162, 208, 226, 0.12);
   --ds-shadow-focus: 0 0 0 4px rgba(169, 229, 243, 0.2);
+  --ds-text-shadow-brand: 0 0 16px rgba(169, 229, 243, 0.28);
+  --ds-text-shadow-link: 0 0 12px #8beaff;
+  --ds-text-shadow-headline: 0 4px 30px #06101f;
+  --ds-text-shadow-summary: 0 2px 14px #030a16;
+
+  /* Motion */
   --ds-transition: 180ms ease;
 
+  /* Layout */
   --shell-width: 1240px;
 }

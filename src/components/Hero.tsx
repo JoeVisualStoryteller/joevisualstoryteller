@@ -84,8 +84,10 @@ function SystemMap() {
       const width = map.clientWidth
       const height = map.clientHeight
       bounds = { width, height }
-      const coreWidth = coreElement?.offsetWidth ?? 132
-      const coreHeight = coreElement?.offsetHeight ?? 132
+      // The core is a rotated diamond: collide against its on-screen bounds, not its unrotated box.
+      const coreBounds = coreElement?.getBoundingClientRect()
+      const coreWidth = coreBounds?.width ?? 132
+      const coreHeight = coreBounds?.height ?? 132
       core = { x: width / 2 - coreWidth / 2, y: height / 2 - coreHeight / 2, width: coreWidth, height: coreHeight, vx: 0, vy: 0 }
       if (reduceMotion.matches || compactLayout.matches) return
       const elements = nodes.filter((node): node is HTMLDivElement => node !== null)
@@ -226,9 +228,10 @@ function SystemMap() {
       </svg>
 
       <div className="map-core">
-        <span className="map-core__pulse" />
-        <strong>OPS</strong>
-        <span>production<br />systems</span>
+        <div className="map-core__label">
+          <strong>OPS</strong>
+          <span>production<br />systems</span>
+        </div>
       </div>
 
       <div ref={(node) => { nodeRefs.current[0] = node }} className="map-node map-node--top map-node--floating">

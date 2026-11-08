@@ -35,7 +35,7 @@ export default function Nav() {
 
   return (
     <header className={`site-nav ${scrolled ? 'site-nav--scrolled' : ''}`}>
-      <div className="site-nav__inner shell">
+      <div className="site-nav__inner">
         <a href="#home" className="brand" aria-label="Joseph H. Dunn II, home">
           <span className="brand__mark">JHD</span>
           <span className="brand__descriptor">Staff Engineer / Operations</span>

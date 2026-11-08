@@ -11,7 +11,7 @@ This repository contains Joseph Henry Dunn II’s single-page portfolio, focused
 | `src/App.tsx` | Composes the skip link, navigation, hero, about, selected work, capabilities, contact, and footer. |
 | `src/components/` | Page sections and interactive UI. `Experience.tsx` renders selected work and career history; `Skills.tsx` renders capabilities. |
 | `src/data/content.ts` | Shared portfolio copy, metrics, case studies, capabilities, career history, and navigation. Some section copy and contact links remain in components. |
-| `src/design-system/tokens.css` | Runtime color, typography, spacing, radius, shadow, and transition tokens. |
+| `src/design-system/tokens.css` | Runtime color, gradient, typography, spacing, radius, shadow, and transition tokens; the only place literal color values live. |
 | `src/index.css` | Global styles, component styles, responsive rules, and motion preferences. |
 | `src/main.tsx` | App entry; imports tokens and styles, then mounts React. |
 | `DESIGN_SYSTEM.md` | Crystal Chronicle design principles and component guidance. `src/design-system/tokens.css` remains the source of truth for runtime values. |
@@ -58,5 +58,4 @@ The site URL is https://joevisualstoryteller.github.io/joevisualstoryteller/. `n
 
 - Preserve the Vite base path unless the hosting URL changes.
 - Keep `src/main.tsx` and its dynamic React DOM import intact unless the task calls for changing the entry point.
-- Do not treat the old root `design-system/` mirror instructions in `CONTRIBUTING.md` as current repository structure; the runtime design tokens now live under `src/design-system/`.
 - Do not edit generated build output.
